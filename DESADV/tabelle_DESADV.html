@@ -1,0 +1,2138 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <title>Variables Tables - DESADV</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+        * {
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: #fafbfc;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+.middle {
+  background-color: #eafcff;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+.right {
+  background-color: #f3fcfc;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+
+		table, h1, h2, h3, h4, h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%; /* Larghezza totale colonna */
+      border-collapse: collapse;
+			}
+		th, td {
+			border: 1px solid black;
+            text-align: left;
+			padding: 10px;                      
+			}
+          
+          .first {
+            background-color: rgb(24, 202, 214);
+            color: #fff
+          }
+          .second {
+            background-color: rgb(99, 192, 192);
+            color: #fff
+          }
+          .flex-container {
+          display: flex;
+          justify-content: space-evenly;
+          word-wrap: break-word;
+      }
+      /* Use a media query to add a break point at 800px: */
+      @media screen and (max-width: 600px) {
+      .left, .middle, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+          
+</style>
+</head>
+<body>
+
+<h1>Qualifiers and Variables</h1>
+   <h3>Supporting guide for EDI standards</h3>
+<div class="flex-container">
+  <!--UNB, Massage Function, DESADV Types-->
+<div class="left">
+    <table>
+    <h4 id="1-unb">#1 UNB</h4>
+    <h5>Sender and Recipient /IdentificationCodeQualifier</h5>
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #35559b; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+    <td class="first">14</td>
+    <td>GLN</td>
+    </tr>
+    <tr>
+    <td class="second">ZZ</td>
+    <td>VAT Number</td>
+    </tr>
+    <tr>
+    <td class="first">EN</td>
+    <td>GLN</td>
+    </tr>
+    </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="2-mess-fun">#2 Message Function</h4>
+  <h5>Header/Document/MessageFunction</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">1</td>
+    <td>Cancellation</td>
+  </tr>
+  <tr>
+    <td class="second">4</td>
+    <td>Edit</td>
+  </tr>
+  <tr>
+    <td class="first">7</td>
+    <td>Duplicate</td>
+  </tr>
+  <tr>
+    <td class="second">9</td>
+    <td>Original</td>
+    </tr>
+  <tr>
+    <td class="first">5</td>
+    <td>Replace</td>
+  </tr>
+  <tr>
+    <td class="second">31</td>
+    <td>Copy</td>
+  </tr>
+  <tr>
+    <td class="first">42</td>
+    <td>Confirmation via other means</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+    <table>
+    <h4 id="3-desadv-ty">#3 DESADV Types</h4>
+    <h5>Header/Document/TypeIdentification</h5>
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #35559b; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+        <td class="first">351</td>
+        <td>DESADV (Despatch Advice)</td>
+    </tr>
+    <tr>
+        <td class="second">35E</td>
+        <td>RESADV (Return Advice)</td>
+    </tr>
+    <tr>
+        <td class="first">YA9</td>
+        <td>Cross docking Preallocato</td>
+    </tr>
+    <tr>
+        <td class="second">345</td>
+        <td>Ready for despatch advice</td>
+    </tr>
+    <tr>
+        <td class="first">748</td>
+        <td>Consignment despatch advice</td>
+    </tr>
+    <tr>
+        <td class="second">YA5</td>
+        <td>Intermediate handling cross docking despatch advice (GS1 Temporary Code)</td>
+    </tr>
+    <tr>
+        <td class="first">YA6</td>
+        <td>Pre-packed cross docking [transshipment] despatch advice (GS1 Temporary Code) </td>
+    </tr>
+    <tr>
+        <td class="second">YB3</td>
+        <td>Intermediate handling cross docking despatch advice (GS1 Temporary Code)</td>
+    </tr>
+    <tr>
+      <td class="first">YC3</td>
+      <td>Consumer pickup delivery note (GS1 Permanent Code)</td>
+    </tr>
+    <tr>
+      <td class="second">YC4</td>
+      <td>Consumer home delivery note (GS1 Permanent Code)</td>
+    </tr>
+   </table>
+</div>
+</div>
+<div class="flex-container">
+   <!--RIF Qualifier, Date Types, Date Formats-->
+<div class="left">
+  <table>
+  <h4 id="4-ref-qual">#4 Reference Qualifier</h4>
+  <h5>/Header/Information/References/ReferenceQualifier</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/References/ReferenceQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">AAJ</td>
+  <td>Delivery Note Number (bolla)</td>
+  </tr>
+  <tr>
+  <td class="second">AAS</td>
+  <td>Transport Document Number (DDT)</td>
+  </tr>
+  <tr>
+  <td class="first">CR</td>
+  <td>Customer reference number</td>
+  </tr>
+  <tr>
+    <td class="second">CN</td>
+    <td>Carrier waybill number</td>
+  </tr>
+  <tr>
+    <td class="first">CT</td>
+    <td>Contract number</td>
+  </tr>
+  <tr>
+    <td class="second">BM</td>
+    <td>BOL number / Delivery number</td>
+  </tr>
+  <tr>
+    <td class="first">IP</td>
+    <td>Import license number</td>
+  </tr>
+  <tr>
+    <td class="second">ON</td>
+    <td>Order number (buyer)</td>
+  </tr>
+  <tr>
+    <td class="first">PK</td>
+    <td>Packing list number</td>
+  </tr>
+  <tr>
+    <td class="second">POR</td>
+    <td>Order confirmation number</td>
+  </tr>
+  <tr>
+    <td class="first">VN</td>
+    <td>Order number (supplier)</td>
+  </tr>
+  <tr>
+    <td class="second">AAU</td>
+    <td>Delivery schedule/plan number</td>
+  </tr>
+  <tr>
+    <td class="first">AAB</td>
+    <td>Accompanying invoice number</td>
+  </tr>
+  <tr>
+    <td class="second">AAK</td>
+    <td>DESADV number</td>
+  </tr>
+  <tr>
+    <td class="first">ALQ</td>
+    <td>Return waybill number</td>
+  </tr>
+  <tr>
+    <td class="second">RPE</td>
+    <td>National Battery and Accumulator Register ID number</td>
+  </tr>
+  <tr>
+    <td class="first">AAN</td>
+    <td>Delivery schedule number</td>
+  </tr>
+  <tr>
+    <td class="second">AWT</td>
+    <td>Administrative Reference Code</td>
+  </tr>
+  <tr>
+    <td class="first">PP</td>
+    <td>Purchase order change number</td>
+  </tr>
+  <tr>
+    <td class="second">AVQ</td>
+    <td>Place of packing approval number</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4  id="5-date-ty">#5 Date Types</h4>
+  <h5>Header/Information/References/ReferenceDate/DateType</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/References/ReferenceDate/DateType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">157</td>
+      <td>Validity start date</td>
+  </tr>
+  <tr>
+      <td class="second">171</td>
+      <td>Document date/time in RFF</td>
+  </tr>
+  <tr>
+      <td class="first">21E</td>
+      <td>Validity end date</td>
+  </tr>
+  <tr>
+      <td class="second">54E</td>
+      <td>Stuffing date/time (GS1 Temporary Code)</td>
+  </tr>
+  
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="6-date-for">#6 Date Formats</h4>
+<h5>/Header/Information/References/ReferenceDate/FormatQualifier</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/References/ReferenceDate/FormatQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">102</td>
+  <td>CCYY-MM-DD</td>
+</tr>
+<tr>
+  <td class="second">203</td>
+  <td>HH:MM:SS</td>
+</tr>
+
+</table>
+</div>
+</div>
+<div class="flex-container">
+  <!--Date Types 2, NAD Code Qualifier, Date Formats 2-->
+ <div class="left">
+  <table>
+  <h4 id="7-date-ty-2">#7 Date Types 2 (Date of Delivery)</h4>
+  <h5>/Header/Information/DateOfDelivery/DateType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">2</td>
+  <td>Requested delivery date/time</td>
+  </tr>
+  <tr>
+    <td class="second">11</td>
+    <td>Shipping date/time</td>
+  </tr>
+  <tr>
+    <td class="first">63</td>
+    <td>Delivery date/time (not later than)</td>
+  </tr>
+  <tr>
+    <td class="second">64</td>
+    <td>Delivery date/time (not before)</td>
+  </tr>
+  <tr>
+    <td class="first">95</td>
+    <td>Date of delivery note</td>
+  </tr>
+  <tr>
+    <td class="second">234</td>
+    <td>Collection date/time (not before)</td>
+  </tr>
+  <tr>
+    <td class="first">358</td>
+    <td>Delivery agreed, (during or after)</td>
+  </tr>
+  <tr>
+    <td class="second">359</td>
+    <td>Delivery agreed, (during or before)</td>
+  </tr>
+  <tr>
+    <td class="first">17</td>
+    <td>Delivery date/time, estimated</td>
+  </tr>
+  <tr>
+    <td class="second">59</td>
+    <td>Inbond movement authorization date</td>
+  </tr>
+  <tr>
+    <td class="first">162</td>
+    <td>Release date of supplier</td>
+  </tr>
+  <tr>
+    <td class="second">191</td>
+    <td>Delivery date/time, expected</td>
+  </tr>
+  <tr>
+    <td class="first">200</td>
+    <td>Pick-up/collection date/time of cargo</td>
+  </tr>
+  <tr>
+    <td class="second">235</td>
+    <td>Collection date/time, latest</td>
+  </tr>
+  <tr>
+    <td class="first">806</td>
+    <td>Shipment date/time, expected</td>
+  </tr>
+  <tr>
+    <td class="second">54E</td>
+    <td>Stuffing date/time (GS1 Temporary Code)</td>
+  </tr>
+  </table>
+ </div>
+<div class="middle">
+  <table>
+  <h4 id="8-cod-list-qual">#8 NAD Code Qualifiers</h4>
+  <h5>/Header/Information/Supplier/CodeListQualifier</h5>
+  <h5>/Header/Information/Buyer/CodeListQualifier</h5>
+  <h5>/Header/Information/DeliveryPoint/CodeListQualifier</h5>
+  <h5>/Header/Information/OtherParty/CodeListQualifier</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/CodeListQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">14</td>
+      <td>EAN/UCC</td>
+  </tr>
+  <tr>
+      <td class="second">IT</td>
+      <td>Code assigned by the buyer</td>
+  </tr>
+  <tr>
+      <td class="first">VA</td>
+      <td>VAT registration number</td>
+  </tr>
+  <tr>
+      <td class="second">IA</td>
+      <td>Code assigned by the Seller</td>
+  </tr>
+  <tr>
+    <td class="first">ZZ</td>
+    <td>Code defined by mutual agreement</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="9-form-qual">#9 Date Format 2</h4>
+<h5>/Header/Information/DateOfDelivery/FormatQualifier</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/FormatQualifier</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/ProductDate/FormatQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">102</td>
+  <td>CCYY-MM-DD</td>
+</tr>
+<tr>
+  <td class="second">203</td>
+  <td>HH:MM:SS</td>
+</tr>
+<tr>
+  <td class="first">718</td>
+  <td>CCYY-MM-DD-CCYY-MM-DD</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Contact, NAD Qualifiers, Term of Delivery -->
+<div class="left">
+  <table>
+  <h4 id="10-contact">#10 Contact</h4>
+  <h5>/Header/Information/Supplier/ContactReference/Contactfunction</h5>
+  <h5>/Header/Information/Buyer/ContactReference/Contactfunction</h5>
+  <h5>/Header/Information/DeliveryPoint/ContactReference/Contactfunction</h5>
+  <h5>/Header/Information/OtherParty/ContactReference/Contactfunction</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">IC</td>
+  <td>Person in charge of shipping</td>
+  </tr>
+  <tr>
+    <td class="second">DL</td>
+    <td>Contact for information</td>
+  </tr>
+  <tr>
+    <td class="first">TR</td>
+    <td>Persona incaricata del trasporto</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="11-nad-qual">#11 NAD Qualifiers</h4>
+  <h5>/Header/Information/OtherParty/PartyType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">CA</td>
+      <td>Carrier</td>
+  </tr>
+  <tr>
+      <td class="second">CN</td>
+      <td>Intermediate recipient</td>
+  </tr>
+  <tr>
+      <td class="first">FD</td>
+      <td>Deposit recipient</td>
+  </tr>
+  <tr>
+      <td class="second">FR</td>
+      <td>Message sender</td>
+  </tr>
+  <tr>
+    <td class="first">IV</td>
+    <td>Invoice recipient</td>
+</tr>
+<tr>
+  <td class="second">OB</td>
+  <td>Order sender</td>
+</tr>
+<tr>
+  <td class="first">PW</td>
+  <td>Place of departure of goods</td>
+</tr>
+<tr>
+  <td class="second">SF</td>
+  <td>Shipping point</td>
+</tr>
+<tr>
+<td class="first">SH</td>
+<td>Shipper (EAN/UCC code)</td>
+</tr>
+<tr>
+  <td class="second">UC</td>
+  <td>Last recipient of goods</td>
+</tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="12-tod">#12 Terms of Delivery</h4>
+<h5>/Header/Information/TermOfDeliveryOrTransport/TermOfDelivery</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">2</td>
+  <td>Delivery Condition</td>
+</tr>
+<tr>
+  <td class="second">3</td>
+  <td>Delivery Costs and Conditions</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Transport Costs, Coded terms, Description 1-->
+<div class="left">
+  <table>
+  <h4 id="13-trans-costs">#13 Transport Costs</h4>
+  <h5>/Header/Information/TermOfDeliveryOrTransport/TransportCosts</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">CC</td>
+  <td>By the Recipient</td>
+  </tr>
+  <tr>
+    <td class="second">PP</td>
+    <td>By the Sender</td>
+  </tr>
+  <tr>
+    <td class="first">PC</td>
+    <td>Prepaid but charged to customer</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="14-cod-ter">#14 Coded Terms</h4>
+  <h5>/Header/Information/TermOfDeliveryOrTransport/TermOfDeliveryCoded</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">EXW</td>
+      <td>EX WORKS</td>
+  </tr>
+  <tr>
+      <td class="second">FCA</td>
+      <td>FREE CARRIER</td>
+  </tr>
+  <tr>
+      <td class="first">FAS</td>
+      <td>FREE ALONGSHIP</td>
+  </tr>
+  <tr>
+      <td class="second">FOB</td>
+      <td>FREE ON BOARD</td>
+  </tr>
+  <tr>
+    <td class="first">CFR</td>
+    <td>COST AND FREIGHT</td>
+</tr>
+  <tr>
+      <td class="second">CIF</td>
+      <td>COST, INSURANCE AND FREIGHT</td>
+  </tr>
+  <tr>
+      <td class="first">CPT</td>
+      <td>CARRIAGE PAID TO</td>
+  </tr>
+  <tr>
+      <td class="second">CIP</td>
+  <td>CARRIAGE AND INSURANCE PAID TO</td>
+  </tr>
+  <tr>
+      <td class="first">DAF</td>
+      <td>FRONTIER DELIVERY</td>
+  </tr>
+  <tr>
+      <td class="second">DES</td>
+      <td>EX SHIP DELIVERY</td>
+  </tr>
+  <tr>
+      <td class="first">DEQ</td>
+      <td>DELIVERY AT THE QUAY</td>
+  </tr>
+  <tr>
+      <td class="second">DDU</td>
+      <td>DELIVERY NOT CLEARED</td>
+  </tr>
+  <tr>
+      <td class="first">DDP</td>
+      <td>DELIVERY CLEARED</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="15-tod-desc">#15 Description 1</h4>
+<h5>/Header/Information/TermOfDeliveryOrTransport/Descr1TermOfDelivery</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">FS</td>
+  <td>Free on Truck (Franco Sponda)</td>
+</tr>
+<tr>
+  <td class="second">FB</td>
+  <td> Free on Quay (Franco Banchina)</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Transport Mode, Transport Means, Package-->
+<div class="left">
+  <table>
+  <h4 id="16-t-mode">#16 Transport Mode</h4>
+  <h5>/Header/Information/DetailsOfTransport/TransportModeCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">10</td>
+  <td>Maritime transport</td>
+  </tr>
+  <tr>
+    <td class="second">20</td>
+    <td>Rail transport</td>
+  </tr>
+  <tr>
+    <td class="first">30</td>
+    <td>Road transport</td>
+  </tr>
+  <tr>
+    <td class="second">40</td>
+    <td>Air transport</td>
+  </tr>
+  <tr>
+    <td class="first">60</td>
+    <td>Multimodal transport</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="17-t-means">#17 Transport Means</h4>
+  <h5>/Header/Information/DetailsOfTransport/TransportMeansCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">23</td>
+      <td>Trailer truck</td>
+  </tr>
+  <tr>
+      <td class="second">25</td>
+      <td>Railway wagon</td>
+  </tr>
+  <tr>
+      <td class="first">31</td>
+      <td>Van</td>
+  </tr>
+  <tr>
+      <td class="second">35</td>
+      <td>Box semi-trailer</td>
+  </tr>
+  <tr>
+    <td class="first">23E</td>
+    <td>Curtain-sided/curtain-sided semi-trailer (EAN code)</td>
+</tr>
+  <tr>
+      <td class="second">25E</td>
+      <td>Temperature-controlled semi-trailer (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="first">32E</td>
+      <td>Swap body (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="second">34E</td>
+      <td>Large volume semi-trailer (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="first">36E</td>
+      <td>70 q pickup truck (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="second">37E</td>
+      <td>Long tractor unit (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="first">38E</td>
+      <td>Normal tractor unit (EAN code)</td>
+  </tr>
+  <tr>
+      <td class="second">43E</td>
+      <td>Hydraulic tail lift tractor unit (EAN code)</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="18-pack-ty">#18 Package Type</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/Package/PackageType</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/Package/PackageType</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Package/PackageType</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">08</td>
+  <td>Disposable pallets /Pallet a perdere</td>
+</tr>
+<tr>
+  <td class="second">09</td>
+  <td>Returnable pallets (EAN/UCC code) /Pallet restituibile (codice EAN/UCC)</td>
+</tr>
+<tr>
+  <td class="first">200</td>
+  <td>ISO pallet 0 – ½ EURO Pallet (EAN/UCC code)</td>
+</tr>
+<tr>
+  <td class="second">201</td>
+  <td>ISO pallet 1 - 1/1 EURO Pallet (EAN/UCC code)</td>
+</tr>
+<tr>
+  <td class="first">203</td>
+  <td>¼ EURO pallet (EAN/UCC code)</td>
+</tr>
+<tr>
+  <td class="second">DPE</td>
+  <td>Displays (EAN/UCC code)/ Espositori (codice EAN/UCC)</td>
+</tr>
+<tr>
+  <td class="first">HR</td>
+  <td>Basket/ Cesta</td>
+</tr>
+<tr>
+  <td class="second">PK</td>
+  <td>Cartons/ Cartoni</td>
+</tr>
+<tr>
+  <td class="first">PA</td>
+  <td>Packages (e.g. cigarette packets)/ Pacchetti</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Measured Code, Measure Significance, Measurement Units-->
+<div class="left">
+  <table>
+  <h4 id="19-mea-cod">#19 Measured Codes</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasuredCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">AAA</td>
+  <td>Net weight per unit (Peso Netto unitario)</td>
+  </tr>
+  <tr>
+    <td class="second">AAB</td>
+    <td>Gross weight per unit (Peso Lordo Unitario)</td>
+  </tr>
+  <tr>
+    <td class="first">DBX</td>
+    <td>BRIX degree (EAN/UCC code)</td>
+  </tr>
+  <tr>
+    <td class="second">DN</td>
+    <td>Density</td>
+  </tr>
+  <tr>
+    <td class="first">HT</td>
+    <td>Height</td>
+  </tr>
+  <tr>
+    <td class="second">LAY</td>
+    <td>Number of layers of one or more products within a package, pallet, etc.</td>
+  </tr>
+  <tr>
+    <td class="first">LN</td>
+    <td>Length</td>
+  </tr>
+  <tr>
+    <td class="second">T</td>
+    <td>Tare</td>
+  </tr>
+  <tr>
+    <td class="first">UCO</td>
+    <td>Units per package (EAN/UCC code)</td>
+  </tr>
+  <tr>
+    <td class="second">ULY</td>
+    <td>Number of units of a product within each layer of the package, pallet, etc.</td>
+  </tr>
+  <tr>
+    <td class="first">WD</td>
+    <td>Width</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="20-mea-sig">#20 Measure Significance</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementSignificanceCode</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/Measurements/MeasurementSignificanceCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">3</td>
+      <td>Approximately</td>
+  </tr>
+  <tr>
+      <td class="second">4</td>
+      <td>Equal to</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="21-mea-un">#21 Measurement Unit</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementUnitCode</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/Measurements/MeasurementUnitCode</h5>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Measurements/MeasurementUnitCode</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">CMT</td>
+  <td>Centimeters</td>
+</tr>
+<tr>
+  <td class="second">GRM</td>
+  <td>Grams</td>
+</tr>
+<tr>
+  <td class="first">KGM</td>
+  <td>Kilograms</td>
+</tr>
+<tr>
+  <td class="second">LTR</td>
+  <td>Liters (1 dm3)</td>
+</tr>
+<tr>
+  <td class="first">MLT</td>
+  <td>Milliliters</td>
+</tr>
+<tr>
+  <td class="second">MTR</td>
+  <td>Meters</td>
+</tr>
+<tr>
+  <td class="first">MTK</td>
+  <td>Square meters</td>
+</tr>
+<tr>
+  <td class="second">PCE</td>
+  <td>Pieces/number</td>
+</tr>
+<tr>
+  <td class="first">P1</td>
+  <td>Percentage</td>
+</tr>
+<tr>
+  <td class="second">MON</td>
+  <td>Months</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Handling Codes, Handling Agency, Instruction Codes-->
+<div class="left">
+  <table>
+  <h4 id="22-hand-cod">#22 Handling Codes</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/HandlingCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">CRU</td>
+  <td>Fragile (EAN code)</td>
+  </tr>
+  <tr>
+    <td class="second">EAT</td>
+    <td>Food / perishable</td>
+  </tr>
+  <tr>
+    <td class="first">HWC</td>
+    <td>Handle with care (EAN code)</td>
+  </tr>
+  <tr>
+    <td class="second">STR</td>
+    <td>Stackable with care (EAN code)</td>
+  </tr>
+  <tr>
+    <td class="first">UST</td>
+    <td>Non-stackable (EAN code)</td>
+  </tr>
+  <tr>
+    <td class="second">BIG</td>
+    <td>Outsized (GS1 Temporary Code)</td>
+  </tr>
+  <tr>
+    <td class="first">PSC</td>
+    <td>Pest controlling (GS1 Temporary Code)</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="23-hand-age">#23 Handling Agency</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/ResponsibleAgencyCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+      <td class="first">9</td>
+      <td>GS1</td>
+  </tr>
+  <tr>
+      <td class="second">60</td>
+      <td>Assigned by national trade agency</td>
+  </tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="24-inst-cod">#24 Instruction Codes</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/PackageIdentification/InstructionsCode</h5>
+<h5>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PackageIdentification/InstructionsCode</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">17</td>
+  <td>Supplier instructions</td>
+</tr>
+<tr>
+  <td class="second">33E</td>
+  <td>Identified with serial shipping container code (EAN code)</td>
+</tr>
+<tr>
+  <td class="first">34E</td>
+  <td>Identified with EAN/UPC code</td>
+</tr>
+<tr>
+  <td class="second">39</td>
+  <td>Marked with Serial Shipping Container Code (SSCC)</td>
+</tr>
+<tr>
+  <td class="first">34</td>
+  <td>Marked GS1 Global Individual Asset Identifier</td>
+</tr>
+<tr>
+  <td class="second">47</td>
+  <td>Marked with GS1 Global Returnable Asset Identifier (GRAI)</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Package Code 1, Measured Code 2, Article Code Qualifiers-->
+<div class="left">
+  <table>
+  <h4 id="25-pac-co">#25 Package Code 1</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/PackageIdentification/IdentificationCodeQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">BJ</td>
+  <td>SSCC (Package Sequential Number)</td>
+  </tr>
+  <tr>
+    <td class="second">BN</td>
+    <td>Serial Number</td>
+  </tr>
+  <tr>
+    <td class="first">EU</td>
+    <td>EAN / UPC Code</td>
+  </tr>
+  <tr>
+    <td class="second">CU</td>
+    <td>GS1 Global Individual Asset Identifier</td>
+  </tr>
+  <tr>
+    <td class="first">DA</td>
+    <td>GS1 Global Returnable Asset Identifier, without serial number</td>
+  </tr>
+  <tr>
+    <td class="second">DB</td>
+    <td>GS1 Global Returnable Asset Identifier, with serial number</td>
+  </tr>
+  <tr>
+    <td class="first">SRV</td>
+    <td>GS1 Global Trade Item Number (GS1 Temporary Code)</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="26-mead-cod">#26 Measured Code 2</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/Measurements/MeasuredCode</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasuredCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">AAK</td>
+    <td>Fat content</td>
+  </tr>
+  <tr>
+    <td class="second">TH</td>
+    <td>Thickness</td>
+  </tr>
+  <tr>
+    <td class="first">X13</td>
+    <td>Acidity of meat (GS1 Temporary Code)</td>
+</tr>
+<tr>
+    <td class="second">ADZ</td>
+    <td>Net weight</td>
+</tr>
+<tr>
+  <td class="first">DI</td>
+  <td>Diameter</td>
+</tr>
+<tr>
+  <td class="second">DP</td>
+  <td>Depth</td>
+</tr>
+<tr>
+  <td class="first">G</td>
+  <td>Gross Weight</td>
+</tr>
+<tr>
+  <td class="second">HT</td>
+  <td>Height</td>
+</tr>
+<tr>
+  <td class="first">LN</td>
+  <td>Length</td>
+</tr>
+<tr>
+  <td class="second">WD</td>
+  <td>Width</td>
+</tr>
+<tr>
+  <td class="first">AAA</td>
+  <td>Net Unit Weight</td>
+</tr>
+<tr>
+  <td class="second">AAB</td>
+  <td>Gross Unit Weight</td>
+</tr>
+<tr>
+  <td class="first">DBX</td>
+  <td>BRIX Degree (EAN-UCC code)</td>
+</tr>
+<tr>
+  <td class="second">DN</td>
+  <td>Density</td>
+</tr>
+<tr>
+  <td class="first">LAY</td>
+  <td>Number of layers of one or more products within a package, pallet, etc.</td>
+</tr>
+<tr>
+  <td class="second">T</td>
+  <td>Tare</td>
+</tr>
+<tr>
+  <td class="first">UCO</td>
+  <td>Units per package (EANUCC code)</td>
+</tr>
+<tr>
+  <td class="second">ULY</td>
+  <td>Number of units of a product within each layer of the package, pallet, etc.</td>
+</tr>
+<tr>
+  <td class="first">PG</td>
+  <td>Glazing Percentage</td>
+</tr>
+  </table>
+</div>
+<div class="right">
+<table>
+<h4 id="27-item-qual">#27 Article Code Qualifiers</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/AdditionalIdentification/ItemQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">EN</td>
+  <td>EAN Code</td>
+</tr>
+<tr>
+  <td class="second">SA</td>
+  <td>Supplier Part Number</td>
+</tr>
+<tr>
+  <td class="first">IN</td>
+  <td>Distributor Part Number</td>
+</tr>
+<tr>
+  <td class="second">UP</td>
+  <td>UPC Code</td>
+</tr>
+<tr>
+  <td class="first">IB</td>
+  <td>ISBN (International Standard Book Number)</td>
+</tr>
+<tr>
+  <td class="second">AC</td>
+  <td>HIBC (Health Industry Bar Code)</td>
+</tr>
+<tr>
+  <td class="first">PV</td>
+  <td>Promotional variant number</td>
+</tr>
+<tr>
+  <td class="second">SRX</td>
+  <td>Slaughter number</td>
+</tr>
+<tr>
+  <td class="first">X2</td>
+  <td>Ear-tag number (GS1 Temporary Code)</td>
+</tr>
+<tr>
+  <td class="second">FS</td>
+  <td>Fish species identification</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Quantity, Measurement Unit Quantity, Quantity Qualifier-->
+<div class="left">
+  <table>
+  <h4 id="28-qua-qua">#28 Quantity</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity/QuantityQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">12</td>
+  <td>Quantity Shipped</td>
+  </tr>
+  <tr>
+    <td class="second">21</td>
+    <td>Quantity Ordered</td>
+  </tr>
+  <tr>
+    <td class="first">59</td>
+    <td>Number of CU in TU</td>
+  </tr>
+  <tr>
+    <td class="second">61</td>
+    <td>Return quantity</td>
+  </tr>
+  <tr>
+    <td class="first">121</td>
+    <td>Over shipped</td>
+  </tr>
+  <tr>
+    <td class="second">192</td>
+    <td>Free goods quantity</td>
+  </tr>
+  <tr>
+    <td class="first">193</td>
+    <td>Free quantity included</td>
+  </tr>
+  <tr>
+    <td class="second">45E</td>
+    <td>Number of units in higher packaging or configuration level (GS1 Temporary Code)</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="29-mea-un-qua">#29 Measurement Units Quantity</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity/MeasureUnitQualifier</h5>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity/MeasureUnitQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">CT</td>
+    <td>Carton</td>
+  </tr>
+  <tr>
+    <td class="second">PCE</td>
+    <td>Pieces</td>
+  </tr>
+  <tr>
+    <td class="first">KGM</td>
+    <td>Kilograms</td>
+</tr>
+<tr>
+    <td class="second">MTR</td>
+    <td>Meters</td>
+</tr>
+<tr>
+  <td class="first">MTK</td>
+  <td>Square Meters</td>
+</tr>
+<tr>
+  <td class="second">LTR</td>
+  <td>Liters</td>
+</tr>
+<tr>
+  <td class="first">CU</td>
+  <td>Consumer Unit</td>
+</tr>
+<tr>
+  <td class="second">TU</td>
+  <td>Trade Unit</td>
+</tr>
+<tr>
+  <td class="first">CMT</td>
+  <td>Centimeters</td>
+</tr>
+<tr>
+  <td class="second">GRM</td>
+  <td>Grams</td>
+</tr>
+<tr>
+  <td class="first">MLT</td>
+  <td>Milliliters</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="30-qua-qua">#30 Quantity Qualifiers</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/QuantityVariances/QuantityQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">21</td>
+  <td>Quantity ordered</td>
+</tr>
+<tr>
+  <td class="second">66</td>
+  <td>Committed quantity</td>
+</tr>
+
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Discrepancy, Reason Change, Location Qualifier-->
+<div class="left">
+  <table>
+  <h4 id="31-disc">#31 Discrepancy</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/QuantityVariances/Discrepancy</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">BP</td>
+  <td>Partial delivery – the missing quantity will be delivered in the future</td>
+  </tr>
+  <tr>
+    <td class="second">CP</td>
+    <td>Partial delivery – considered complete delivery, the missing goods do not have to be delivered</td>
+  </tr>
+  <tr>
+    <td class="first">AC</td>
+    <td>Excessive quantity compared to the order</td>
+  </tr>
+  <tr>
+    <td class="second">AE</td>
+    <td>Delivery made without prior notice</td>
+  </tr>
+  <tr>
+    <td class="first">AF</td>
+    <td>Quantity of goods delivered damaged</td>
+  </tr>
+  <tr>
+    <td class="second">AG</td>
+    <td>Quantity of goods delivered late</td>
+  </tr>
+
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="32-reas-ch">#32 Reason For Change</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Item/QuantityVariances/ReasonForChangeCoded</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">AT</td>
+    <td>Product not ordered</td>
+  </tr>
+  <tr>
+    <td class="second">AUE</td>
+    <td>EAN/UPC identifier unknown</td>
+  </tr>
+  <tr>
+    <td class="first">BN</td>
+    <td>EAN/UPC barcode not readable</td>
+</tr>
+<tr>
+    <td class="second">DME</td>
+    <td>Damaged (EAN code)</td>
+</tr>
+<tr>
+  <td class="first">IS</td>
+  <td>Replacement product (compared to what was ordered)</td>
+</tr>
+<tr>
+  <td class="second">PC</td>
+  <td>Different packaging</td>
+</tr>
+<tr>
+  <td class="first">PE</td>
+  <td>Product shelf life (minimum/maximum) is not accepted</td>
+</tr>
+<tr>
+  <td class="second">WR</td>
+  <td>Temporarily unavailable</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="33-loc-qual">#33 Location Qualifiers</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/LocationQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">7</td>
+  <td>Place of delivery</td>
+</tr>
+<tr>
+  <td class="second">244</td>
+  <td>Country of meat cutting</td>
+</tr>
+<tr>
+  <td class="first">256</td>
+  <td>Place of packing</td>
+</tr>
+<tr>
+  <td class="second">19</td>
+  <td>Aquaculture production unit</td>
+</tr>
+<tr>
+  <td class="first">299</td>
+  <td>Fishing vessel</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Location Identification, Location Code, Date Types 3-->
+<div class="left">
+  <table>
+  <h4>#34 Location Identification</h4>
+  <h5>???</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">241</td>
+  <td>Country of birth</td>
+  </tr>
+  <tr>
+    <td class="second">242</td>
+    <td>Country of breeding</td>
+  </tr>
+  <tr>
+    <td class="first">243</td>
+    <td>Country of slaughter</td>
+  </tr>
+  <tr>
+    <td class="second">244</td>
+    <td>Country of cutting</td>
+  </tr>
+  <tr>
+    <td class="first">30E</td>
+    <td>Cutting plant - Slaughterhouse approval number</td>
+  </tr>
+  <tr>
+    <td class="second">40E</td>
+    <td>Packing Plant - Cutting plant approval number</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4  id="35-loc-id">#35 Location Codes</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/CodeListQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">14</td>
+    <td>EAN/UCC</td>
+  </tr>
+  <tr>
+    <td class="second">92</td>
+    <td>Code assigned by the buyer</td>
+  </tr>
+  <tr>
+    <td class="first">VA</td>
+    <td>VAT registration number</td>
+</tr>
+<tr>
+    <td class="second">91</td>
+    <td>Code assigned by the Seller</td>
+</tr>
+<tr>
+  <td class="first">ZZ</td>
+  <td>Code defined by mutual agreement</td>
+</tr>
+<tr>
+  <td class="second">5</td>
+  <td>ISO (International Organization for Standardization)</td>
+</tr>
+<tr>
+  <td class="first">194</td>
+  <td>AU, AQIS (Australian Quarantine and Inspection Service)</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="36-date-ty">#36 Date Types 3</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/DateType</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">2</td>
+  <td>Requested delivery date/time</td>
+</tr>
+<tr>
+  <td class="second">11</td>
+  <td>Shipping date and time</td>
+</tr>
+<tr>
+  <td class="first">63</td>
+  <td>Delivery date/time (not later than)</td>
+</tr>
+<tr>
+  <td class="second">64</td>
+  <td>Delivery date/time (not before)</td>
+</tr>
+<tr>
+  <td class="first">234</td>
+  <td>Collection date/time (not before)</td>
+</tr>
+<tr>
+  <td class="second">358</td>
+  <td>Delivery agreed, (on or after)</td>
+</tr>
+<tr>
+  <td class="first">359</td>
+  <td>Delivery agreed, (on or before)</td>
+</tr>
+<tr>
+  <td class="second">69</td>
+  <td>Delivery date/time, promised for</td>
+</tr>
+<tr>
+  <td class="first">94</td>
+  <td>Production/manufacture date</td>
+</tr>
+<tr>
+  <td class="second">200</td>
+  <td>Pick-up/collection date/time of cargo</td>
+</tr>
+<tr>
+  <td class="first">755</td>
+  <td>Product ageing duration, minimum</td>
+</tr>
+<tr>
+  <td class="second">793</td>
+  <td>Reprocessing date/time</td>
+</tr>
+<tr>
+  <td class="first">807</td>
+  <td>Slaughtering date/time</td>
+</tr>
+<tr>
+  <td class="second">808</td>
+  <td>Animal birth date/time</td>
+</tr>
+<tr>
+  <td class="first">54E</td>
+  <td>Stuffing date/time (GS1 Temporary Code)</td>
+</tr>
+<tr>
+  <td class="second">X14</td>
+  <td>Requested for delivery week commencing (GS1 Temporary Code)</td>
+</tr>
+<tr>
+  <td class="first">X19</td>
+  <td>Material Safety Data Sheet issue date(GS1 Temporary Code)</td>
+</tr>
+<tr>
+  <td class="second">X20</td>
+  <td>slaughter date for carcasses, half-carcasses and quarters</td>
+</tr>
+<tr>
+  <td class="first">94</td>
+  <td>Date of production, date of processing, cutting, mincing or preparation, as appropriate, for any other food of animal origin</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Quantity 2, Party Location, Package Code 2-->
+<div class="left">
+  <table>
+  <h4 id="37-qua-qua">#37 Quantity qualifier 2</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity/QuantityQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">12</td>
+  <td>Quantity Shipped</td>
+  </tr>
+  <tr>
+    <td class="second">21</td>
+    <td>Ordered quantity</td>
+  </tr>
+  <tr>
+    <td class="first">11</td>
+    <td>Split quantity</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="38-ot-pa-loc-ty">#38 Party Location Types</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/PartyType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">IV</td>
+    <td>Invoice recipient</td>
+  </tr>
+  <tr>
+    <td class="second">OB</td>
+    <td>Order sender</td>
+  </tr>
+  <tr>
+    <td class="first">SU</td>
+    <td>Supplier</td>
+</tr>
+<tr>
+    <td class="second">UC</td>
+    <td>Last goods recipient</td>
+</tr>
+<tr>
+  <td class="first">UD</td>
+  <td>Ultimate customer</td>
+</tr>
+<tr>
+  <td class="second">DGD</td>
+  <td>Farming</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="39-pac-id-qual">#39 Package Codes 2</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/PackageIdentification/IdentificationCodeQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">BN</td>
+  <td>Serial Number</td>
+</tr>
+<tr>
+  <td class="second">BX</td>
+  <td>Batch Number</td>
+</tr>
+<tr>
+  <td class="first">EU</td>
+  <td>EAN / UPC Code</td>
+</tr>
+<tr>
+  <td class="second">SRV</td>
+  <td>GS1 Global Trade Item Number (GS1 Temporary Code)</td>
+</tr>
+
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Date Type 4, Measured Code 3, Movement Reasons-->
+<div class="left">
+  <table>
+  <h4 id="40-prod-date-ty">#40 Date Type 4</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/ProductDate/DateType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">36</td>
+  <td>Expiration date</td>
+  </tr>
+  <tr>
+    <td class="second">94</td>
+    <td>Production date</td>
+  </tr>
+  <tr>
+    <td class="first">361</td>
+    <td>Best before date</td>
+  </tr>
+  <tr>
+    <td class="second">365</td>
+    <td>Packaging date</td>
+  </tr>
+  <tr>
+    <td class="first">360</td>
+    <td>Sell by date</td>
+  </tr>
+  <tr>
+    <td class="second">91E</td>
+    <td>First freezing date (GS1 Temporary Code)</td>
+  </tr>
+  <tr>
+    <td class="first">796</td>
+    <td>Date of catch or production or harvest</td>
+  </tr>
+  <tr>
+    <td class="second">382</td>
+    <td>Earliest sale date</td>
+  </tr>
+  <tr>
+    <td class="first">434</td>
+    <td>Maturity date</td>
+  </tr>
+  <tr>
+    <td class="second">656</td>
+    <td>Age</td>
+  </tr>
+  <tr>
+    <td class="first">753</td>
+    <td>Maturity date, optimal</td>
+  </tr>
+  <tr>
+    <td class="second">804</td>
+    <td>Product sterilisation date</td>
+  </tr>
+  <tr>
+    <td class="first">54E</td>
+    <td>Stuffing date/time (GS1 Temporary Code)</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="41-mea-cod">#41 Measured Code 3</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Measurements/MeasuredCode</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">AAK</td>
+    <td>Fat content</td>
+  </tr>
+  <tr>
+    <td class="second">TH</td>
+    <td>Thickness</td>
+  </tr>
+  <tr>
+    <td class="first">X13</td>
+    <td>Acidity of meat (GS1 Temporary Code)</td>
+</tr>
+<tr>
+    <td class="second">ADZ</td>
+    <td>Net weight</td>
+</tr>
+<tr>
+  <td class="first">DI</td>
+  <td>Diameter</td>
+</tr>
+<tr>
+  <td class="second">DP</td>
+  <td>Depth</td>
+</tr>
+<tr>
+  <td class="first">G</td>
+  <td>Gross Weight</td>
+</tr>
+<tr>
+  <td class="second">HT</td>
+  <td>Height</td>
+</tr>
+<tr>
+  <td class="first">LN</td>
+  <td>Length</td>
+</tr>
+<tr>
+  <td class="second">WD</td>
+  <td>Width</td>
+</tr>
+<tr>
+  <td class="first">AAA</td>
+  <td>Net Unit Weight</td>
+</tr>
+<tr>
+  <td class="second">AAB</td>
+  <td>Gross Unit Weight</td>
+</tr>
+<tr>
+  <td class="first">DBX</td>
+  <td>BRIX Degree (EAN - UCC code)</td>
+</tr>
+<tr>
+  <td class="second">DN</td>
+  <td>Density</td>
+</tr>
+<tr>
+  <td class="first">LAY</td>
+  <td>Number of layers of one or more products within a package, pallet, etc.</td>
+</tr>
+<tr>
+  <td class="second">T</td>
+  <td>Tare</td>
+</tr>
+<tr>
+  <td class="first">UCO</td>
+  <td>Units per package (EANUCC code)</td>
+</tr>
+<tr>
+  <td class="second">ULY</td>
+  <td>Number of units of a product within each layer of the package, pallet, etc.</td>
+</tr>
+<tr>
+  <td class="first">PG</td>
+  <td>Glazing Percentage</td>
+</tr>
+<tr>
+  <td class="second">ET</td>
+  <td>Animal age</td>
+</tr>
+<tr>
+  <td class="first">OD</td>
+  <td>Caliber</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="42-ass-ty">#42 Assignment Types (Movement Reasons)</h4>
+<h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/AssignmentType</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">L01</td>
+  <td>Sale</td>
+</tr>
+<tr>
+  <td class="second">L02</td>
+  <td>Return</td>
+</tr>
+<tr>
+  <td class="first">L03</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td class="second">L04</td>
+  <td>Empty</td>
+</tr>
+<tr>
+  <td class="first">L05</td>
+  <td>Packaging</td>
+</tr>
+<tr>
+  <td class="second">L06</td>
+  <td>Deposits</td>
+</tr>
+<tr>
+  <td class="first">L07</td>
+  <td>Quantity diff.</td>
+</tr>
+<tr>
+  <td class="second">L08</td>
+  <td>Price diff.</td>
+</tr>
+<tr>
+  <td class="first">L09</td>
+  <td>Goods discount</td>
+</tr>
+<tr>
+  <td class="second">L10</td>
+  <td>Dispute credit</td>
+</tr>
+<tr>
+  <td class="first">L11</td>
+  <td>Add/Accr VAT only</td>
+</tr>
+<tr>
+  <td class="second">L12</td>
+  <td>Free sample</td>
+</tr>
+<tr>
+  <td class="first">L13</td>
+  <td>Paper advertising material</td>
+</tr>
+<tr>
+  <td class="second">L14</td>
+  <td>Non-paper advertising material</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Traceability, Notes, Check...-->
+<div class="left">
+  <table>
+  <h4 id="43-trac">#43 Traceability</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Traceability/TraceabilityType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">BOV</td>
+  <td>Bovine</td>
+  </tr>
+  <tr>
+    <td class="second">GEN</td>
+    <td>Generic product</td>
+  </tr>
+  <tr>
+    <td class="first">ITT</td>
+    <td>Fisheries</td>
+  </tr>
+  <tr>
+    <td class="second">LAT</td>
+    <td>Dairy products</td>
+  </tr>
+  <tr>
+    <td class="first">ORT</td>
+    <td>Fruit and vegetables</td>
+  </tr>
+  <tr>
+    <td class="second">SUI</td>
+    <td>Pork</td>
+  </tr>
+  <tr>
+    <td class="first">SAL</td>
+    <td>Cured meats</td>
+  </tr>
+  <tr>
+    <td class="second">ANM</td>
+    <td>Article name (food name)</td>
+  </tr>
+  <tr>
+    <td class="first">FRZ</td>
+    <td>Information on product freezing</td>
+  </tr>
+  <tr>
+    <td class="second">249</td>
+    <td>Scientific name (FAO FISHBASE information system or ASFIS DB)</td>
+  </tr>
+  <tr>
+    <td class="first">GEO</td>
+    <td>Geographical area concerned</td>
+  </tr>
+  <tr>
+    <td class="second">FGT</td>
+    <td>Type of fishing gear</td>
+  </tr>
+  <tr>
+    <td class="first">PRO</td>
+    <td>Characteristics of production method</td>
+  </tr>
+  <tr>
+    <td class="second">LAV</td>
+    <td>Processing method</td>
+  </tr>
+  <tr>
+    <td class="first">ASC</td>
+    <td>Additional information</td>
+  </tr>
+  <tr>
+    <td class="second">216</td>
+    <td>Breed</td>
+  </tr>
+  <tr>
+    <td class="first">X2</td>
+    <td>Ear tag</td>
+  </tr>
+  <tr>
+    <td class="second">BRN</td>
+    <td>Commercial name</td>
+  </tr>
+  <tr>
+    <td class="first">ALM</td>
+    <td>Type of feed</td>
+  </tr>
+  <tr>
+    <td class="second">38</td>
+    <td>Fruit category</td>
+  </tr>
+  <tr>
+    <td class="first">249</td>
+    <td>Scientific name (variety)</td>
+  </tr>
+  <tr>
+    <td class="second">13</td>
+    <td>Quality</td>
+  </tr>
+  <tr>
+    <td class="first">FIC</td>
+    <td>Additional product characteristics</td>
+  </tr>
+  <tr>
+    <td class="second">27</td>
+    <td>Allergens/Intolerances Material description</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+  <table>
+  <h4 id="44-note-ty">#44 Notes</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Product/Various/NoteType</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">GEN</td>
+    <td>Entire transaction set</td>
+  </tr>
+  <tr>
+    <td class="second">ZZZ</td>
+    <td>Agreed text</td>
+  </tr>
+  <tr>
+    <td class="first">AAI</td>
+    <td>General information</td>
+</tr>
+<tr>
+    <td class="second">LIN</td>
+    <td>Document line information</td>
+</tr>
+<tr>
+  <td class="first">BLY</td>
+  <td>Product ingredients</td>
+</tr>
+<tr>
+  <td class="second">ACL</td>
+  <td>Quality declaration</td>
+</tr>
+</table>
+</div>
+<div class="right">
+<table>
+<h4 id="45-check">#45 Checks</h4>
+<h5>/Summary/CheckInfo/ControlQualifier</h5>
+<tr>
+<th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+<th style="background-color: #35559b; color: aliceblue;">Description</th>
+</tr>
+<tr>
+  <td class="first">7</td>
+  <td>Total gross weight</td>
+</tr>
+<tr>
+  <td class="second">11</td>
+  <td>Total number of packages</td>
+</tr>
+<tr>
+  <td class="first">29</td>
+  <td>Total net weight (also to indicate the total net content)</td>
+</tr>
+<tr>
+  <td class="second">33</td>
+  <td>Total number of pallets</td>
+</tr>
+<tr>
+  <td class="first">1</td>
+  <td>Total value of the quantity segments at line level in a message</td>
+</tr>
+<tr>
+  <td class="second">2</td>
+  <td>Number of line items in message</td>
+</tr>
+<tr>
+  <td class="first">26</td>
+  <td>Total gross measurement/cube</td>
+</tr>
+</table>
+</div>  
+</div>
+<div class="flex-container">
+  <!--Traceability, Notes, Check...-->
+<div class="left">
+  <table>
+  <h4 id="46-mea-check">#46 Measurement Units Check</h4>
+  <h5>/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementUnitCode</h5>
+  <h5>/Summary/CheckInfo/MeasureUnitQualifier</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #35559b; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+  <td class="first">CMT</td>
+  <td>Centimeters</td>
+  </tr>
+  <tr>
+    <td class="second">GRM</td>
+    <td>Grams</td>
+  </tr>
+  <tr>
+    <td class="first">KGM</td>
+    <td>Kilograms</td>
+  </tr>
+  <tr>
+    <td class="second">LTR</td>
+    <td>Liters</td>
+  </tr>
+  <tr>
+    <td class="first">MLT</td>
+    <td>Milliliters</td>
+  </tr>
+  <tr>
+    <td class="second">MTK</td>
+    <td>Square meters</td>
+  </tr>
+  <tr>
+    <td class="first">MTR</td>
+    <td>Meters</td>
+  </tr>
+  <tr>
+    <td class="second">PCE</td>
+    <td>Pieces</td>
+  </tr>
+  <tr>
+    <td class="first">TNE</td>
+    <td>Tons</td>
+  </tr>
+  </table>
+</div>
+<div class="middle">
+</div>
+<div class="right">
+</div>
+</div>
+
+<!--Footer-->
+</body>

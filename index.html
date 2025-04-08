@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  h1, h2, h3, h4, p {
+            font-family: Arial, Helvetica, sans-serif;
+						width: 95%; /* Larghezza RESPONSIVE */
+						border-collapse: collapse;
+  }
+  li {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+  }
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 5px;
+  background-color: #2196F3;
+  padding: 5px;
+}
+.container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+}
+.container > div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
+.container > div.footer {
+  grid-area: footer;
+}
+.button {
+  border-radius: 20px;
+  background: #fcfbfb;
+  padding: 10px;
+  margin:20px;
+  width: 200px;
+  color:#35559b;
+  font-size: large;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #35559b;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Messaggi EDI</h1>
+
+<p>Raccolta documentazione sui formati EDI per i principali tipi di docuementi in gestione.</p>
+
+
+<div class="container">
+  <div class="header"><h3>Seleziona il tipo documento tra quelli al momento disponibili:</h3></div>
+  <div class="menu">
+   
+    <div class="button"> <a href="DESADV\doc_map_DESADV_xml_96A.html">DESADV XML e 96A</a></div>
+    <div class="button"> <a href="ORDERS\doc_map_ORDERS_xml.html">ORDERS XML</a> </div>
+  
+  </div>
+
+  <div class="content">
+    <ul>
+    <li><b>ORDERS:</b> Ordini d'acquisto emessi tipicamente dai compratori di merce e inviati ai fornitori.</li>
+    <li><b>DESADV:</b> (Despatch Advice) sono messaggi che comunicano informazioni relative ai beni spediti sotto condizioni concordate tra il compratore e il venditore al fine di informare chi riceve la spedizione del contenuto dettagliato della stessa. </li>  
+  </ul>
+</div>
+  <div class="footer"><h4>Document Version: 1.0 /Release date: 07/04/2025</h4>
+    <p>Per segnalazioni e richieste, <a href="mailto:m.dilembo@vargroup.it">INVIA EMAIL</mailto:></p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,996 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <title>Variables Tables - DESADV</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+        * {
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: #fafbfc;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+.middle {
+  background-color: #ffecdc;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+.right {
+  background-color: #fdf8f1;
+  padding: 10px;
+  float: left;
+  width: 33%; /* The width is 33%, by default */
+}
+
+
+		table, h1, h2, h3, h4, h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%; /* Larghezza totale colonna */
+      border-collapse: collapse;
+			}
+		th, td {
+			border: 1px solid black;
+            text-align: left;
+			padding: 10px;                      
+			}
+          
+          .first {
+            background-color: rgb(252, 168, 99);
+            color: #fff
+          }
+          .second {
+            background-color: rgb(252, 126, 87);
+            color: #fff
+          }
+          .flex-container {
+          display: flex;
+          justify-content: space-evenly;
+          word-wrap: break-word;
+      }
+      /* Use a media query to add a break point at 800px: */
+      @media screen and (max-width: 600px) {
+      .left, .middle, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+          
+</style>
+</head>
+<body>
+
+<h1>Qualifiers and Variables</h1>
+   <h3>Supporting guide for EDI standards</h3>
+<div class="flex-container">
+  <!--UNB, Type identification, Massage Function-->
+<div class="left">
+    <table>
+    <h4 id="1-unb">#1 UNB</h4>
+    <h5>/ORDERS/Header/Envelope/Sender/IdentificationCodeQualifier</h5>
+    <h5>/ORDERS/Header/Envelope/Recipient/IdentificationCodeQualifier</h5>
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+    <td class="first">14</td>
+    <td>GLN</td>
+    </tr>
+    <tr>
+    <td class="second">ZZ</td>
+    <td>VAT Number</td>
+    </tr>
+    <tr>
+    <td class="first">EN</td>
+    <td>GLN</td>
+    </tr>
+    </table>
+</div>
+<div class="left">
+    <table>
+    <h4 id="2-id-ty">#2 Type Identification</h4>
+    <h5>/Header/Document/TypeIdentification</h5>
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+      <td class="first">220</td>
+      <td>Order</td>
+    </tr>
+    <tr>
+      <td class="second">221</td>
+      <td>Blanket Order</td>
+    </tr>
+    <tr>
+      <td class="first">224</td>
+      <td>Urgent Order</td>
+    </tr>
+    <tr>
+      <td class="second">226</td>
+      <td>Call off Order</td>
+    </tr>
+    <tr>
+    <td class="first">227</td>
+    <td>Order for consignment</td>
+    </tr>
+    <tr>
+    <td class="second">YA9</td>
+    <td>Preallocated Cross Docking</td>
+    </tr>
+    <tr>
+      <td class="first">225</td>
+      <td>Repair order</td>
+    </tr>
+    <tr>
+      <td class="second">258</td>
+      <td>Standing order</td>
+    </tr>
+    <tr>
+    <td class="first">237</td>
+    <td>Cross docking services order</td>
+    </tr>
+    <tr>
+    <td class="second">400</td>
+    <td>Exceptional order</td>
+    </tr>
+    <tr>
+      <td class="first">401</td>
+      <td>Transshipment order</td>
+    </tr>
+    <tr>
+      <td class="second">402</td>
+      <td>Cross docking order</td>
+    </tr>
+    <tr>
+    <td class="first">725</td>
+    <td>Manufacturer raised order</td>
+    </tr>
+    <tr>
+    <td class="second">726</td>
+    <td>Manufacturer raised consignment order</td>
+    </tr>
+    <tr>
+      <td class="first">YC1</td>
+      <td>Consumer pickup order (GS1 Permanent Code)</td>
+    </tr>
+    <tr>
+      <td class="second">YC2</td>
+      <td>Consumer home delivery order (GS1 Permanent Code)</td>
+    </tr>
+    <tr>
+    <td class="first">333</td>
+    <td>Extra</td>
+    </tr>
+    <tr>
+    <td class="second">310</td>
+    <td>Order proposal (from supplier)</td>
+    </tr>
+    <tr>
+      <td class="first">42E</td>
+      <td>Order proposal (from distributor)</td>
+      </tr>
+      <tr>
+      <td class="second">Ordine</td>
+      <td>Order</td>
+      </tr>
+  </table>
+  </div>
+  <div class="left">
+  <table>
+  <h4 id="3-mes-fun">#3 Message Function</h4>
+  <h5>/Header/Document/MessageFunction</h5>
+  <tr>
+  <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+  <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+  </tr>
+  <tr>
+    <td class="first">5</td>
+    <td>Replacement</td>
+  </tr>
+  <tr>
+    <td class="second">9</td>
+    <td>Original</td>
+  </tr>
+  <tr>
+    <td class="first">16</td>
+    <td>Proposal</td>
+  </tr>
+  <tr>
+    <td class="second">42</td>
+    <td>Confirm order sent by other means</td>
+  </tr>
+  <tr>
+    <td class="first">6</td>
+    <td>Confirmation</td>
+  </tr>
+  <tr>
+    <td class="second">7</td>
+    <td>Duplicate</td>
+  </tr>
+  <tr>
+    <td class="first">29</td>
+    <td>Accepted without amendment</td>
+  </tr>
+  <tr>
+    <td class="second">31</td>
+    <td>Copy</td>
+  </tr>
+  <tr>
+    <td class="first">46</td>
+    <td>Provisional</td>
+  </tr>
+  </table>
+  </div>  
+  </div>
+  <div class="flex-container">
+    <!--Reference Type, Type Date, Code List Qualifier-->
+  <div class="right">
+      <table>
+      <h4 id="4-ref-ty">#4 Reference Type</h4>
+      <h5>/Header/Information/OrderReference/OrderReferenceType</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+        <td class="first">AAG</td>
+        <td>Supplier Order Proposal</td>
+      </tr>
+      <tr>
+        <td class="second">AAN</td>
+        <td>Distributor Order Proposal</td>
+      </tr>
+      <tr>
+        <td class="first">BO</td>
+        <td>Blanket Order</td>
+      </tr>
+      <tr>
+        <td class="second">CT</td>
+        <td>Contract Number</td>
+      </tr>
+      <tr>
+        <td class="first">PD</td>
+        <td>Promotional Order/Promotion Number</td>
+      </tr>
+      <tr>
+        <td class="second">CR</td>
+        <td>Internal Customer Order</td>
+      </tr>
+      <tr>
+        <td class="first">AE</td>
+        <td>Authorization for expense (AFE)</td>
+      </tr>
+      <tr>
+        <td class="second">AKO</td>
+        <td>Action authorization number</td>
+      </tr>
+      <tr>
+        <td class="first">ANJ</td>
+        <td>Authorization number</td>
+      </tr>
+      <tr>
+        <td class="second">IP</td>
+        <td>Import licence number</td>
+      </tr>
+      <tr>
+        <td class="first">PL</td>
+        <td>Price list number</td>
+      </tr>
+      <tr>
+        <td class="second">UC</td>
+        <td>Ultimate customer's reference number</td>
+      </tr>
+      </table>
+  </div>
+  <div class="right">
+      <table>
+      <h4 id="5-date-ty">#5 Date Type</h4>
+      <h5>/Header/Information/OrderReference/OrderReferenceDate/TypeDate</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+        <td class="first">157</td>
+        <td>Validity start date</td>
+      </tr>
+      <tr>
+        <td class="second">171</td>
+        <td>Reference date/time</td>
+      </tr>
+      <tr>
+        <td class="first">21E</td>
+        <td>Validity end date</td>
+      </tr>
+    </table>
+    </div>
+    <div class="right">
+    <table>
+    <h4 id="6-nad-qual">#6 Code List Qualifier</h4>
+    <h5>/Header/Information/Supplier/CodeListQualifier</h5>
+    <h5>/Header/Information/Buyer/CodeListQualifier</h5>
+    <h5>/Header/Information/DeliveryPoint/CodeListQualifier</h5>
+    <h5>/Header/Information/OtherParty/CodeListQualifier</h5>
+    
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+      <td class="first">14</td>
+      <td>EAN</td>
+    </tr>
+    <tr>
+      <td class="second">IT</td>
+      <td>Code assigned by the buyer</td>
+    </tr>
+    <tr>
+      <td class="first">IA</td>
+      <td>Code assigned by the Seller</td>
+    </tr>
+    <tr>
+      <td class="second">ZZ</td>
+      <td>Code defined by mutual agreement</td>
+    </tr>
+    <tr>
+      <td class="first">VA</td>
+      <td>VAT registration number</td>
+    </tr>
+   </table>
+    </div>  
+    </div>
+    <div class="flex-container">
+      <!--Contact Function, Party Type, Date of Delivery Type-->
+    <div class="left">
+      <table>
+      <h4 id="7-cont-fun">#7 Contact Function</h4>
+      <h5>/Header/Information/Supplier/ContactReference/Contactfunction</h5>
+      <h5>/Header/Information/Buyer/ContactReference/Contactfunction</h5>
+      <h5>/Header/Information/DeliveryPoint/ContactReference/Contactfunction</h5>
+      <h5>/Header/Information/OtherParty/ContactReference/Contactfunction</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+      <td class="first">AP</td>
+      <td>Accounting Office</td>
+      </tr>
+      <tr>
+        <td class="second">IC</td>
+        <td>General Contact for Information</td>
+      </tr>
+      <tr>
+        <td class="first">OC</td>
+        <td>Order Contact</td>
+      </tr>
+      <tr>
+        <td class="second">SA</td>
+        <td>Sales Administration</td>
+      </tr>
+      <tr>
+        <td class="first">SD</td>
+        <td>Shipping Office</td>
+      </tr>
+      <tr>
+        <td class="second">BJ</td>
+        <td>Department or person responsible for processing purchase order</td>
+      </tr>
+      <tr>
+        <td class="first">BO</td>
+        <td>After business hours contact</td>
+      </tr>
+      <tr>
+        <td class="second">PD</td>
+        <td>Purchasing contact</td>
+      </tr>
+      <tr>
+        <td class="first">SR</td>
+        <td>Sales representative or department</td>
+      </tr>
+      </table>
+    </div>
+    <div class="left">
+      <table>
+        <h4 id="8-par-ty">#8 Party Type</h4>
+        <h5>/Header/Information/OtherParty/PartyType</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+        <td class="first">IV</td>
+        <td>Invoice destination</td>
+        </tr>
+        <tr>
+          <td class="second">LSP</td>
+          <td>Intermediate collection point</td>
+        </tr>
+        <tr>
+          <td class="first">PW</td>
+          <td>Supplier fulfillment warehouse</td>
+        </tr>
+        <tr>
+          <td class="second">UC</td>
+          <td>Final recipient of goods</td>
+        </tr>
+        <tr>
+          <td class="first">BF</td>
+          <td>Beneficiary bank</td>
+        </tr>
+        <tr>
+          <td class="second">DL</td>
+          <td>Factor + company name</td>
+        </tr>
+        <tr>
+          <td class="first">CO</td>
+          <td>Corporate office</td>
+        </tr>
+        <tr>
+          <td class="second">SN</td>
+          <td>Store number</td>
+        </tr>
+        <tr>
+          <td class="first">WH</td>
+          <td>Warehouse keeper</td>
+        </tr>
+        </table>
+    </div>
+    <div class="left">
+      <table>
+        <h4 id="9-date-ty">#9 Date Type</h4>
+        <h5>/Header/Information/DateOfDelivery/DateType</h5>
+        <h5>/Detail/Product/DateOfDelivery/DateType</h5>
+        <h5>/Detail/Product/PlaceLocationIdentification/ReferenceDate/DateType</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">2</td>
+          <td>Delivery date/time, requested</td>
+        </tr>
+        <tr>
+          <td class="second">63</td>
+          <td>Do not deliver after this date/time</td>
+        </tr>
+        <tr>
+          <td class="first">64</td>
+          <td>Do not deliver before this date/time</td>
+        </tr>
+        <tr>
+          <td class="second">69</td>
+          <td>Delivery date/time, guaranteed</td>
+        </tr>
+        <tr>
+          <td class="first">76</td>
+          <td>Expected delivery date/time</td>
+        </tr>
+        <tr>
+          <td class="second">11</td>
+          <td>Date of preparation of goods</td>
+        </tr>
+        <tr>
+          <td class="first">10</td>
+          <td>Shipment date/time, requested </td>
+        </tr>
+        <tr>
+          <td class="second">15</td>
+          <td>Promotion start date/time</td>
+        </tr>
+        <tr>
+          <td class="first">37</td>
+          <td>Ship not before date/time </td>
+        </tr>
+        <tr>
+          <td class="second">38</td>
+          <td>Ship not later than date/time</td>
+        </tr>
+        <tr>
+          <td class="first">61</td>
+          <td>Cancel if not delivered by this date </td>
+        </tr>
+        <tr>
+          <td class="second">200</td>
+          <td>Pick-up/collection date/time of cargo</td>
+        </tr>
+        <tr>
+          <td class="first">235</td>
+          <td>Collection date/time, latest</td>
+        </tr>
+        <tr>
+          <td class="second">263</td>
+          <td>Invoicing period</td>
+        </tr>
+        <tr>
+          <td class="first">273</td>
+          <td>Validity period</td>
+        </tr>
+        <tr>
+          <td class="second">282</td>
+          <td>Confirmation date lead time</td>
+        </tr>
+        <tr>
+          <td class="first">383</td>
+          <td>Cancel if not shipped by this date</td>
+        </tr>
+        <tr>
+          <td class="second">X14</td>
+          <td>Requested for delivery week commencing (GS1 Temporary Code)</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+    <div class="flex-container">
+      <!--Note Type, Monetary Unit Type, Item Type Identification Code-->
+    <div class="right">
+      <table>
+      <h4 id="10-note-ty">#10 Note Type</h4>
+      <h5>/Header/Information/Various/NoteType</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+      <td class="first">DIN</td>
+      <td>Delivery instructions</td>
+      </tr>
+      <tr>
+        <td class="second">INV</td>
+        <td>Billing instructions</td>
+      </tr>
+      <tr>
+        <td class="first">PUR</td>
+        <td>Order information</td>
+      </tr>
+      <tr>
+        <td class="second">PRD</td>
+        <td>Product information</td>
+      </tr>
+      <tr>
+        <td class="first">ZZZ</td>
+        <td>Agreed text</td>
+      </tr>
+      </table>
+    </div>
+    <div class="right">
+      <table>
+        <h4 id="11-mon-ty">#11 Monetary Unit Type</h4>
+        <h5>/Header/Information/CurrencyInfo/UnitMonetaryType</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+        <td class="first">4</td>
+        <td>Invoicing currency unit</td>
+        </tr>
+        <tr>
+          <td class="second">9</td>
+          <td>Order currency unit</td>
+        </tr>
+        <tr>
+          <td class="first">11</td>
+          <td>Payment currency unit</td>
+        </tr>
+        <tr>
+          <td class="second">10</td>
+          <td>Pricing currency</td>
+        </tr>
+        <tr>
+          <td class="first">12</td>
+          <td>Quotation currency</td>
+        </tr>
+        </table>
+    </div>
+    <div class="right">
+      <table>
+        <h4 id="12-item-ty">#12 Item Type Identification Code</h4>
+        <h5>/Detail/Product/Item/AdditionalIdentification/ItemTypeIdentificationCode</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">EN</td>
+          <td>EAN code</td>
+        </tr>
+        <tr>
+          <td class="second">SA</td>
+          <td>Supplier code</td>
+        </tr>
+        <tr>
+          <td class="first">IN</td>
+          <td>Buyer code</td>
+        </tr>
+        <tr>
+          <td class="second">UP</td>
+          <td>UPC</td>
+        </tr>
+        <tr>
+          <td class="first">DW</td>
+          <td>Drawing</td>
+        </tr>
+        <tr>
+          <td class="second">IB</td>
+          <td>ISBN (International Standard Book Number)</td>
+        </tr>
+        <tr>
+          <td class="first">UA</td>
+          <td>Ultimate customer's article number</td>
+        </tr>
+        <tr>
+          <td class="second">AC</td>
+          <td>HIBC (Health Industry Bar Code)</td>
+        </tr>
+        <tr>
+          <td class="first">EWC</td>
+          <td>European Waste Catalogue (GS1 Temporary Code)</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+    <div class="flex-container">
+      <!--Quantity Qualifier, Measurement Unit, Price Type-->
+    <div class="left">
+      <table>
+      <h4 id="13-qua-qua">#13 Quantity Qualifier</h4>
+      <h5>/Detail/Product/Item/Quantity/QuantityQualifier</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+      <td class="first">21</td>
+      <td>Quantity Ordered</td>
+      </tr>
+      <tr>
+        <td class="second">59</td>
+        <td>Number of pieces per carton (CU in TU)</td>
+      </tr>
+      <tr>
+        <td class="first">1</td>
+        <td>Discrete quantity</td>
+      </tr>
+      <tr>
+        <td class="second">52</td>
+        <td>Quantity per pack</td>
+      </tr>
+      <tr>
+        <td class="first">164</td>
+        <td>Delivery batch</td>
+      </tr>
+      <tr>
+        <td class="second">192</td>
+        <td>Free goods quantity</td>
+      </tr>
+      <tr>
+        <td class="first">246</td>
+        <td>Returns replacement quantity</td>
+      </tr>
+      <tr>
+        <td class="second">17E</td>
+        <td>Number of units in lower packaging or configuration level (GS1 Temporary Code)</td>
+      </tr>
+      <tr>
+        <td class="first">45E</td>
+        <td>Number of units in higher packaging or configuration level (GS1 Temporary Code)</td>
+      </tr>
+      </table>
+    </div>
+    <div class="left">
+      <table>
+        <h4 id="14-mea-qua">#14 Mesurement Unit Qualifier</h4>
+        <h5>/Detail/Product/Item/Quantity/MeasureUnitQualifier</h5>
+        <h5>/Detail/Product/Item/Price/MeasureUnitQualifier</h5>
+        <h5>/Detail/Product/PlaceLocationIdentification/Quantity/MeasureUnitQualifier</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">CMT</td>
+          <td>Centimeters</td>
+        </tr>
+        <tr>
+          <td class="second">GRM</td>
+          <td>Grams</td>
+        </tr>
+        <tr>
+          <td class="first">KGM</td>
+          <td>Kilograms</td>
+        </tr>
+        <tr>
+          <td class="second">LTR</td>
+          <td>Liters</td>
+        </tr>
+        <tr>
+          <td class="first">MLT</td>
+          <td>Milliliters</td>
+        </tr>
+        <tr>
+          <td class="second">MTR</td>
+          <td>Meters</td>
+        </tr>
+        <tr>
+          <td class="first">MTK</td>
+          <td>Square meters</td>
+        </tr>
+        <tr>
+          <td class="second">PCE</td>
+          <td>Pieces</td>
+        </tr>
+        <tr>
+          <td class="first">CT</td>
+          <td>Cartons</td>
+        </tr>
+        <tr>
+          <td class="second">CU</td>
+          <td>Consumer Unit</td>
+        </tr>
+        <tr>
+          <td class="first">TU</td>
+          <td>Trade Unit</td>
+        </tr>
+        <tr>
+          <td class="second">PF</td>
+          <td>Pallet</td>
+        </tr>
+        <tr>
+          <td class="first">BL</td>
+          <td>Blister</td>
+        </tr>
+        <tr>
+          <td class="second">P1</td>
+          <td>Percentage</td>
+        </tr>
+        <tr>
+          <td class="first">BX</td>
+          <td>Compound article multi-VAT</td>
+        </tr>
+        </table>
+    </div>
+    <div class="left">
+      <table>
+        <h4 id="15-pri-ty">#15 Price Type</h4>
+        <h5>/Detail/Product/Item/AdditionalIdentification/ItemTypeIdentificationCode</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">CT</td>
+          <td>Contract</td>
+        </tr>
+        <tr>
+          <td class="second">AE</td>
+          <td>Tactical Price</td>
+        </tr>
+        <tr>
+          <td class="first">CA</td>
+          <td>Catalog</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+    <div class="flex-container">
+      <!--Location Code Qualifier, Date Type, Control Qualifier-->
+    <div class="right">
+      <table>
+      <h4 id="16-loc-qua">#16 Location Code List Qualifier</h4>
+      <h5>/Detail/Product/Item/Quantity/QuantityQualifier</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+      <td class="first">14</td>
+      <td>EAN</td>
+      </tr>
+      <tr>
+        <td class="second">ZZ</td>
+        <td>Code defined by mutual agreement</td>
+      </tr>
+      <tr>
+        <td class="first">91</td>
+        <td>Code assigned by the Seller</td>
+      </tr>
+      <tr>
+        <td class="second">92</td>
+        <td>Code assigned by the Buyer</td>
+      </tr>
+      <tr>
+        <td class="first">VA</td>
+        <td>VAT registration number</td>
+      </tr>
+      </table>
+    </div>
+    <div class="right">
+      <table>
+        <h4 id="17-date-ty">#17 Location Date Type</h4>
+        <h5>/Detail/Product/PlaceLocationIdentification/ReferenceDate/DateType</h5>
+       
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">002</td>
+          <td>Delivery date/time, requested</td>
+        </tr>
+        <tr>
+          <td class="second">10</td>
+          <td>Shipment date/time, requested</td>
+        </tr>
+        <tr>
+          <td class="first">11</td>
+          <td>Date of preparation of goods</td>
+        </tr>
+        <tr>
+          <td class="second">61</td>
+          <td>Cancel if not delivered by this date</td>
+        </tr>
+        <tr>
+          <td class="first">063</td>
+          <td>Do not deliver after this date/time</td>
+        </tr>
+        <tr>
+          <td class="second">064</td>
+          <td>Do not deliver before this date/time</td>
+        </tr>
+        <tr>
+          <td class="first">069</td>
+          <td>Delivery date/time, guaranteed</td>
+        </tr>
+        <tr>
+          <td class="second">200</td>
+          <td>Pick-up/collection date/time of cargo</td>
+        </tr>
+        <tr>
+          <td class="first">364</td>
+          <td>Minimum shelf life remaining at time of despatch period</td>
+        </tr>
+        <tr>
+          <td class="second">X14</td>
+          <td>Requested for delivery weekcommencing (GS1 Temporary Code)</td>
+        </tr>
+        </table>
+    </div>
+    <div class="right">
+      <table>
+        <h4 id="18-form-qua">#18 Format Qualifier</h4>
+        <h5>/Detail/Product/Item/AdditionalIdentification/ItemTypeIdentificationCode</h5>
+        <tr>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+        <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+        </tr>
+        <tr>
+          <td class="first">102</td>
+          <td>SSAAMMGG</td>
+        </tr>
+        <tr>
+          <td class="second">203</td>
+          <td>SSAAMMGGHHMM</td>
+        </tr>
+        <tr>
+          <td class="first">718</td>
+          <td>SSAAMMGG -SSAAMMGG</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+  <div class="flex-container">
+    <!--Control Qualifier-->
+  <div class="left">
+    <table>
+    <h4 id="19-cont-qua">#19 Control Qualifier</h4>
+    <h5>/Summary/CheckInfo/ControlQualifier</h5>
+    <tr>
+    <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+    <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+    </tr>
+    <tr>
+    <td class="first">1</td>
+    <td>Sum of the values ​​in the quantity tag of all the Detail Items</td>
+    </tr>
+    <tr>
+      <td class="second">2</td>
+      <td>Number of Item tags contained in the message, including PrimaryItem FALSE</td>
+    </tr>
+    <tr>
+      <td class="first">11</td>
+      <td>Total number of TUs</td>
+    </tr>
+    <tr>
+      <td class="second">7</td>
+      <td>Total gross weight</td>
+    </tr>
+    <tr>
+      <td class="first">10</td>
+      <td>Total number of consignments</td>
+    </tr>
+    <tr>
+      <td class="second">15</td>
+      <td>Total consignment, cube</td>
+    </tr>
+    <tr>
+      <td class="first">16</td>
+      <td>Total number of equipment</td>
+    </tr>
+    <tr>
+      <td class="second">29</td>
+      <td>Total net weight of consignment</td>
+    </tr>
+    </table>
+  </div>
+  <div class="left">
+    <table>
+      <h4 id="20-mea-qua">#20 Mesurement Unit Qualifier</h4>
+      <h5>/Summary/CheckInfo/MeasureUnitQualifier</h5>
+      <tr>
+      <th style="background-color: #5e5e5f; color: aliceblue;">Values</th>
+      <th style="background-color: #fd6326; color: aliceblue;">Description</th>
+      </tr>
+      <tr>
+        <td class="second">PCE</td>
+        <td>Pieces</td>
+      </tr>
+      <tr>
+        <td class="first">CT</td>
+        <td>Cartons</td>
+      </tr>
+      <tr>
+        <td class="first">KGM</td>
+        <td>Kilograms</td>
+      </tr>
+      <tr>
+        <td class="second">MTR</td>
+        <td>Meters</td>
+      </tr>
+      <tr>
+        <td class="first">MTK</td>
+        <td>Square meters</td>
+      </tr>
+      <tr>
+        <td class="second">LTR</td>
+        <td>Liters</td>
+      </tr>
+      <tr>
+        <td class="second">CU</td>
+        <td>Consumer Unit</td>
+      </tr>
+      <tr>
+        <td class="first">TU</td>
+        <td>Trade Unit</td>
+      </tr>
+      <tr>
+        <td class="second">P1</td>
+        <td>Percentage</td>
+      </tr>
+      <tr>
+        <td class="first">BX</td>
+        <td>Compound article multi-VAT</td>
+      </tr>
+      <tr>
+        <td class="first">BLI</td>
+        <td>Blister</td>
+      </tr>
+      <tr>
+        <td class="second">PL</td>
+        <td>Percentage</td>
+      </tr>
+      </table>
+  </div>
+  <div class="left">
+  </div>
+  </div>
+  
+  <!--Footer-->
+  </body>
