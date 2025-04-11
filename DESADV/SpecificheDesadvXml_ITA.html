@@ -1,0 +1,1720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESADV in XML</title>
+    <style>
+
+					.container {
+          display: grid;
+          column-gap: 50px;
+          grid-template-columns: auto auto auto;
+          background-color: rgb(240, 246, 253);
+          padding: 20px;
+          }
+					table, h1, h2, h3, h4, li {
+            font-family: Arial, Helvetica, sans-serif;
+						width: 95%; /* Larghezza RESPONSIVE */
+						border-collapse: collapse;
+					}
+					th, td {
+						border: 1px solid black;
+            text-align: left;
+						padding: 10px;
+                       
+					}
+
+          a:hover {
+            color: tomato;
+          }
+
+          .d {
+            background-color: rgb(193, 236, 248);
+          }
+          .e {
+            background-color: rgb(240, 238, 238);
+          }
+          .flex-container {
+          display: flex;
+          justify-content: space-evenly;
+          }
+          .button {
+            border-radius: 20px;
+            background: #fcfbfb;
+            padding: 10px;
+            width: 200px;
+            color:#35559b;
+            border: 2px solid #35559b;
+            font-size: large;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .right {
+            position: absolute;
+            right: 20px;
+            padding: 10px;
+          }
+          
+		</style>
+  </head>
+  <body>
+  <section>
+    <h1>La struttura del DESADV</h1>
+    <h3>Formato documento: XML</h3>
+
+    <h4><a href="https://marida3var.github.io/Doc_Tracciati/index.html">&larr; TORNA ALLA PAGINA PRINCIPALE</a></h4>
+
+    <div class="container">
+      <div>
+    <ul>
+    <li> Visualizza i campi della testata:<a href="#header"> HEADER</a></li>
+    <li> Visualizza i campi della sezione di Dettaglio:<a href="#detail"> DETAIL</a></li>
+    <li> Visualizza i campi del sommario:<a href="#summary"> SUMMARY</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="right"><a class="button" href="DESADV_XML.pdf" target="_blank">Scarica come PDF</a>
+  </div>
+</div>
+  </section>
+  <section id="top" class="table">
+    <div class="flex-container">
+     <table>
+      <tr>
+        <th>n.</th>
+        <th style="background-color: #5e5e5f; color: aliceblue;">Elementi & Path</th>
+        <th style="background-color: #4b62a1; color: aliceblue;">Descrizione</th>
+        <th style="background-color: #35559b; color: aliceblue;">Regole di compilazione</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="e"><b>DESADV</b><br>/DESADV</td>
+        <td>Dichiarazione del tipo di messaggio</td>
+        <td>Root Element</td>
+      </tr>
+      <tr>
+        <td id="header" >2</td>
+        <td class="e"><b>Header</b><br>/DESADV/Header</td>
+        <td>Apertura testata del messaggio</td> 
+        <td>Complex Type</td>   
+       </tr>
+      <tr>
+        <td>3</td>
+        <td class="e"><b>Envelope</b><br>/DESADV/Header/Envelope</td>
+        <td>Intestazione del DESADV</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="e"><b>Sender</b><br>/DESADV/Header/Envelope/Sender</td>
+        <td>Il Mittente del DESADV</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Envelope/Sender/Identification</td>
+        <td>Identificazione del Mittente</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="e"><b>IdentificationCodeQualifier</b><br>/DESADV/Header/Envelope/Sender/IdentificationCodeQualifier</td>
+        <td> Codice identificativo del Mittente</td>
+        <td><a href="tabelle_DESADV.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="e"><b>Recipient</b><br>/DESADV/Header/Envelope/Recipient</td>
+        <td>Il Destinatario del DESADV</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Envelope/Recipient/Identification</td>
+        <td>Identificazione del Destinatario</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="e"><b>IdentificationCodeQualifier</b><br>/DESADV/Header/Envelope/Recipient/IdentificationCodeQualifier</td>
+        <td>Codice identificativo del Destinatario</td>
+        <td><a href="tabelle_DESADV.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="e"><b>SendDateTime</b><br>/DESADV/Header/Envelope/SendDateTime</td>
+        <td>Data e Ora di Invio Messaggio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="e"><b>Date</b><br>/DESADV/Header/Envelope/SendDateTime/Date</td>
+        <td>Data Invio Messaggio</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="e"><b>Time</b><br>/DESADV/Header/Envelope/SendDateTime/Time</td>
+        <td>Ora Invio Messaggio</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="e"><b>InterchangeControlReference</b><br>/DESADV/Header/Envelope/InterchangeControlReference</td>
+        <td>Riferimento al controllo degli scambi</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="e"><b>MessageType</b><br>/DESADV/Header/Envelope/MessageType</td>
+        <td>Tipo di Messaggio</td>
+        <td>Valore Fisso: DESADV</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="e"><b>Document</b><br>/DESADV/Header/Document</td>
+        <td>Intestazione Documento</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="e"><b>TypeIdentification</b><br>/DESADV/Header/Document/TypeIdentification</td>
+        <td>Tipo di Identificazione del Documento</td>
+        <td><a href="tabelle_DESADV.html#3-desadv-ty">Valore dinamico: 351 - 35E - YA9 - 345 - 748 - YA5 - YA6 - YB3 - YC3 - YC4</a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="e"><b>Number</b><br>/DESADV/Header/Document/Number</td>
+        <td>Numero Identificativo Documento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="e"><b>MessageFunction</b><br>/DESADV/Header/Document/MessageFunction</td>
+        <td>Funzione del Messaggio</td>
+        <td><a href="tabelle_DESADV.html#2-mess-fun">Valore dinamico: 1 - 4 - 7 - 9 - 5 - 31 - 42</a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="e"><b>Date</b><br>/DESADV/Header/Document/Date</td>
+        <td>Data Documento</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="e"><b>Time</b><br>/DESADV/Header/Document/Time</td>
+        <td>Ora Documento</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td class="e"><b>Information</b><br>/DESADV/Header/Information</td>
+        <td>Informazioni di Testata</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td class="e"><b>References</b><br>/DESADV/Header/Information/References</td>
+        <td>Riferimenti</td>
+        <td>Complex Type, massimo 19 record</td>    
+      </tr>
+      <tr>
+        <td>23</td>
+        <td class="e"><b>ReferenceQualifier</b><br>/DESADV/Header/Information/References/ReferenceQualifier</td>
+        <td>Qualificatore di riferimento</td>
+        <td><a href="tabelle_DESADV.html#4-ref-qual">Valore dinamico: ON - VN - AAJ - AAS - CR - CN - CT - BM - IP - PK - POR - AAU - AAB - AAK - ALQ - RPE - AAN - AWT - PP</a></td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td class="e"><b>ReferenceNumber</b><br>/DESADV/Header/Information/References/ReferenceNumber</td>
+        <td>Numero di riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="e"><b>ReferenceDate</b><br>/DESADV/Header/Information/References/ReferenceDate</td>
+        <td>Data di riferimento</td>
+        <td>Complex Type, massimo 4 record</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td class="e"><b>DateType</b><br>/DESADV/Header/Information/References/ReferenceDate/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_DESADV.html#5-date-ty">Valore dinamico: 157 - 171 - 21E - 54E</a></td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td class="e"><b>Date</b><br>/DESADV/Header/Information/References/ReferenceDate/Date</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td class="e"><b>Time</b><br>/DESADV/Header/Information/References/ReferenceDate/Time</td>
+        <td>Ora</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td class="e"><b>FormatQualifier</b><br>/DESADV/Header/Information/References/ReferenceDate/FormatQualifier</td>
+        <td>Qualificatore di Formato</td>
+        <td><a href="tabelle_DESADV.html#6-date-for">Valore dinamico: 102 - 203</a></td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td class="e"><b>DateOfDelivery</b><br>/DESADV/Header/Information/DateOfDelivery</td>
+        <td>Data di Spedizione</td>
+        <td>Complex Type, massimo 16 record</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td class="e"><b>DateType</b><br>/DESADV/Header/Information/DateOfDelivery/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_DESADV.html#7-date-ty-2">Valore dinamico: 2 - 11 - 63 - 64 - 95 - 234 - 358 - 359 - 17 - 59 - 162 - 191 - 200 - 235 - 806 - 54E</a></td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td class="e"><b>Date</b><br>/DESADV/Header/Information/DateOfDelivery/Date</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td class="e"><b>Time</b><br>/DESADV/Header/Information/DateOfDelivery/Time</td>
+        <td>Ora</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td class="e"><b>ToDate</b><br>/DESADV/Header/Information/DateOfDelivery/ToDate</td>
+        <td>Data limite</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td class="e"><b>FormatQualifier</b><br>/DESADV/Header/Information/DateOfDelivery/FormatQualifier</td>
+        <td>Qualificatore di Formato</td>
+        <td><a href="tabelle_DESADV.html#9-form-qual">Valore dinamico: 102 - 203 - 718</a></td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td class="e"><b>Supplier</b><br>/DESADV/Header/Information/Supplier</td>
+        <td>Fornitore</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td class="e"><b>PartyType</b><br>/DESADV/Header/Information/Supplier/PartyType</td>
+        <td>Tipo di Referente</td>
+        <td>Valore Fisso: SU</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Information/Supplier/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td class="e"><b>CodeListQualifier</b><br>/DESADV/Header/Information/Supplier/CodeListQualifier</td>
+        <td>Qualificatore del codice di lista</td>
+        <td><a href="tabelle_DESADV.html#9-cod-list-qual">Valore dinamico: 14 - ZZ - IT - IA - VA</a></td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td class="e"><b>Name</b><br>/DESADV/Header/Information/Supplier/Name</td>
+        <td>Nome del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td class="e"><b>Address</b><br>/DESADV/Header/Information/Supplier/Address</td>
+        <td>Indirizzo del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td class="e"><b>City</b><br>/DESADV/Header/Information/Supplier/City</td>
+        <td>Città del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td class="e"><b>CountrySubEntity</b><br>/DESADV/Header/Information/Supplier/CountrySubEntity</td>
+        <td>Provincia del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td class="e"><b>Postcode</b><br>/DESADV/Header/Information/Supplier/Postcode</td>
+        <td>Codice postale del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>45</td>
+        <td class="e"><b>Country</b><br>/DESADV/Header/Information/Supplier/Country</td>
+        <td>Nazione del Fornitore</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>46</td>
+        <td class="e"><b>ContactReference</b><br>/DESADV/Header/Information/Supplier/ContactReference</td>
+        <td>Contatti di Riferimento del Fornitore</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>47</td>
+        <td class="e"><b>Contactfunction</b><br>/DESADV/Header/Information/Supplier/ContactReference/Contactfunction</td>
+        <td>Funzione del Contatto</td>
+        <td><a href="tabelle_DESADV.html#10-contact">Valore dinamico: DL - IC - TR</a></td>
+      </tr>
+      <tr>
+        <td>48</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/DESADV/Header/Information/Supplier/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>49</td>
+        <td class="e"><b>Telephone</b><br>/DESADV/Header/Information/Supplier/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="e"><b>Fax</b><br>/DESADV/Header/Information/Supplier/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>51</td>
+        <td class="e"><b>Telex</b><br>/DESADV/Header/Information/Supplier/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>52</td>
+        <td class="e"><b>Email</b><br>/DESADV/Header/Information/Supplier/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>53</td>
+        <td class="e"><b>X400</b><br>/DESADV/Header/Information/Supplier/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td class="e"><b>URL</b><br>/DESADV/Header/Information/Supplier/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>55</td>
+        <td class="e"><b>Buyer</b><br>/DESADV/Header/Information/Buyer</td>
+        <td>Acquirente</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>56</td>
+        <td class="e"><b>PartyType</b><br>/DESADV/Header/Information/Buyer/PartyType</td>
+        <td>Tipo di Referente</td>
+        <td>Valore Fisso: BY</td>
+      </tr>
+      <tr>
+        <td>57</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Information/Buyer/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>58</td>
+        <td class="e"><b>CodeListQualifier</b><br>/DESADV/Header/Information/Buyer/CodeListQualifier</td>
+        <td>Qualificatore del codice di lista</td>
+        <td><a href="tabelle_DESADV.html#8-cod-list-qual">Valore dinamico: 14 - ZZ - IT - IA - VA</a></td>
+      </tr>
+      <tr>
+        <td>59</td>
+        <td class="e"><b>Name</b><br>/DESADV/Header/Information/Buyer/Name</td>
+        <td>Nome dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>60</td>
+        <td class="e"><b>Address</b><br>/DESADV/Header/Information/Buyer/Address</td>
+        <td>Indirizzo dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>61</td>
+        <td class="e"><b>City</b><br>/DESADV/Header/Information/Buyer/City</td>
+        <td>Città dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>62</td>
+        <td class="e"><b>CountrySubEntity</b><br>/DESADV/Header/Information/Buyer/CountrySubEntity</td>
+        <td>Provincia dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>63</td>
+        <td class="e"><b>Postcode</b><br>/DESADV/Header/Information/Buyer/Postcode</td>
+        <td>Codice Postale dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>64</td>
+        <td class="e"><b>Country</b><br>/DESADV/Header/Information/Buyer/Country</td>
+        <td>Nazione dell'Acquirente</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>65</td>
+        <td class="e"><b>ContactReference</b><br>/DESADV/Header/Information/Buyer/ContactReference</td>
+        <td>Contatti di riferimento dell'Acquirente</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>66</td>
+        <td class="e"><b>Contactfunction</b><br>/DESADV/Header/Information/Buyer/ContactReference/Contactfunction</td>
+        <td>Funzione del Contatto</td>
+        <td><a href="tabelle_DESADV.html#10-contact">Valore dinamico: DL - IC - TR</a></td>
+      </tr>
+      <tr>
+        <td>67</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/DESADV/Header/Information/Buyer/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>68</td>
+        <td class="e"><b>Telephone</b><br>/DESADV/Header/Information/Buyer/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>69</td>
+        <td class="e"><b>Fax</b><br>/DESADV/Header/Information/Buyer/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>70</td>
+        <td class="e"><b>Telex</b><br>/DESADV/Header/Information/Buyer/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>71</td>
+        <td class="e"><b>Email</b><br>/DESADV/Header/Information/Buyer/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>72</td>
+        <td class="e"><b>X400</b><br>/DESADV/Header/Information/Buyer/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>73</td>
+        <td class="e"><b>URL</b><br>/DESADV/Header/Information/Buyer/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>74</td>
+        <td class="e"><b>DeliveryPoint</b><br>/DESADV/Header/Information/DeliveryPoint</td>
+        <td>Punto di Consegna</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td class="e"><b>PartyType</b><br>/DESADV/Header/Information/DeliveryPoint/PartyType</td>
+        <td>Tipo di Referente</td>
+        <td>Valore Fisso: DP</td>
+      </tr>
+      <tr>
+        <td>76</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Information/DeliveryPoint/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>77</td>
+        <td class="e"><b>CodeListQualifier</b><br>/DESADV/Header/Information/DeliveryPoint/CodeListQualifier</td>
+        <td>Qualificatore del codice di lista</td>
+        <td><a href="tabelle_DESADV.html#8-cod-list-qual">Valore dinamico: 14 - ZZ - IT - IA - VA</a></td>
+      </tr>
+      <tr>
+        <td>78</td>
+        <td class="e"><b>Name</b><br>/DESADV/Header/Information/DeliveryPoint/Name</td>
+        <td>Nome del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>79</td>
+        <td class="e"><b>Address</b><br>/DESADV/Header/Information/DeliveryPoint/Address</td>
+        <td>Indirizzo del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>80</td>
+        <td class="e"><b>City</b><br>/DESADV/Header/Information/DeliveryPoint/City</td>
+        <td>Città del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>81</td>
+        <td class="e"><b>CountrySubEntity</b>
+        <br>/DESADV/Header/Information/DeliveryPoint/CountrySubEntity</td>
+        <td>Provincia del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>82</td>
+        <td class="e"><b>Postcode</b><br>/DESADV/Header/Information/DeliveryPoint/Postcode</td>
+        <td>Codice postale del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>83</td>
+        <td class="e"><b>Country</b><br>/DESADV/Header/Information/DeliveryPoint/Country</td>
+        <td>Nazione del Punto di Consegna</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>84</td>
+        <td class="e"><b>ContactReference</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference</td>
+        <td>Contatti di Riferimento del Punto di Consegna</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>85</td>
+        <td class="e"><b>Contactfunction</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/Contactfunction</td>
+        <td>Funzione del Contatto</td>
+        <td><a href="tabelle_DESADV.html#10-contact">Valore dinamico: DL - IC - TR</a></td>
+      </tr>
+      <tr>
+        <td>86</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>87</td>
+        <td class="e"><b>Telephone</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>88</td>
+        <td class="e"><b>Fax</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>89</td>
+        <td class="e"><b>Telex</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="e"><b>Email</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>91</td>
+        <td class="e"><b>X400</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>92</td>
+        <td class="e"><b>URL</b><br>/DESADV/Header/Information/DeliveryPoint/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>93</td>
+        <td class="e"><b>OtherParty</b><br>/DESADV/Header/Information/OtherParty</td>
+        <td>Altre parti coinvolte</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>94</td>
+        <td class="e"><b>PartyType</b><br>/DESADV/Header/Information/OtherParty/PartyType</td>
+        <td>Tipo di Referente</td>
+        <td><a href="tabelle_DESADV.html#11-nad-qual">Valore dinamico: CA - CN - FD - FR - IV - OB - PW - SF - SH - UC</a></td>
+      </tr>
+      <tr>
+        <td>95</td>
+        <td class="e"><b>Identification</b><br>/DESADV/Header/Information/OtherParty/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>96</td>
+        <td class="e"><b>CodeListQualifier</b><br>/DESADV/Header/Information/OtherParty/CodeListQualifier</td>
+        <td>Qualificatore del codice di lista</td>
+        <td><a href="tabelle_DESADV.html#8-cod-list-qual">Valore dinamico: 14 - ZZ - IT - IA - VA</a></td>
+      </tr>
+      <tr>
+        <td>97</td>
+        <td class="e"><b>Name</b><br>/DESADV/Header/Information/OtherParty/Name</td>
+        <td>Nome della Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>98</td>
+        <td class="e"><b>Address</b><br>/DESADV/Header/Information/OtherParty/Address</td>
+        <td>Indirizzo Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>99</td>
+        <td class="e"><b>City</b><br>/DESADV/Header/Information/OtherParty/City</td>
+        <td>Città Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>100</td>
+        <td class="e"><b>CountrySubEntity</b><br>/DESADV/Header/Information/OtherParty/CountrySubEntity</td>
+        <td>Provincia Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td class="e"><b>Postcode</b><br>/DESADV/Header/Information/OtherParty/Postcode</td>
+        <td>Codice Postale Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td class="e"><b>Country</b><br>/DESADV/Header/Information/OtherParty/Country</td>
+        <td>Nazione Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td class="e"><b>ContactReference</b><br>/DESADV/Header/Information/OtherParty/ContactReference</td>
+        <td>Contatti di Riferiemento Parte coinvolta</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>104</td>
+        <td class="e"><b>Contactfunction</b><br>/DESADV/Header/Information/OtherParty/ContactReference/Contactfunction</td>
+        <td>Funzione del Contatto</td>
+        <td><a href="tabelle_DESADV.html#10-contact">Valore dinamico: DL - IC - TR</a></td>
+      </tr>
+      <tr>
+        <td>105</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/DESADV/Header/Information/OtherParty/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>106</td>
+        <td class="e"><b>Telephone</b><br>/DESADV/Header/Information/OtherParty/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>107</td>
+        <td class="e"><b>Fax</b><br>/DESADV/Header/Information/OtherParty/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>108</td>
+        <td class="e"><b>Telex</b><br>/DESADV/Header/Information/OtherParty/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>109</td>
+        <td class="e"><b>Email</b><br>/DESADV/Header/Information/OtherParty/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>110</td>
+        <td class="e"><b>X400</b><br>/DESADV/Header/Information/OtherParty/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>111</td>
+        <td class="e"><b>URL</b><br>/DESADV/Header/Information/OtherParty/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>112</td>
+        <td class="e"><b>TermOfDeliveryOrTransport</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport</td>
+        <td>Condizioni di Spedizione o Trasporto</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>113</td>
+        <td class="e"><b>TermOfDelivery</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport/TermOfDelivery</td>
+        <td>Condizioni di Spedizione</td>
+        <td><a href="tabelle_DESADV.html#12-tod">Valore dinamico: 3 oppure 2</a></td>
+      </tr>
+      <tr>
+        <td>114</td>
+        <td class="e"><b>TransportCosts</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport/TransportCosts</td>
+        <td>Costi di Trasporto</td>
+        <td><a href="tabelle_DESADV.html#13-trans-costs">Valore dinamico: PP - CC - PC</a></td>
+      </tr>
+      <tr>
+        <td>115</td>
+        <td class="e"><b>TermOfDeliveryCoded</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport/TermOfDeliveryCoded</td>
+        <td>Termine di consegna codificato</td>
+        <td><a href="tabelle_DESADV.html#14-cod-ter">Valore dinamico: EXW - FCA - FAS - FOB - CFR - CIF - CPT - CIP - DAF - DES - DEQ - DDU - DDP</a></td>
+      </tr>
+      <tr>
+        <td>116</td>
+        <td class="e"><b>Descr1TermOfDelivery</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport/Descr1TermOfDelivery</td>
+        <td>Descrizione 1 Condizioni di Spedizione</td>
+        <td><a href="tabelle_DESADV.html#15-tod-desc">Valore dinamico: FS - FB</a></td>
+      </tr>
+      <tr>
+        <td>117</td>
+        <td class="e"><b>Descr2TermOfDelivery</b><br>/DESADV/Header/Information/TermOfDeliveryOrTransport/Descr2TermOfDelivery</td>
+        <td>Descrizione 2 Condizioni di Spedizione</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>118</td>
+        <td class="e"><b>DetailsOfTransport</b><br>/DESADV/Header/Information/DetailsOfTransport</td>
+        <td>Dettagli di Trasporto</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>119</td>
+        <td class="e"><b>TransportQualifier</b><br>/DESADV/Header/Information/DetailsOfTransport/TransportQualifier</td>
+        <td>Qualificatore del Trasporto</td>
+        <td>Valore fisso: 20</td>
+      </tr>
+      <tr>
+        <td>120</td>
+        <td class="e"><b>Number</b><br>/DESADV/Header/Information/DetailsOfTransport/Number</td>
+        <td>Numero di riferimento del Trasporto</td>
+        <td>Stringa alfanumerica di massimo 17 caratteri</td>
+      </tr>
+      <tr>
+        <td>121</td>
+        <td class="e"><b>TransportModeCode</b><br>/DESADV/Header/Information/DetailsOfTransport/TransportModeCode</td>
+        <td>Codice Modalità Trasporto</td>
+        <td><a href="tabelle_DESADV.html#16-t-mode">Valore dinamico: 10 - 20 - 30 - 40 - 60</a></td>
+      </tr>
+      <tr>
+        <td>122</td>
+        <td class="e"><b>TransportMode</b><br>/DESADV/Header/Information/DetailsOfTransport/TransportMode</td>
+        <td>Modalità Trasporto</td>
+        <td>Stringa alfanumerica di massimo 17 caratteri</td>
+      </tr>
+      <tr>
+        <td>123</td>
+        <td class="e"><b>TransportMeansCode</b><br>/DESADV/Header/Information/DetailsOfTransport/TransportMeansCode</td>
+        <td>Codice Mezzi di Trasporto</td>
+        <td><a href="tabelle_DESADV.html#17-t-means">Valore dinamico: 23 - 25 - 31 - 35 - 23E - 25E - 32E - 34E - 35E - 36E - 37E - 38E - 43E</a></td>
+      </tr>
+      <tr>
+        <td>124</td>
+        <td class="e"><b>TransportMeans</b><br>/DESADV/Header/Information/DetailsOfTransport/TransportMeans</td>
+        <td>Mezzi di Trasporto</td>
+        <td>Stringa alfanumerica di massimo 17 caratteri</td>
+      </tr>
+      <tr>
+        <td>125</td>
+        <td class="e"><b>CarrierIdentifier</b><br>/DESADV/Header/Information/DetailsOfTransport/CarrierIdentifier</td>
+        <td>Identificatore del vettore</td>
+        <td>Stringa alfanumerica di massimo 17 caratteri</td>
+      </tr>
+      <tr>
+        <td>126</td>
+        <td class="e"><b>CarrierName</b><br>/DESADV/Header/Information/DetailsOfTransport/CarrierName</td>
+        <td>Nome del vettore</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td id="detail">127</td>
+        <td class="d"><b>Detail</b><br>/DESADV/Detail</td>
+        <td>Dettaglio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>128</td>
+        <td class="d"><b>LogisticsUnit</b><br>/DESADV/Detail/LogisticsUnit</td>
+        <td>Unità Logistiche</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>129</td>
+        <td class="d"><b>TotalLogisticsUnit</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit</td>
+        <td>Unità Logistiche Totali</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>130</td>
+        <td class="d"><b>ConsignmentSequence</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/ConsignmentSequence</td>
+        <td>Sequenza di Consegna <br><em>*Si raccomanda l’uso della numerazione progressiva sequenziale.</em></td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>131</td>
+        <td class="d"><b>LevelIdentifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/ConsignmentSequence/LevelIdentifier</td>
+        <td>Identificatore di Livello</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>132</td>
+        <td class="d"><b>Package</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Package</td>
+        <td>Imballo</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>133</td>
+        <td class="d"><b>PackageQuantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Package/PackageQuantity</td>
+        <td>Quantità Imballi</td>
+        <td>Valore numerico intero positivo</td>
+      </tr>
+      <tr>
+        <td>134</td>
+        <td  class="d"><b>PackageType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Package/PackageType</td>
+        <td>Tipo di Imballo</td>
+        <td><a href="tabelle_DESADV.html#18-pack-ty">Valore dinamico: 08 - 09 - 200 - 201 - 203 - DPE - HR - PK - PA</a></td>
+      </tr>
+      <tr>
+        <td>135</td>
+        <td class="d"><b>Measurements</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements</td>
+        <td>Misure</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>136</td>
+        <td class="d"><b>MeasurementQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementQualifier</td>
+        <td>Qualificatore delle Misure</td>
+        <td>Valore fisso: PD</td>
+      </tr>
+      <tr>
+        <td>137</td>
+        <td  class="d"><b>MeasuredCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasuredCode</td>
+        <td>Codice Misurato</td>
+        <td><a href="tabelle_DESADV.html#19-mea-cod">Valore dinamico: AAA - AAB - DBX - DN - HT - LAY - LN - T - UCO - ULY - WD</a></td>
+      </tr>
+      <tr>
+        <td>138</td>
+        <td class="d"><b>MeasurementSignificanceCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementSignificanceCode</td>
+        <td>Misurazione Significato Codice</td>
+        <td><a href="tabelle_DESADV.html#20-mea-sig">Valore dinamico: 3 oppure 4</a></td>
+      </tr>
+      <tr>
+        <td>139</td>
+        <td  class="d"><b>MeasurementName</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementName</td>
+        <td>Nome Misura</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>140</td>
+        <td class="d"><b>MeasurementUnitCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementUnitCode</td>
+        <td>Codice Unità Misurazione</td>
+        <td><a href="tabelle_DESADV.html#21-mea-un">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - MTK - PCE</a></td>
+      </tr>
+      <tr>
+        <td>141</td>
+        <td class="d"><b>MeasurementValue</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/Measurements/MeasurementValue</td>
+        <td>Valore Misura</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>142</td>
+        <td class="d"><b>HandlingInstructions</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions</td>
+        <td>Istruzioni per la Gestione</td>
+        <td>Complex Type, massimo 17 record</td>
+      </tr>
+      <tr>
+        <td>143</td>
+        <td class="d"><b>HandlingCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/HandlingCode</td>
+        <td>Codice di Gestione</td>
+        <td><a href="tabelle_DESADV.html#22-hand-cod">Valore dinamico: CRU - EAT - HWC - STR - UST - BIG - PSC</a></td>
+      </tr>
+      <tr>
+        <td>144</td>
+        <td class="d"><b>IdentificationCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/IdentificationCode</td>
+        <td>Codice di Identificazione</td>
+        <td>Stringa alfanumerica di massimo 17 caratteri</td>
+      </tr>
+      <tr>
+        <td>145</td>
+        <td class="d"><b>ResponsibleAgencyCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/ResponsibleAgencyCode</td>
+        <td>Codice Agenzia Responsabile</td>
+        <td><a href="tabelle_DESADV.html#23-hand-age">Valore dinamico: 9 oppure 60</a></td>
+      </tr>
+      <tr>
+        <td>146</td>
+        <td class="d"><b>Description</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/HandlingInstructions/Description</td>
+        <td>Descrizione</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>147</td>
+        <td class="d"><b>SingleLogisticsUnit</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit</td>
+        <td>Singola Unità Logistica</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>148</td>
+        <td class="d"><b>ConsignmentSequence</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/ConsignmentSequence</td>
+        <td>Sequenza di Consegna
+          <br><em>*Si raccomanda l’uso della numerazione progressiva sequenziale.</em>
+        </td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>149</td>
+        <td class="d"><b>LevelIdentifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/ConsignmentSequence/LevelIdentifier</td>
+        <td>Identificazione di Livello</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>150</td>
+        <td class="d"><b>ParentIdentifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/ConsignmentSequence/ParentIdentifier</td>
+        <td>Identificazione del Nodo Padre</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>151</td>
+        <td class="d"><b>Package</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Package</td>
+        <td>Imballo</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>152</td>
+        <td class="d"><b>PackageQuantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Package/PackageQuantity</td>
+        <td>Quantità Imballi</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>153</td>
+        <td class="d"><b>PackageType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Package/PackageType</td>
+        <td>Tipo di Imballo</td>
+        <td><a href="tabelle_DESADV.html#18-pack-ty">Valore dinamico: 08 - 09 - 200 - 201 - 203 - DPE - HR - PK - PA</a></td>
+      </tr>
+      <tr>
+        <td>154</td>
+        <td class="d"><b>Measurements</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements</td>
+        <td>Misure</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>155</td>
+        <td class="d"><b>MeasurementQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasurementQualifier</td>
+        <td>Qualificatore delle Misure</td>
+        <td>Valore fisso: PD</td>
+      </tr>
+      <tr>
+        <td>156</td>
+        <td class="d"><b>MeasuredCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasuredCode</td>
+        <td>Codice Misurato</td>
+        <td><a href="tabelle_DESADV.html#26-mead-cod">Valore dinamico: AAA - AAB - DBX - DN - HT - LAY - LN - T - UCO - ULY - WD</a></td>
+      </tr>
+      <tr>
+        <td>157</td>
+        <td class="d"><b>MeasurementSignificanceCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasurementSignificanceCode</td>
+        <td>Misurazione Significato Codice</td>
+        <td><a href="tabelle_DESADV.html#20-mea-sig">Valore dinamico: 3 oppure 4</a></td>
+      </tr>
+      <tr>
+        <td>158</td>
+        <td class="d"><b>MeasurementName</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasurementName</td>
+        <td>Nome Misura</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>159</td>
+        <td class="d"><b>MeasurementUnitCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasurementUnitCode</td>
+        <td>Codice Unità Misurazione</td>
+        <td><a href="tabelle_DESADV.html#21-mea-un">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - MTK - PCE</a></td>
+      </tr>
+      <tr>
+        <td>160</td>
+        <td class="d"><b>MeasurementValue</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/Measurements/MeasurementValue</td>
+        <td>Valore Misura</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>161</td>
+        <td class="d"><b>PackageIdentification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/PackageIdentification</td>
+        <td>Identificazione Imballo</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>162</td>
+        <td class="d"><b>InstructionsCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/PackageIdentification/InstructionsCode</td>
+        <td>Codice Istruzioni</td>
+        <td><a href="tabelle_DESADV.html#24-inst-cod">Valore dinamico: 17 - 33E - 34E - 39 - 34 - 47</a></td>
+      </tr>
+      <tr>
+        <td>163</td>
+        <td class="d"><b>IdentificationCodeQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/PackageIdentification/IdentificationCodeQualifier</td>
+        <td>Qualificatore del Codice di Identificazione</td>
+        <td><a href="tabelle_DESADV.html#25-pac-co">Valore dinamico: BJ - BN - EU - CU - DA - DB - SRV</a></td>
+      </tr>
+      <tr>
+        <td>164</td>
+        <td class="d"><b>IdentificationCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/PackageIdentification/IdentificationCode</td>
+        <td>Codice di Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>165</td>
+        <td class="d"><b>LogisticsUnitContent</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent</td>
+        <td>Contenuto dell'Unità Logistica</td>
+        <td>Complex Type, nessun limite di quantità</td>
+      </tr>
+      <tr>
+        <td>166</td>
+        <td class="d"><b>ConsignmentSequence</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/ConsignmentSequence</td>
+        <td>Sequenza di Consegna
+          <br><em>*Si raccomanda l’uso della numerazione progressiva sequenziale.</em>
+        </td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>167</td>
+        <td class="d"><b>LevelIdentifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/ConsignmentSequence/LevelIdentifier</td>
+        <td>Identificazione di Livello</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>168</td>
+        <td class="d"><b>ParentIdentifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/ConsignmentSequence/ParentIdentifier</td>
+        <td>Identificazione del Nodo Padre</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>169</td>
+        <td class="d"><b>Package</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Package</td>
+        <td>Imballo</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>170</td>
+        <td class="d"><b>PackageQuantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Package/PackageQuantity</td>
+        <td>Quantità Imballi</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>171</td>
+        <td class="d"><b>PackageType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Package/PackageType</td>
+        <td>Tipo di Imballo</td>
+        <td><a href="tabelle_DESADV.html#18-pack-ty">Valore dinamico: 08 - 09 - 200 - 201 - 203 - DPE - HR - PK - PA</a></td>
+      </tr>
+      <tr>
+        <td>172</td>
+        <td class="d"><b>Measurements</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements</td>
+        <td>Misure</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>173</td>
+        <td class="d"><b>MeasurementQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementQualifier</td>
+        <td>Qualificatore delle Misure</td>
+        <td>Valore fisso: PD</td>
+      </tr>
+      <tr>
+        <td>174</td>
+        <td class="d"><b>MeasuredCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasuredCode</td>
+        <td>Codice Misurato</td>
+        <td><a href="tabelle_DESADV.html#26-mead-cod">Valore dinamico: ADZ - DI - DP - G - HT - LN - T - TH - WD - AAA - AAB - DBX - DN - LAY - UCO - ULY - AAK - X13 - PG</a></td>
+      </tr>
+      <tr>
+        <td>175</td>
+        <td class="d"><b>MeasurementSignificanceCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementSignificanceCode</td>
+        <td>Misurazione Significato Codice</td>
+        <td><a href="tabelle_DESADV.html#20-mea-sig">Valore dinamico: 3 oppure 4</a></td>
+      </tr>
+      <tr>
+        <td>176</td>
+        <td class="d"><b>MeasurementName</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementName</td>
+        <td>Nome Misura</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>177</td>
+        <td class="d"><b>MeasurementUnitCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementUnitCode</td>
+        <td>Codice Unità Misurazione</td>
+        <td><a href="tabelle_DESADV.html#46-mea-check">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - MTK - PCE</a></td>
+      </tr>
+      <tr>
+        <td>178</td>
+        <td class="d"><b>MeasurementValue</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Measurements/MeasurementValue</td>
+        <td>Valore Misura</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>179</td>
+        <td class="d"><b>Product</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product</td>
+        <td>Prodotto</td>
+        <td>Complex Type, nessun limite di quantità</td>
+      </tr>
+      <tr>
+        <td>180</td>
+        <td class="d"><b>Item</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item</td>
+        <td>Elemento</td>
+        <td>Complex Type, massimo 2 record</td>
+      </tr>
+      <tr>
+        <td>181</td>
+        <td class="d"><b>PrimaryItem</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/PrimaryItem</td>
+        <td>Elemento Primario</td>
+        <td>Variabile boolean</td>
+      </tr>
+      <tr>
+        <td>182</td>
+        <td class="d"><b>RowNumber</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/RowNumber</td>
+        <td>Numero Riga</td>
+        <td>Valore numerico intero positivo</td>
+      </tr>
+      <tr>
+        <td>183</td>
+        <td class="d"><b>AdditionalIdentification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/AdditionalIdentification</td>
+        <td>Identificazione Aggiuntiva</td>
+        <td>Complex Type, massimo 10 record<br><button><a href="LIN_spec.pdf" target="_blank">Apri allegato dedicato alla LIN</a></button></td>
+      </tr>
+      <tr>
+        <td>184</td>
+        <td class="d"><b>ItemNumber</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/AdditionalIdentification/ItemNumber</td>
+        <td>Numero Elemento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+     </tr>
+      <tr>
+        <td>185</td>
+        <td class="d"><b>ItemQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/AdditionalIdentification/ItemQualifier</td>
+        <td>Qualificatore Elemento</td>
+        <td><a href="tabelle_DESADV.html#27-item-qual">Valore dinamico: EN - SA - IN - UP - IB - AC - PV - SRX - X2 - FS</a></td>
+      </tr>
+      <tr>
+        <td>186</td>
+        <td class="d"><b>ItemType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/ItemType</td>
+        <td>Tipo di Elemento</td>
+        <td>Valore dinamico: CU oppure TU</td>
+      </tr>
+      <tr>
+        <td>187</td>
+        <td class="d"><b>Description</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Description</td>
+        <td style="font-size: 15;">Descrizione</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>188</td>
+        <td class="d"><b>Quantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity</td>
+        <td>Quantità</td>
+        <td>Complex Type, massimo 8 record</td>
+      </tr>
+      <tr>
+        <td>189</td>
+        <td class="d"><b>QuantityQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity/QuantityQualifier</td>
+        <td>Qualificatore Quantità</td>
+        <td><a href="tabelle_DESADV.html#28-qua-qua">Valore dinamico: 12 - 59 - 21 - 61 - 121 - 192 - 193 - 45E</a></td>
+      </tr>
+      <tr>
+        <td>190</td>
+        <td class="d"><b>Quantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity/Quantity</td>
+        <td>Quantità</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>191</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/Quantity/MeasureUnitQualifier</td>
+        <td>Qualificatore Unità di Misura</td>
+        <td><a href="tabelle_DESADV.html#29-mea-un-qua">Valore dinamico: PCE - CT - KGM - MTR - MTK - LTR - CU - CT - CMT - GRM - MLT</a></td>
+      </tr>
+      <tr>
+        <td>192</td>
+        <td class="d"><b>QuantityVariances</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/<br>...SingleLogisticsUnit/LogisticsUnitContent/Product/Item/QuantityVariances</td>
+        <td>Variazioni di Quantità</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>193</td>
+        <td class="d"><b>QuantityVarianceValue</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Item/QuantityVariances/QuantityVarianceValue</td>
+        <td>Valore Variazioni di Quantità</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>194</td>
+        <td class="d"><b>QuantityQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Item/QuantityVariances/QuantityQualifier</td>
+        <td>Qualificatore Quantità</td>
+        <td><a href="tabelle_DESADV.html#30-qua-qua">Valore dinamico: 21 oppure 66</a></td>
+      </tr>
+      <tr>
+        <td>195</td>
+        <td class="d"><b>Discrepancy</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Item/QuantityVariances/Discrepancy</td>
+        <td>Discrepanza</td>
+        <td><a href="tabelle_DESADV.html#31-disc">Valore dinamico: BP - CP - AC - AE - AF - AG</a></td>
+      </tr>
+      <tr>
+        <td>196</td>
+        <td class="d"><b>ReasonForChange</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Item/QuantityVariances/ReasonForChange</td>
+        <td>Motivo della Modifica</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>197</td>
+        <td class="d"><b>ReasonForChangeCoded</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Item/QuantityVariances/ReasonForChangeCoded</td>
+        <td>Codice Motivo della Modifica</td>
+        <td><a href="tabelle_DESADV.html#32-reas-ch">Valore dinamico: AT - AUE - BN - DME - IS - PC - PE - WR</a></td>
+      </tr>
+      <tr>
+        <td>198</td>
+        <td class="d"><b>PlaceLocationIdentification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification</td>
+        <td>Identificazione del Luogo</td>
+        <td>Complex Type: massimo 100 record</td>
+      </tr>
+      <tr>
+        <td>199</td>
+        <td class="d"><b>LocationQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/LocationQualifier</td>
+        <td>Qualificatore Luogo</td>
+        <td><a href="tabelle_DESADV.html#33-loc-qual">Valore dinamico: 7 - 244 - 256 - 19 - 299</a></td>
+      </tr>
+      <tr>
+        <td>200</td>
+        <td class="d"><b>Identification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>201</td>
+        <td class="d"><b>CodeListQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/CodeListQualifier</td>
+        <td>Qualificatore del Codice Lista</td>
+        <td><a href="tabelle_DESADV.html#35-loc-id">Valore dinamico: 14 - ZZ - 91 - 92 - VA - 5 - 194</a></td>
+      </tr>
+      <tr>
+        <td>202</td>
+        <td class="d"><b>Name</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Name</td>
+        <td>Nome dell'Identificazione del Luogo</td>
+        <td>Stringa alfanumerica di massimo 256 caratteri</td>
+      </tr>
+      <tr>
+        <td>203</td>
+        <td class="d"><b>Address</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Address</td>
+        <td>Indirizzo</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>204</td>
+        <td class="d"><b>City</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>205</td>
+        <td class="d"><b>CountrySubEntity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>206</td>
+        <td class="d"><b>Postcode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Postcode</td>
+        <td>Codice Postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>207</td>
+        <td class="d"><b>Country</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri
+          <br><em>*Vedi tabella ISO 3166</em>
+        </td>
+      </tr>
+      <tr>
+        <td>208</td>
+        <td class="d"><b>ReferenceDate</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate</td>
+        <td>Data di Riferimento</td>
+        <td>Massimo 18 record</td>
+      </tr>
+      <tr>
+        <td>209</td>
+        <td class="d"><b>DateType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_DESADV.html#36-date-ty">Valore dinamico: 2 - 11 - 17 - 63 - 64 - 69 - 94 - 200 - 755 - 793 - 807 - 808 - 54E - X14 - X19 - 234 - 358 - 359</a></td>
+      </tr>
+      <tr>
+        <td>210</td>
+        <td class="d"><b>Date</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/Date</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>211</td>
+        <td class="d"><b>Time</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/Time</td>
+        <td>Ora</td>
+        <td>Formato Ora</td>       
+      </tr>
+      <tr>
+        <td>212</td>
+        <td class="d"><b>ToDate</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/ToDate</td>
+        <td>Data limite</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>213</td>
+        <td class="d"><b>FormatQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/ReferenceDate/FormatQualifier</td>
+        <td>Qualificatore del Formato</td>
+        <td><a href="tabelle_DESADV.html#9-form-qual">Valore dinamico: 102 - 203 - 718</a></td>
+      </tr>
+      <tr>
+        <td>214</td>
+        <td class="d"><b>Quantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity</td>
+        <td>Quantità</td>
+        <td>Complex Type: massimo 3 record</td>
+      </tr>
+      <tr>
+        <td>215</td>
+        <td class="d"><b>QuantityQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity/QuantityQualifier</td>
+        <td>Qualificatore della Quantità</td>
+        <td><a href="tabelle_DESADV.html#37-qua-qua">Valore dinamico: 12 - 21 - 11</a></td>
+      </tr>
+      <tr>
+        <td>216</td>
+        <td class="d"><b>Quantity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity/Quantity</td>
+        <td>Quantità</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>217</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/Quantity/MeasureUnitQualifier</td>
+        <td>Qualificatore Unità di Misura</td>
+        <td><a href="tabelle_DESADV.html#29-mea-un-qua">Valore dinamico: PCE - CT - KGM - MTR - MTK - LTR - CU - CT - CMT - GRM - MLT</a></td>
+      </tr>
+      <tr>
+        <td>218</td>
+        <td class="d"><b>OtherPartyLocation</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation</td>
+        <td>Luogo Altre Parti coinvolte</td>
+        <td>Massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>219</td>
+        <td class="d"><b>PartyType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/PartyType</td>
+        <td>Tipo di Parte coinvolta</td>
+        <td><a href="tabelle_DESADV.html#38-ot-pa-loc-ty">Valore dinamico: IV - OB - SU - UC - DGD - UD</a></td>
+      </tr>
+      <tr>
+        <td>220</td>
+        <td class="d"><b>Identification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/Identification</td>
+        <td>Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>221</td>
+        <td class="d"><b>CodeListQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/CodeListQualifier</td>
+        <td>Qualificatore della Lista Codici</td>
+        <td><a href="tabelle_DESADV.html#8-cod-list-qual">Valore dinamico: 14 - IT - IA - ZZ - VA</a></td>
+      </tr>
+      <tr>
+        <td>222</td>
+        <td class="d"><b>Name</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/Name</td>
+        <td>Nome altra Parte coinvolta</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>223</td>
+        <td class="d"><b>Address</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/Address</td>
+        <td>Indirizzo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>224</td>
+        <td class="d"><b>City</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>225</td>
+        <td class="d"><b>CountrySubEntity</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>226</td>
+        <td class="d"><b>Postcode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/Postcode</td>
+        <td>Codice Postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>227</td>
+        <td class="d"><b>Country</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/Country</td>
+        <td style="font-size: 15;">Nazione
+          <br><em>*Vedi tabella ISO 3166</em>
+        </td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      <tr>
+        <td>228</td>
+        <td class="d"><b>ASLCodeFarm</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PlaceLocationIdentification/OtherPartyLocation/ASLCodeFarm</td>
+        <td>Codice Ufficio ASL</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>229</td>
+        <td class="d"><b>PackageIdentification</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PackageIdentification</td>
+        <td>Identificazione Imballo</td>
+        <td>Complex Type: massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>230</td>
+        <td class="d"><b>InstructionsCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PackageIdentification/InstructionsCode</td>
+        <td>Codice Istruzioni</td>
+        <td><a href="tabelle_DESADV.html#24-inst-cod">Valore dinamico: 17 - 33E - 34E - 39 - 34 - 47 - 36E</a></td>
+      </tr>
+      <tr>
+        <td>231</td>
+        <td class="d"><b>IdentificationCodeQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PackageIdentification/IdentificationCodeQualifier</td>
+        <td>Qualificatore Codice di identificazione</td>
+        <td><a href="tabelle_DESADV.html#39-pac-id-qual">Valore dinamico: BX - EU - CRE - SRV - BN</a></td>
+      </tr>
+      <tr>
+        <td>232</td>
+        <td class="d"><b>IdentificationCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/PackageIdentification/IdentificationCode</td>
+        <td>Codice di Identificazione</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>233</td>
+        <td class="d"><b>ProductDate</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate</td>
+        <td>Data del Prodotto</td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>234</td>
+        <td class="d"><b>DateType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_DESADV.html#40-prod-date-ty">Valore dinamico: 36 - 94 - 361 - 365 - 360 - 91E - 796 - 382 - 434 - 656 - 753 - 804 - 54E</a></td>
+      </tr>
+      <tr>
+        <td>235</td>
+        <td class="d"><b>Date</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate/Date</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>236</td>
+        <td class="d"><b>Time</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate/Time</td>
+        <td>Ora</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>237</td>
+        <td class="d"><b>ToDate</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate/ToDate</td>
+        <td>Data Limite</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>238</td>
+        <td class="d"><b>FormatQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/ProductDate/FormatQualifier</td>
+        <td>Qualificatore del Formato</td>
+        <td><a href="tabelle_DESADV.html#9-form-qual">Valore dinamico: 102 - 203 - 718</a></td>
+      </tr>
+      <tr>
+        <td>239</td>
+        <td class="d"><b>Measurements</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements</td>
+        <td>Misure</td>
+        <td>Complex Type, massimo 10 record</td>
+      </tr>
+      <tr>
+        <td>240</td>
+        <td class="d"><b>MeasurementQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasurementQualifier</td>
+        <td>Qualificatore Misure</td>
+        <td>Valore fisso: PD</td>
+      </tr>
+      <tr>
+        <td>241</td>
+        <td class="d"><b>MeasuredCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasuredCode</td>
+        <td>Codice Misurato</td>
+        <td><a href="tabelle_DESADV.html#41-mea-cod">Valore dinamico: ADZ - DI - DP - G - HT - LN - T - TH - WD - AAA - AAB - DBX - DN - LAY - UCO - ULY - AAK - X13 - PG - ET - OD</a></td>
+      </tr>
+      <tr>
+        <td>242</td>
+        <td class="d"><b>MeasurementSignificanceCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasurementSignificanceCode</td>
+        <td>Misurazione Significato Codice</td>
+        <td>Valore dinamico: 3 oppure 4</td>
+      </tr>
+      <tr>
+        <td>243</td>
+        <td class="d"><b>MeasurementName</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasurementName</td>
+        <td>Nome Misura</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>244</td>
+        <td class="d"><b>MeasurementUnitCode</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasurementUnitCode</td>
+        <td>Codice Unità Misurazione</td>
+        <td><a href="tabelle_DESADV.html#21-mea-un">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - MTK - PCE - P1 - MON</a></td>
+      </tr>
+      <tr>
+        <td>245</td>
+        <td class="d"><b>MeasurementValue</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Measurements/MeasurementValue</td>
+        <td>Valore Misura</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>246</td>
+        <td class="d"><b>AssignmentType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/AssignmentType</td>
+        <td>Tipo di Assegnazione</td>
+        <td><a href="tabelle_DESADV.html#42-ass-ty">Valore dinamico: L01 ... L14</a></td>
+      </tr>
+      <tr>
+        <td>247</td>
+        <td class="d"><b>Traceability</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Traceability</td>
+        <td>Tracciabilità</td>
+        <td>Complex Type, massimo 100 record</td>
+      </tr>
+      <tr>
+        <td>248</td>
+        <td class="d"><b>TraceabilityType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Traceability/TraceabilityType</td>
+        <td>Tipo di Tracciabilità</td>
+        <td><a href="tabelle_DESADV.html#43-trac">Valore dinamico: BOV - SUI - ITT - ORT - LAT - SAL - GEN - ANM - FRZ - 249 - GEO - FGT - PRO - LAV - ASC - 216 - X2 - BRN - ALM - 38 - 13 - FIC - 27</a></td>
+      </tr>
+      <tr>
+        <td>249</td>
+        <td class="d"><b>Frozen</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Traceability/Frozen</td>
+        <td>Congelato</td>
+        <td>Variabile boolean</td>
+      </tr>
+      <tr>
+        <td>250</td>
+        <td class="d"><b>Code</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Traceability/Code</td>
+        <td>Codice</td>
+        <td>Stringa alfanumerica di massimo 200 caratteri</td>
+      </tr>
+      <tr>
+        <td>251</td>
+        <td class="d"><b>Name</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Traceability/Name</td>
+        <td>Nome</td>
+        <td>Stringa alfanumerica di massimo 200 caratteri</td>
+      </tr>
+      <tr>
+        <td>252</td>
+        <td class="d"><b>References</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References</td>
+        <td>Riferiementi</td>
+        <td>Complex Type, massimo 19 record</td>
+      </tr>
+      <tr>
+        <td>253</td>
+        <td class="d"><b>ReferenceQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceQualifier</td>
+        <td>Qualificatore di Riferimento</td>
+        <td><a href="tabelle_DESADV.html#4-ref-qual">Valore dinamico: ON - VN - AAJ - AAS - CR - CN - CT - BM - IP - PK - POR - AAU - AAB - AAK - ALQ - RPE - AAN - AWT - PP</a></td>
+      </tr>
+      <tr>
+        <td>254</td>
+        <td class="d"><b>ReferenceNumber</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceNumber</td>
+        <td>Numero di Riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>255</td>
+        <td class="d"><b>ReferenceLineNumber</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceLineNumber</td>
+        <td>Numero Riga di Riferiemento</td>
+        <td>Valore numerico intero</td>
+      </tr>
+      <tr>
+        <td>256</td>
+        <td class="d"><b>ReferenceDate</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceDate</td>
+        <td>Data di Riferimento</td>
+        <td>Massimo 4 record</td>
+      </tr>
+      <tr>
+        <td>257</td>
+        <td class="d"><b>DateType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceDate/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_DESADV.html#5-date-ty">Valore dinamico: 157 - 171 - 21E - 54E</a></td>
+      </tr>
+      <tr>
+        <td>258</td>
+        <td class="d"><b>Date</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceDate/Date</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>259</td>
+        <td class="d"><b>Time</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceDate/Time</td>
+        <td>Ora</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>260</td>
+        <td class="d"><b>FormatQualifier</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/References/ReferenceDate/FormatQualifier</td>
+        <td>Qualificatore di Formato</td>
+        <td><a href="tabelle_DESADV.html#6-date-for">Valore dinamico: 102 - 203</a></td>
+      </tr>
+      <tr>
+        <td>261</td>
+        <td class="d"><b>Various</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Various</td>
+        <td style="font-size: 15;">Varie</td>
+        <td>Complex Type, nessun limite di quantità</td>
+      </tr>
+      <tr>
+        <td>262</td>
+        <td class="d"><b>NoteType</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Various/NoteType</td>
+        <td style="font-size: 15;">Tipo Nota</td>
+        <td><a href="tabelle_DESADV.html#44-note-ty">Valore dinamico: GEN - ZZZ - AAI - LIN - BLY - 27 - ACL</a></td>
+      </tr>
+      <tr>
+        <td>263</td>
+        <td class="d"><b>Note</b><br>/DESADV/Detail/LogisticsUnit/TotalLogisticsUnit/SingleLogisticsUnit/<br>...LogisticsUnitContent/Product/Various/Note</td>
+        <td style="font-size: 15;">Nota</td>
+        <td>Stringa alfanumerica di massimo 350 caratteri</td>
+      </tr>
+      <tr>
+        <td id="summary">264</td>
+        <td class="e"><b>Summary</b><br>/DESADV/Summary</td>
+        <td>Sommario</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>265</td>
+        <td class="e"><b>CheckInfo</b><br>/DESADV/Summary/CheckInfo</td>
+        <td>Controllo Informazioni</td>
+        <td>Complex Type, massimo 7 record</td>
+      </tr>
+      <tr>
+        <td>266</td>
+        <td class="e"><b>ControlQualifier</b><br>/DESADV/Summary/CheckInfo/ControlQualifier</td>
+        <td>Qualificatore di Controllo</td>
+        <td><a href="tabelle_DESADV.html#45-check">Valore dinamico: 11 - 33 - 7 - 29 - 1 - 2 - 26</a></td>
+      </tr>
+      <tr>
+        <td>267</td>
+        <td class="e"><b>ControlValue</b><br>/DESADV/Summary/CheckInfo/ControlValue</td>
+        <td>Valore di Controllo</td>
+        <td>Valore numerico decimale</td>
+      </tr>
+      <tr>
+        <td>268</td>
+        <td class="e"><b>MeasureUnitQualifier</b><br>/DESADV/Summary/CheckInfo/MeasureUnitQualifier</td>
+        <td>Qualificatore Unità di Misura</td>
+        <td><a href="tabelle_DESADV.html#46-mea-check">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - MTK - PCE - TNE</a></td>
+      </tr>
+    </table>
+  </div>
+</section>
+<section class="footer">
+  <div class="container">
+    <div>
+      <h5>Document Version: 1.0 /Release date: 09/04/2025</h5>
+    </div>
+    
+    <div>
+      <div class="right"><a class="button" href="#top">Torna all'inizio</a></button>
+    </div>
+  </section>
+
+  </body>
+</html>
