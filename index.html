@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentazione EDI</title>
 <style>
-  h1, h2, h3, h4, p {
+  h1, h2, h3, h4, p, a {
             font-family: Arial, Helvetica, sans-serif;
-						width: 95%; /* Larghezza RESPONSIVE */
 						border-collapse: collapse;
   }
   li {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.8;
+  }
+  a {
+    color: inherit;
   }
 .container {
   display: grid;
@@ -17,27 +21,39 @@
     "header header"
     "menu content"
     "footer footer";
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   gap: 5px;
-  background-color: #2196F3;
+  background: linear-gradient(to left, #33ccff 0%, #1b27d6 100%);
   padding: 5px;
+  width: 100%; /* Larghezza RESPONSIVE */
 }
 .container > div {
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
 }
 .container > div.header {
   grid-area: header;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  border-radius: 15px 15px 0px;
 }
 .container > div.menu {
   grid-area: menu;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: whitesmoke;
+  border-inline-style: solid;
+  border-inline-color: #4e2994;
 }
 .container > div.content {
   grid-area: content;
+  background-color: rgba(255, 255, 255);
+  
 }
 .container > div.footer {
   grid-area: footer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 4px dotted rgba(252, 252, 253, 0.582);
+  border-radius: 2em 1em 4em / 0.5em 3em;
+  color: whitesmoke;
 }
 .button-d {
   border-radius: 20px;
@@ -65,30 +81,63 @@
   border: 2px solid #ee805f;
   padding: 10px;
 }
+.button-r {
+  border-radius: 20px;
+  background: #dfdddd;
+  padding: 10px;
+  margin:20px;
+  width: 200px;
+  color:#06991e;
+  font-size: large;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #06991e;
+  padding: 10px;
+}
 </style>
 </head>
 <body>
 
-<h1>Messaggi EDI</h1>
-
-<p>Raccolta documentazione sui formati EDI per i principali tipi di documenti in gestione.</p>
-
 
 <div class="container">
-  <div class="header"><h3>Seleziona il tipo documento tra quelli al momento disponibili:</h3></div>
-  <div class="menu">
-   
-    <div class="button-d"> <a href="DESADV\doc_map_DESADV_xml_96A.html">DESADV XML e 96A</a></div>
-    <div class="button-o"> <a href="ORDERS\doc_map_ORDERS_xml.html">ORDERS XML</a> </div>
-  
+  <div class="header">
+    <h1>Messaggi EDI</h1>
+    <p>Raccolta documentazione sui formati EDI per i principali tipi di documenti in gestione.</p>
   </div>
-
-  <div class="content">
-    <ul>
-    <li><b>ORDERS:</b> Ordini d'acquisto emessi tipicamente dai compratori di merce e inviati ai fornitori.</li>
-    <li><b>DESADV:</b> (Despatch Advice) sono messaggi che comunicano informazioni relative ai beni spediti sotto condizioni concordate tra il compratore e il venditore al fine di informare chi riceve la spedizione del contenuto dettagliato della stessa. </li>  
-  </ul>
 </div>
+  <h3>Seleziona il tipo documento tra quelli al momento disponibili:</h3>
+  <div class="container">
+  <div class="menu">
+    <h3>ORDERS</h3>
+    <p>Questo messaggio viene utilizzato dal compratore per ordinare beni o servizi dal venditore, indicando tipo, quantità, tempi di consegna, condizioni di pagamento e spedizione, codici articolo e altri dettagli contrattuali.</p>  
+  </div> 
+  <div class="content">
+  <div class="button-o"> <a href="ORDERS\doc_map_ORDERS_xml.html">ORDERS XML</a> </div>
+  <div><a href="ORDERS\tabelle_ORDERS.html">Tabelle qualificatori e valori dinamici</a></div>
+  </div>
+</div>
+<div class="container">
+  <div class="menu">
+    <h3>ORDRSP</h3>
+    <p>Messaggio usato dal fornitore per rispondere a uno o più ordini inviati da un cliente, indicando accettazione totale/parziale, modifiche o rifiuti delle righe d’ordine..</p>  
+  </div> 
+  <div class="content">
+    <div><p><em style="color: darkgray;">In arrivo:</em></p></div>
+  <button class="button-r" type="button-r" disabled>ORDRSP XML</button></div>
+  </div>
+</div>
+<div class="container">
+<div class="menu">
+  <h3>DESADV</h3>
+  <p>I Despatch Advice sono messaggi che comunicano informazioni relative ai beni spediti sotto condizioni concordate tra il compratore e il venditore al fine di informare chi riceve la spedizione del contenuto dettagliato della stessa.</p>
+</div>
+    <div class="content">
+    <div class="button-d"> <a href="DESADV\SpecificheDesadvXml_ITA.html">DESADV XML</a></div> 
+    <div class="button-d"> <a href="DESADV\doc_map_DESADV_xml_96A.html">DESADV XML e 96A</a></div>
+    <div><a href="DESADV/tabelle_DESADV.html">Tabelle qualificatori e valori dinamici</a></div>
+</div>
+</div>
+<div class="container">
   <div class="footer"><h4>Document Version: 1.0 /Release date: 07/04/2025</h4>
     <p>Per segnalazioni e richieste, <a href="mailto:m.dilembo@vargroup.it">INVIA EMAIL</mailto:></p>
   </div>
