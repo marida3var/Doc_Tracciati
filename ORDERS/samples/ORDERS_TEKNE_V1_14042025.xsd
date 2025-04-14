@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2022 (x64) (http://www.altova.com) by  (TEKNE SRL) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:cmn="http://NamespaceTest.com/CommonTypes" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:element name="ORDERS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Envelope">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Sender">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Name or coded representation of the sender of a data interchange</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="IdentificationCodeQualifier">
+														<xs:annotation>
+															<xs:documentation>Qualifier referring to the source of codes for the identifiers of interchanging partners</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="EN"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Recipient">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Name or coded representation of the recipient of a data interchange</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="IdentificationCodeQualifier">
+														<xs:annotation>
+															<xs:documentation>Qualifier referring to the source of codes for the identifiers of interchanging partners</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="EN"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SendDateTime">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Date" type="xs:date"/>
+													<xs:element name="Time" type="xs:time" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="InterchangeControlReference" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"/>
+													<xs:pattern value="[a-zA-Z0-9]+"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Message" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="MessageIdentifier" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="MessageType" minOccurs="1" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Message Type</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="ORDERS"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="MessageVersionNumber" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Message version number</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string"/>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="MessageReleaseNumber" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Message release number</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string"/>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="ControllingAgency" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Controlling agency</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string"/>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="AssociationAssignedCode" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Association assigned code</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string"/>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Document">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TypeIdentification">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="220"/>
+													<xs:enumeration value="221"/>
+													<xs:enumeration value="224"/>
+													<xs:enumeration value="226"/>
+													<xs:enumeration value="227"/>
+													<xs:enumeration value="YA9"/>
+													<xs:enumeration value="225"/>
+													<xs:enumeration value="258"/>
+													<xs:enumeration value="237"/>
+													<xs:enumeration value="400"/>
+													<xs:enumeration value="401"/>
+													<xs:enumeration value="402"/>
+													<xs:enumeration value="725"/>
+													<xs:enumeration value="726"/>
+													<xs:enumeration value="YC1"/>
+													<xs:enumeration value="YC2"/>
+													<xs:enumeration value="333"/>
+													<xs:enumeration value="310"/>
+													<xs:enumeration value="42E"/>
+													<xs:enumeration value="Ordine"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Number">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"/>
+													<xs:pattern value="[a-zA-Z0-9-._/,\s]+"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="MessageFunction">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="5"/>
+													<xs:enumeration value="9"/>
+													<xs:enumeration value="16"/>
+													<xs:enumeration value="42"/>
+													<xs:enumeration value="6"/>
+													<xs:enumeration value="7"/>
+													<xs:enumeration value="29"/>
+													<xs:enumeration value="31"/>
+													<xs:enumeration value="46"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" type="xs:date" minOccurs="1"/>
+										<xs:element name="Time" type="xs:time" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Information">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Order" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Informazioni di riferimento a livello di documento (RFF)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="OrderNumberVendor" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>N.Ordine interno del venditore </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9-._/,\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DateOrderNumberVendor" type="xs:date" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Data Ordine interno del venditore</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TimeOrderNumberVendor" type="xs:time" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Ora Ordine interno del venditore</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="OrderNumberPurchase" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Identificativo Ordine del Compratore</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9-._/,\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DateOrderNumberPurchase" type="xs:date" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Data Identificativo Ordine del Compratore</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="TimeOrderNumberPurchase" type="xs:time" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Ora Identificativo Ordine del Compratore</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OrderReference" minOccurs="0" maxOccurs="12">
+											<xs:annotation>
+												<xs:documentation>Informazioni di riferimento a livello di documento (RFF)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="OrderReferenceType" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Tipologia di riferimento ordine (qualificatore)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="AAG"/>
+																<xs:enumeration value="AAN"/>
+																<xs:enumeration value="BO"/>
+																<xs:enumeration value="CT"/>
+																<xs:enumeration value="PD"/>
+																<xs:enumeration value="CR"/>
+																<xs:enumeration value="AE"/>
+																<xs:enumeration value="AKO"/>
+																<xs:enumeration value="ANJ"/>
+																<xs:enumeration value="IP"/>
+																<xs:enumeration value="PL"/>
+																<xs:enumeration value="UC"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OrderReferenceNumber" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Numero di riferimento</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9-._/,\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OrderReferenceDate" minOccurs="0" maxOccurs="3">
+														<xs:annotation>
+															<xs:documentation>Informazioni di riferimento data</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="TypeDate" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Tipologia di data (qualificatore)</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="157"/>
+																			<xs:enumeration value="171"/>
+																			<xs:enumeration value="21E"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="ReferenceDate" type="xs:date" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Data</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ReferenceTime" type="xs:time" minOccurs="0" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Ora</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Supplier" minOccurs="1" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Informazioni sul fornitore (NAD 3035 = SU)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PartyType">
+														<xs:annotation>
+															<xs:documentation>Party type (SU)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="SU"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Codice identificativo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CodeListQualifier">
+														<xs:annotation>
+															<xs:documentation>Tipo codice</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="IT"/>
+																<xs:enumeration value="IA"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="VA"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ragione sociale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="175"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Address" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="140"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="City" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Città</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CountrySubEntity" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Provincia</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Postcode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CAP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nazione</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
+														<xs:annotation>
+															<xs:documentation>Riferimenti Contatti</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="Contactfunction" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="AP"/>
+																			<xs:enumeration value="IC"/>
+																			<xs:enumeration value="OC"/>
+																			<xs:enumeration value="SA"/>
+																			<xs:enumeration value="SD"/>
+																			<xs:enumeration value="BJ"/>
+																			<xs:enumeration value="BO"/>
+																			<xs:enumeration value="PD"/>
+																			<xs:enumeration value="SR"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DepartmentOrEmployee" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="35"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telephone" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Fax" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telex" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Email" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="70"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="X400" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="URL" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Buyer" minOccurs="1" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Informazioni sul buyer (NAD 3035 = BY)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PartyType">
+														<xs:annotation>
+															<xs:documentation>Party type (BY)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="BY"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Codice identificativo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CodeListQualifier">
+														<xs:annotation>
+															<xs:documentation>Tipo codice</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="IT"/>
+																<xs:enumeration value="IA"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="VA"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ragione sociale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="175"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Address" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="140"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="City" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Città</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CountrySubEntity" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Provincia</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Postcode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CAP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nazione</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
+														<xs:annotation>
+															<xs:documentation>Riferimenti Contatti</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="Contactfunction" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="AP"/>
+																			<xs:enumeration value="IC"/>
+																			<xs:enumeration value="OC"/>
+																			<xs:enumeration value="SA"/>
+																			<xs:enumeration value="SD"/>
+																			<xs:enumeration value="BJ"/>
+																			<xs:enumeration value="BO"/>
+																			<xs:enumeration value="PD"/>
+																			<xs:enumeration value="SR"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DepartmentOrEmployee" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="35"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telephone" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Fax" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telex" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Email" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="70"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="X400" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="URL" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DeliveryPoint" minOccurs="1" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Informazioni Punto di Consegna (NAD 3035 = DP)</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PartyType">
+														<xs:annotation>
+															<xs:documentation>Party type (DP)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="DP"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Codice identificativo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CodeListQualifier">
+														<xs:annotation>
+															<xs:documentation>Tipo codice</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="IT"/>
+																<xs:enumeration value="IA"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="VA"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ragione sociale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="175"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Address" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="140"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="City" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Città</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CountrySubEntity" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Provincia</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Postcode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CAP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nazione</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
+														<xs:annotation>
+															<xs:documentation>Riferimenti Contatti</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="Contactfunction" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="AP"/>
+																			<xs:enumeration value="IC"/>
+																			<xs:enumeration value="OC"/>
+																			<xs:enumeration value="SA"/>
+																			<xs:enumeration value="SD"/>
+																			<xs:enumeration value="BJ"/>
+																			<xs:enumeration value="BO"/>
+																			<xs:enumeration value="PD"/>
+																			<xs:enumeration value="SR"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DepartmentOrEmployee" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="35"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telephone" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Fax" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telex" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Email" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="70"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="X400" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="URL" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OtherParty" minOccurs="0" maxOccurs="9">
+											<xs:annotation>
+												<xs:documentation>Informazioni sulle altri parti coinvolte</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PartyType">
+														<xs:annotation>
+															<xs:documentation>Party type</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="IV"/>
+																<xs:enumeration value="LSP"/>
+																<xs:enumeration value="PW"/>
+																<xs:enumeration value="UC"/>
+																<xs:enumeration value="BF"/>
+																<xs:enumeration value="DL"/>
+																<xs:enumeration value="CO"/>
+																<xs:enumeration value="SN"/>
+																<xs:enumeration value="SR"/>
+																<xs:enumeration value="WH"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Identification">
+														<xs:annotation>
+															<xs:documentation>Codice identificativo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CodeListQualifier">
+														<xs:annotation>
+															<xs:documentation>Tipo codice</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="IT"/>
+																<xs:enumeration value="IA"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="VA"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ragione sociale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="175"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Address" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="140"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="City" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Città</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CountrySubEntity" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Provincia</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Postcode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CAP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nazione</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
+														<xs:annotation>
+															<xs:documentation>Riferimenti Contatti</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="Contactfunction" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="AP"/>
+																			<xs:enumeration value="IC"/>
+																			<xs:enumeration value="OC"/>
+																			<xs:enumeration value="SA"/>
+																			<xs:enumeration value="SD"/>
+																			<xs:enumeration value="BJ"/>
+																			<xs:enumeration value="BO"/>
+																			<xs:enumeration value="PD"/>
+																			<xs:enumeration value="SR"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="DepartmentOrEmployee" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="35"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telephone" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Fax" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Telex" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="25"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Email" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="70"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="X400" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="URL" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="512"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DateOfDelivery" minOccurs="1" maxOccurs="5">
+											<xs:annotation>
+												<xs:documentation>Informazioni sulla data di consegna</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Date" type="xs:date" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Data consegna merce</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Time" type="xs:time" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ora consegna merce</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="DateType" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Tipo data di consegna</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="63"/>
+																<xs:enumeration value="64"/>
+																<xs:enumeration value="69"/>
+																<xs:enumeration value="76"/>
+																<xs:enumeration value="10"/>
+																<xs:enumeration value="11"/>
+																<xs:enumeration value="15"/>
+																<xs:enumeration value="37"/>
+																<xs:enumeration value="38"/>
+																<xs:enumeration value="61"/>
+																<xs:enumeration value="200"/>
+																<xs:enumeration value="235"/>
+																<xs:enumeration value="263"/>
+																<xs:enumeration value="273"/>
+																<xs:enumeration value="282"/>
+																<xs:enumeration value="383"/>
+																<xs:enumeration value="X14"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Various" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="NoteType" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="DIN"/>
+																<xs:enumeration value="IN"/>
+																<xs:enumeration value="PUR"/>
+																<xs:enumeration value="PRD"/>
+																<xs:enumeration value="ZZZ"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Note">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="350"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,:!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CurrencyInfo" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="Currency" type="xs:string" minOccurs="0"/>
+													<xs:element name="UnitMonetaryType">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="4"/>
+																<xs:enumeration value="9"/>
+																<xs:enumeration value="10"/>
+																<xs:enumeration value="11"/>
+																<xs:enumeration value="12"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Detail">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Product" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Item" minOccurs="1" maxOccurs="2">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PrimaryItem" type="xs:boolean"/>
+													<xs:element name="RowNumber" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Numero progressivo riga</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="6"/>
+																<xs:pattern value="[0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ItemType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CU/TU</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="CU"/>
+																<xs:enumeration value="TU"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Description" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Descrizione articolo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="175"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="AdditionalIdentification" minOccurs="0" maxOccurs="3">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ItemNumber" minOccurs="1" maxOccurs="1">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="35"/>
+																			<xs:pattern value="[a-zA-Z0-9/\\\- ]*"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="ItemTypeIdentificationCode" minOccurs="1" maxOccurs="1">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="EN"/>
+																			<xs:enumeration value="SA"/>
+																			<xs:enumeration value="IN"/>
+																			<xs:enumeration value="UP"/>
+																			<xs:enumeration value="DW"/>
+																			<xs:enumeration value="IB"/>
+																			<xs:enumeration value="UA"/>
+																			<xs:enumeration value="AC"/>
+																			<xs:enumeration value="EWC"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Quantity" minOccurs="0" maxOccurs="9">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="QuantityQualifier" minOccurs="1" maxOccurs="1">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="21"/>
+																			<xs:enumeration value="59"/>
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="52"/>
+																			<xs:enumeration value="164"/>
+																			<xs:enumeration value="192"/>
+																			<xs:enumeration value="246"/>
+																			<xs:enumeration value="17E"/>
+																			<xs:enumeration value="45E"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Quantity" type="xs:decimal" minOccurs="1" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Totale Quantità ordinata espressa in TU fornitore</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MeasureUnitQualifier" minOccurs="1" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Unità di misura della quantità ordinata</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="PCE"/>
+																			<xs:enumeration value="KGM"/>
+																			<xs:enumeration value="CMT"/>
+																			<xs:enumeration value="GRM"/>
+																			<xs:enumeration value="LTR"/>
+																			<xs:enumeration value="MLT"/>
+																			<xs:enumeration value="MTR"/>
+																			<xs:enumeration value="MTK"/>
+																			<xs:enumeration value="CT"/>
+																			<xs:enumeration value="CU"/>
+																			<xs:enumeration value="TU"/>
+																			<xs:enumeration value="PF"/>
+																			<xs:enumeration value="BL"/>
+																			<xs:enumeration value="P1"/>
+																			<xs:enumeration value="BX"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Price" minOccurs="0" maxOccurs="2">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="PriceQualifier">
+																	<xs:annotation>
+																		<xs:documentation>Qualificatore (lordo/netto)</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="NETTO"/>
+																			<xs:enumeration value="LORDO"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Price">
+																	<xs:annotation>
+																		<xs:documentation>Prezzo</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:pattern value="[\-]?[0-9]{1,11}\.[0-9]{1,3}"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="PriceType" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Tipo prezzo</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="CT"/>
+																			<xs:enumeration value="AE"/>
+																			<xs:enumeration value="CA"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="PromotionalPrice" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Prezzo promozionale</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MeasureUnitQualifier">
+																	<xs:annotation>
+																		<xs:documentation>Unità di misura del prezzo unitario</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="CMT"/>
+																			<xs:enumeration value="GRM"/>
+																			<xs:enumeration value="KGM"/>
+																			<xs:enumeration value="LTR"/>
+																			<xs:enumeration value="MLT"/>
+																			<xs:enumeration value="MTR"/>
+																			<xs:enumeration value="PCE"/>
+																			<xs:enumeration value="P1"/>
+																			<xs:enumeration value="CT"/>
+																			<xs:enumeration value="CU"/>
+																			<xs:enumeration value="TU"/>
+																			<xs:enumeration value="PF"/>
+																			<xs:enumeration value="BL"/>
+																			<xs:enumeration value="P1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TotalNumberPriceUnit" type="xs:decimal" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="DateOfDelivery" minOccurs="0" maxOccurs="5">
+											<xs:annotation>
+												<xs:documentation>Informazioni sulla data di consegna</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Date" type="xs:date" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Data consegna merce</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Time" type="xs:time" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ora consegna merce</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="DateType" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Tipo data di consegna</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="63"/>
+																<xs:enumeration value="64"/>
+																<xs:enumeration value="69"/>
+																<xs:enumeration value="76"/>
+																<xs:enumeration value="11"/>
+																<xs:enumeration value="10"/>
+																<xs:enumeration value="15"/>
+																<xs:enumeration value="61"/>
+																<xs:enumeration value="100"/>
+																<xs:enumeration value="200"/>
+																<xs:enumeration value="361"/>
+																<xs:enumeration value="364"/>
+																<xs:enumeration value="754"/>
+																<xs:enumeration value="X14"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ItemInfo" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="ItemRefeferenceType">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="PD"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ItemReferenceNumber" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="PlaceLocationIdentification" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Identification" minOccurs="1">
+														<xs:annotation>
+															<xs:documentation>Codice identificativo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="25"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CodeListQualifier">
+														<xs:annotation>
+															<xs:documentation>Tipo codice</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="14"/>
+																<xs:enumeration value="ZZ"/>
+																<xs:enumeration value="91"/>
+																<xs:enumeration value="92"/>
+																<xs:enumeration value="VA"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Ragione sociale</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="70"/>
+																<xs:pattern value="[a-zA-Z0-9-.,!?'\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Address" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="70"/>
+																<xs:pattern value="[a-zA-Z0-9-.,!?'\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="City" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Città</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"/>
+																<xs:pattern value="[a-zA-Z0-9-.,!?'\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CountrySubEntity" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Provincia</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Postcode" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>CAP</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="9"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Nazione</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[a-zA-Z0-9]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Quantity" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Quantity" type="xs:decimal">
+																	<xs:annotation>
+																		<xs:documentation>Quantità</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MeasureUnitQualifier">
+																	<xs:annotation>
+																		<xs:documentation>Unità di misura della quantità</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="PCE"/>
+																			<xs:enumeration value="CT"/>
+																			<xs:enumeration value="KGM"/>
+																			<xs:enumeration value="MTR"/>
+																			<xs:enumeration value="MTK"/>
+																			<xs:enumeration value="LTR"/>
+																			<xs:enumeration value="CU"/>
+																			<xs:enumeration value="TU"/>
+																			<xs:enumeration value="CMT"/>
+																			<xs:enumeration value="GRM"/>
+																			<xs:enumeration value="MLT"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ReferenceDate" minOccurs="0" maxOccurs="18">
+														<xs:annotation>
+															<xs:documentation>Data</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="DateType" minOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Tipo data</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="002"/>
+																			<xs:enumeration value="10"/>
+																			<xs:enumeration value="11"/>
+																			<xs:enumeration value="61"/>
+																			<xs:enumeration value="063"/>
+																			<xs:enumeration value="064"/>
+																			<xs:enumeration value="069"/>
+																			<xs:enumeration value="200"/>
+																			<xs:enumeration value="364"/>
+																			<xs:enumeration value="X14"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Date" type="xs:date" minOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Data consegna merce</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Time" type="xs:time" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Ora consegna merce</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ToDate" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>A Data consegna merce</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FormatQualifier" minOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Data consegna merce</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="102"/>
+																			<xs:enumeration value="203"/>
+																			<xs:enumeration value="718"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Various" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Note">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="350"/>
+																<xs:pattern value="[a-zA-Z0-9\-.,:!?/_'&amp;\\(\)\s]+"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Summary" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CheckInfo" minOccurs="0" maxOccurs="8">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ControlQualifier">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="1"/>
+													<xs:enumeration value="2"/>
+													<xs:enumeration value="11"/>
+													<xs:enumeration value="7"/>
+													<xs:enumeration value="10"/>
+													<xs:enumeration value="15"/>
+													<xs:enumeration value="16"/>
+													<xs:enumeration value="29"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ControlValue" type="xs:string"/>
+										<xs:element name="MeasureUnitQualifier" minOccurs="0" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Unità di misura della quantità ordinata</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="PCE"/>
+													<xs:enumeration value="KGM"/>
+													<xs:enumeration value="CMT"/>
+													<xs:enumeration value="GRM"/>
+													<xs:enumeration value="LTR"/>
+													<xs:enumeration value="MLT"/>
+													<xs:enumeration value="MTR"/>
+													<xs:enumeration value="MTK"/>
+													<xs:enumeration value="CT"/>
+													<xs:enumeration value="CU"/>
+													<xs:enumeration value="TU"/>
+													<xs:enumeration value="P1"/>
+													<xs:enumeration value="BX"/>
+													<xs:enumeration value="BLI"/>
+													<xs:enumeration value="PL"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
