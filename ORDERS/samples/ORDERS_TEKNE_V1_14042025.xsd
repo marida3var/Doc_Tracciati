@@ -145,6 +145,9 @@
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="TypeIdentification">
+										<xs:annotation>
+											<xs:documentation>Document Identification Type</xs:documentation>
+										</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:enumeration value="220"/>
@@ -171,6 +174,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="Number">
+										<xs:annotation>
+											<xs:documentation>Document Identification Number</xs:documentation>
+										</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="35"/>
@@ -179,6 +185,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="MessageFunction">
+										<xs:annotation>
+											<xs:documentation>The function for this message</xs:documentation>
+										</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:enumeration value="5"/>
@@ -203,13 +212,13 @@
 									<xs:sequence>
 										<xs:element name="Order" minOccurs="0">
 											<xs:annotation>
-												<xs:documentation>Informazioni di riferimento a livello di documento (RFF)</xs:documentation>
+												<xs:documentation>Document-level reference information (RFF)</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence minOccurs="0">
 													<xs:element name="OrderNumberVendor" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>N.Ordine interno del venditore </xs:documentation>
+															<xs:documentation>Seller's internal order number</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -220,17 +229,17 @@
 													</xs:element>
 													<xs:element name="DateOrderNumberVendor" type="xs:date" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Data Ordine interno del venditore</xs:documentation>
+															<xs:documentation>Seller internal Order Date</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="TimeOrderNumberVendor" type="xs:time" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Ora Ordine interno del venditore</xs:documentation>
+															<xs:documentation>Seller internal Order Time</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="OrderNumberPurchase" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Identificativo Ordine del Compratore</xs:documentation>
+															<xs:documentation>Buyer Order ID</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -241,12 +250,12 @@
 													</xs:element>
 													<xs:element name="DateOrderNumberPurchase" type="xs:date" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Data Identificativo Ordine del Compratore</xs:documentation>
+															<xs:documentation>Buyer Order Identification Date</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="TimeOrderNumberPurchase" type="xs:time" minOccurs="0" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Ora Identificativo Ordine del Compratore</xs:documentation>
+															<xs:documentation>Buyer Order Identification Time</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
@@ -254,13 +263,13 @@
 										</xs:element>
 										<xs:element name="OrderReference" minOccurs="0" maxOccurs="12">
 											<xs:annotation>
-												<xs:documentation>Informazioni di riferimento a livello di documento (RFF)</xs:documentation>
+												<xs:documentation>Document-level reference information (RFF)</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence minOccurs="0">
 													<xs:element name="OrderReferenceType" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Tipologia di riferimento ordine (qualificatore)</xs:documentation>
+															<xs:documentation>Order Reference Type (Qualifier)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -281,7 +290,7 @@
 													</xs:element>
 													<xs:element name="OrderReferenceNumber" maxOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Numero di riferimento</xs:documentation>
+															<xs:documentation>Reference number</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -292,13 +301,13 @@
 													</xs:element>
 													<xs:element name="OrderReferenceDate" minOccurs="0" maxOccurs="3">
 														<xs:annotation>
-															<xs:documentation>Informazioni di riferimento data</xs:documentation>
+															<xs:documentation>Reference information date</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence minOccurs="0">
 																<xs:element name="TypeDate" maxOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Tipologia di data (qualificatore)</xs:documentation>
+																		<xs:documentation>Date type (qualifier)</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -310,12 +319,12 @@
 																</xs:element>
 																<xs:element name="ReferenceDate" type="xs:date" maxOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Data</xs:documentation>
+																		<xs:documentation>Date</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="ReferenceTime" type="xs:time" minOccurs="0" maxOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Ora</xs:documentation>
+																		<xs:documentation>Time</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 															</xs:sequence>
@@ -326,7 +335,7 @@
 										</xs:element>
 										<xs:element name="Supplier" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Informazioni sul fornitore (NAD 3035 = SU)</xs:documentation>
+												<xs:documentation>Supplier information (NAD 3035 = SU)</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -342,7 +351,7 @@
 													</xs:element>
 													<xs:element name="Identification">
 														<xs:annotation>
-															<xs:documentation>Codice identificativo</xs:documentation>
+															<xs:documentation>Supplier Identification Code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -353,7 +362,7 @@
 													</xs:element>
 													<xs:element name="CodeListQualifier">
 														<xs:annotation>
-															<xs:documentation>Tipo codice</xs:documentation>
+															<xs:documentation>Code Type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -367,7 +376,7 @@
 													</xs:element>
 													<xs:element name="Name" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ragione sociale</xs:documentation>
+															<xs:documentation>Supplier legal name</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -378,7 +387,7 @@
 													</xs:element>
 													<xs:element name="Address" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+															<xs:documentation>Supplier address (street and number)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -389,7 +398,7 @@
 													</xs:element>
 													<xs:element name="City" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Città</xs:documentation>
+															<xs:documentation>Supplier city</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -400,7 +409,7 @@
 													</xs:element>
 													<xs:element name="CountrySubEntity" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Provincia</xs:documentation>
+															<xs:documentation>Province</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -411,7 +420,7 @@
 													</xs:element>
 													<xs:element name="Postcode" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>CAP</xs:documentation>
+															<xs:documentation>Postal Code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -422,7 +431,7 @@
 													</xs:element>
 													<xs:element name="Country" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Nazione</xs:documentation>
+															<xs:documentation>Supplier country</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -433,7 +442,7 @@
 													</xs:element>
 													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
 														<xs:annotation>
-															<xs:documentation>Riferimenti Contatti</xs:documentation>
+															<xs:documentation>Contact references</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence minOccurs="0">
@@ -509,7 +518,7 @@
 										</xs:element>
 										<xs:element name="Buyer" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Informazioni sul buyer (NAD 3035 = BY)</xs:documentation>
+												<xs:documentation>Buyer Information (NAD 3035 = BY)</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -525,7 +534,7 @@
 													</xs:element>
 													<xs:element name="Identification">
 														<xs:annotation>
-															<xs:documentation>Codice identificativo</xs:documentation>
+															<xs:documentation>Buyer identification code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -536,7 +545,7 @@
 													</xs:element>
 													<xs:element name="CodeListQualifier">
 														<xs:annotation>
-															<xs:documentation>Tipo codice</xs:documentation>
+															<xs:documentation>Code type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -550,7 +559,7 @@
 													</xs:element>
 													<xs:element name="Name" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ragione sociale</xs:documentation>
+															<xs:documentation>Buyer legal name</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -561,7 +570,7 @@
 													</xs:element>
 													<xs:element name="Address" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+															<xs:documentation>Buyer address (street and number)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -572,7 +581,7 @@
 													</xs:element>
 													<xs:element name="City" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Città</xs:documentation>
+															<xs:documentation>Buyer city</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -583,7 +592,7 @@
 													</xs:element>
 													<xs:element name="CountrySubEntity" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Provincia</xs:documentation>
+															<xs:documentation>Province</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -594,7 +603,7 @@
 													</xs:element>
 													<xs:element name="Postcode" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>CAP</xs:documentation>
+															<xs:documentation>Postal code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -605,7 +614,7 @@
 													</xs:element>
 													<xs:element name="Country" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Nazione</xs:documentation>
+															<xs:documentation>Country</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -616,7 +625,7 @@
 													</xs:element>
 													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
 														<xs:annotation>
-															<xs:documentation>Riferimenti Contatti</xs:documentation>
+															<xs:documentation>Contact references</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence minOccurs="0">
@@ -692,7 +701,7 @@
 										</xs:element>
 										<xs:element name="DeliveryPoint" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Informazioni Punto di Consegna (NAD 3035 = DP)</xs:documentation>
+												<xs:documentation>Delivery Point Information (NAD 3035 = DP)</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -708,7 +717,7 @@
 													</xs:element>
 													<xs:element name="Identification">
 														<xs:annotation>
-															<xs:documentation>Codice identificativo</xs:documentation>
+															<xs:documentation>Delivery Point identification code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -719,7 +728,7 @@
 													</xs:element>
 													<xs:element name="CodeListQualifier">
 														<xs:annotation>
-															<xs:documentation>Tipo codice</xs:documentation>
+															<xs:documentation>Code type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -733,7 +742,7 @@
 													</xs:element>
 													<xs:element name="Name" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ragione sociale</xs:documentation>
+															<xs:documentation>Delivery Point legal name</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -744,7 +753,7 @@
 													</xs:element>
 													<xs:element name="Address" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+															<xs:documentation>Delivery Point address (street and number)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -755,7 +764,7 @@
 													</xs:element>
 													<xs:element name="City" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Città</xs:documentation>
+															<xs:documentation>City</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -766,7 +775,7 @@
 													</xs:element>
 													<xs:element name="CountrySubEntity" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Provincia</xs:documentation>
+															<xs:documentation>Province</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -777,7 +786,7 @@
 													</xs:element>
 													<xs:element name="Postcode" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>CAP</xs:documentation>
+															<xs:documentation>Postal codeP</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -788,7 +797,7 @@
 													</xs:element>
 													<xs:element name="Country" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Nazione</xs:documentation>
+															<xs:documentation>Country</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -799,7 +808,7 @@
 													</xs:element>
 													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
 														<xs:annotation>
-															<xs:documentation>Riferimenti Contatti</xs:documentation>
+															<xs:documentation>Contact references</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence minOccurs="0">
@@ -875,7 +884,7 @@
 										</xs:element>
 										<xs:element name="OtherParty" minOccurs="0" maxOccurs="9">
 											<xs:annotation>
-												<xs:documentation>Informazioni sulle altri parti coinvolte</xs:documentation>
+												<xs:documentation>Information about other parties involved</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -900,7 +909,7 @@
 													</xs:element>
 													<xs:element name="Identification">
 														<xs:annotation>
-															<xs:documentation>Codice identificativo</xs:documentation>
+															<xs:documentation>Identification code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -911,7 +920,7 @@
 													</xs:element>
 													<xs:element name="CodeListQualifier">
 														<xs:annotation>
-															<xs:documentation>Tipo codice</xs:documentation>
+															<xs:documentation>Code type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -926,7 +935,7 @@
 													</xs:element>
 													<xs:element name="Name" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ragione sociale</xs:documentation>
+															<xs:documentation>Legal name</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -937,7 +946,7 @@
 													</xs:element>
 													<xs:element name="Address" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+															<xs:documentation>Address (street and number)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -948,7 +957,7 @@
 													</xs:element>
 													<xs:element name="City" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Città</xs:documentation>
+															<xs:documentation>City</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -959,7 +968,7 @@
 													</xs:element>
 													<xs:element name="CountrySubEntity" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Provincia</xs:documentation>
+															<xs:documentation>Province</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -970,7 +979,7 @@
 													</xs:element>
 													<xs:element name="Postcode" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>CAP</xs:documentation>
+															<xs:documentation>Postal code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -981,7 +990,7 @@
 													</xs:element>
 													<xs:element name="Country" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Nazione</xs:documentation>
+															<xs:documentation>Country</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -992,7 +1001,7 @@
 													</xs:element>
 													<xs:element name="ContactReference" minOccurs="0" maxOccurs="5">
 														<xs:annotation>
-															<xs:documentation>Riferimenti Contatti</xs:documentation>
+															<xs:documentation>Contact references</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence minOccurs="0">
@@ -1068,23 +1077,23 @@
 										</xs:element>
 										<xs:element name="DateOfDelivery" minOccurs="1" maxOccurs="5">
 											<xs:annotation>
-												<xs:documentation>Informazioni sulla data di consegna</xs:documentation>
+												<xs:documentation>Delivery date information</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="Date" type="xs:date" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Data consegna merce</xs:documentation>
+															<xs:documentation>Date of delivery of goods</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="Time" type="xs:time" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ora consegna merce</xs:documentation>
+															<xs:documentation>Time of delivery of goods</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="DateType" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Tipo data di consegna</xs:documentation>
+															<xs:documentation>Delivery date type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1173,7 +1182,7 @@
 													<xs:element name="PrimaryItem" type="xs:boolean"/>
 													<xs:element name="RowNumber" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Numero progressivo riga</xs:documentation>
+															<xs:documentation>Progressive line number</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1195,7 +1204,7 @@
 													</xs:element>
 													<xs:element name="Description" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Descrizione articolo</xs:documentation>
+															<xs:documentation>Item Description</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1253,12 +1262,12 @@
 																</xs:element>
 																<xs:element name="Quantity" type="xs:decimal" minOccurs="1" maxOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Totale Quantità ordinata espressa in TU fornitore</xs:documentation>
+																		<xs:documentation>Total Quantity ordered expressed in supplier TU</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="MeasureUnitQualifier" minOccurs="1" maxOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Unità di misura della quantità ordinata</xs:documentation>
+																		<xs:documentation>Unit of measurement of the quantity ordered</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1288,7 +1297,7 @@
 															<xs:sequence>
 																<xs:element name="PriceQualifier">
 																	<xs:annotation>
-																		<xs:documentation>Qualificatore (lordo/netto)</xs:documentation>
+																		<xs:documentation>Price Qualifier (lordo/netto)</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1299,7 +1308,7 @@
 																</xs:element>
 																<xs:element name="Price">
 																	<xs:annotation>
-																		<xs:documentation>Prezzo</xs:documentation>
+																		<xs:documentation>Price value</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:decimal">
@@ -1309,7 +1318,7 @@
 																</xs:element>
 																<xs:element name="PriceType" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>Tipo prezzo</xs:documentation>
+																		<xs:documentation>Price type</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1321,12 +1330,12 @@
 																</xs:element>
 																<xs:element name="PromotionalPrice" type="xs:boolean" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>Prezzo promozionale</xs:documentation>
+																		<xs:documentation>Promotional price</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="MeasureUnitQualifier">
 																	<xs:annotation>
-																		<xs:documentation>Unità di misura del prezzo unitario</xs:documentation>
+																		<xs:documentation>Unit of measurement of unit price</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1356,23 +1365,23 @@
 										</xs:element>
 										<xs:element name="DateOfDelivery" minOccurs="0" maxOccurs="5">
 											<xs:annotation>
-												<xs:documentation>Informazioni sulla data di consegna</xs:documentation>
+												<xs:documentation>Delivery date information</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="Date" type="xs:date" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Data consegna merce</xs:documentation>
+															<xs:documentation>Date of delivery of goods</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="Time" type="xs:time" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ora consegna merce</xs:documentation>
+															<xs:documentation>Time of deliver of goods</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="DateType" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Tipo data di consegna</xs:documentation>
+															<xs:documentation>Delivery date type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1422,7 +1431,7 @@
 												<xs:sequence>
 													<xs:element name="Identification" minOccurs="1">
 														<xs:annotation>
-															<xs:documentation>Codice identificativo</xs:documentation>
+															<xs:documentation>Identification code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1433,7 +1442,7 @@
 													</xs:element>
 													<xs:element name="CodeListQualifier">
 														<xs:annotation>
-															<xs:documentation>Tipo codice</xs:documentation>
+															<xs:documentation>Code type</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1447,7 +1456,7 @@
 													</xs:element>
 													<xs:element name="Name" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Ragione sociale</xs:documentation>
+															<xs:documentation>Legal name</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1458,7 +1467,7 @@
 													</xs:element>
 													<xs:element name="Address" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Indirizzo (via e numero)</xs:documentation>
+															<xs:documentation>Address (street and number)</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1469,7 +1478,7 @@
 													</xs:element>
 													<xs:element name="City" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Città</xs:documentation>
+															<xs:documentation>City</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1480,7 +1489,7 @@
 													</xs:element>
 													<xs:element name="CountrySubEntity" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Provincia</xs:documentation>
+															<xs:documentation>Province</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1491,7 +1500,7 @@
 													</xs:element>
 													<xs:element name="Postcode" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>CAP</xs:documentation>
+															<xs:documentation>Postal code</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1502,7 +1511,7 @@
 													</xs:element>
 													<xs:element name="Country" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>Nazione</xs:documentation>
+															<xs:documentation>COuntry</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -1516,12 +1525,12 @@
 															<xs:sequence>
 																<xs:element name="Quantity" type="xs:decimal">
 																	<xs:annotation>
-																		<xs:documentation>Quantità</xs:documentation>
+																		<xs:documentation>Quantity value</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="MeasureUnitQualifier">
 																	<xs:annotation>
-																		<xs:documentation>Unità di misura della quantità</xs:documentation>
+																		<xs:documentation>Unit of measurement of quantity</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1544,13 +1553,13 @@
 													</xs:element>
 													<xs:element name="ReferenceDate" minOccurs="0" maxOccurs="18">
 														<xs:annotation>
-															<xs:documentation>Data</xs:documentation>
+															<xs:documentation>Date</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="DateType" minOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Tipo data</xs:documentation>
+																		<xs:documentation>Date type</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1569,22 +1578,22 @@
 																</xs:element>
 																<xs:element name="Date" type="xs:date" minOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Data consegna merce</xs:documentation>
+																		<xs:documentation>Date of delivery of goods</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="Time" type="xs:time" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>Ora consegna merce</xs:documentation>
+																		<xs:documentation>Time of delivery of goods</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="ToDate" type="xs:date" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>A Data consegna merce</xs:documentation>
+																		<xs:documentation>Deadline of delivery of goods</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="FormatQualifier" minOccurs="1">
 																	<xs:annotation>
-																		<xs:documentation>Data consegna merce</xs:documentation>
+																		<xs:documentation>Qualifier for the Date of delivery of goods</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -1643,7 +1652,7 @@
 										<xs:element name="ControlValue" type="xs:string"/>
 										<xs:element name="MeasureUnitQualifier" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Unità di misura della quantità ordinata</xs:documentation>
+												<xs:documentation>Unit of measurement of the quantity ordered</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
