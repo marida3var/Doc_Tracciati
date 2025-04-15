@@ -30,11 +30,13 @@
 
           .d {
             background-color: rgb(193, 236, 248);
-            font-size: small;
+            justify-content: space-evenly;
+            word-wrap: break-word;
           }
           .e {
             background-color: rgb(240, 238, 238);
-            font-size: small;
+            justify-content: space-evenly;
+            word-wrap: break-word;
           }
           .f {
             color: #182dce
@@ -127,7 +129,7 @@
         <br>/DESADV/Header/Envelope/Sender</td>
         <td>Il Mittente del DESADV</td>
         <td>Complex Type</td>
-        <td></td>
+        <td class="f"><b>S002</b> Interchange Sender</td>
         <td rowspan="11">UNB+UNOA:1+CODICE MITTENTE:ZZ+CODICE DESTINATARIO:ZZ+200207:1456+9827++DESADV'</td>
       </tr>
       <tr>
@@ -136,7 +138,7 @@
         <br>/DESADV/Header/Envelope/Sender/Identification</td>
         <td>Identificazione del Mittente</td>
         <td>Stringa alfanumerica di massimo 35 caratteri</td>
-        <td></td>
+        <td class="f">0004 - Identificazione del Mittente</td>
       </tr>
       <tr>
         <td>6</td>
@@ -144,8 +146,7 @@
         <br>/DESADV/Header/Envelope/Sender/IdentificationCodeQualifier</td>
         <td> Codice identificativo del Mittente</td>
         <td><a href="tabelle_DESADV.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
-        <td class="f">1131 Identificatore lista di codici, codificato
-          <br>3055 Agenzia responsabile lista codici, codificato (9=EAN)</td>
+        <td class="f">0007 Partner identification code qualifier</td>
       </tr>
       <tr>
         <td>7</td>
@@ -153,6 +154,7 @@
         <br>/DESADV/Header/Envelope/Recipient</td>
         <td>Il Destinatario del DESADV</td>
         <td>Complex Type</td>
+        <td class="f"><b>S003</b> Il destinatario dell'interscambio</td>
       </tr>
       <tr>
         <td>8</td>
@@ -160,6 +162,7 @@
         <br>/DESADV/Header/Envelope/Recipient/Identification</td>
         <td>Identificazione del Destinatario</td>
         <td>Stringa alfanumerica di massimo 35 caratteri</td>
+        <td class="f">0010 - Interchange recipient identification</td>
       </tr>
       <tr>
         <td>9</td>
@@ -167,8 +170,7 @@
         <br>/DESADV/Header/Envelope/Recipient/IdentificationCodeQualifier</td>
         <td>Codice identificativo del Destinatario</td>
         <td><a href="tabelle_DESADV.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
-        <td class="f">1131 Identificatore lista di codici, codificato
-          <br>3055 Agenzia responsabile lista codici, codificato (9=EAN)</td>
+        <td class="f">0007 Partner identification code qualifier</td>
       </tr>
       <tr>
         <td>10</td>
@@ -176,6 +178,7 @@
         <br>/DESADV/Header/Envelope/SendDateTime</td>
         <td>Data e Ora di Invio Messaggio</td>
         <td>Complex Type</td>
+        <td class="f"><b>S004</b> Data e ora in cui il mittente prepara il messaggio</td>
       </tr>
       <tr>
         <td>11</td>
@@ -183,6 +186,7 @@
         <br>/DESADV/Header/Envelope/SendDateTime/Date</td>
         <td>Data Invio Messaggio</td>
         <td>Formato Data</td>
+        <td class="f">0017 - Obbligatorio 6 caratteri numerici</td>
       </tr>
       <tr>
         <td>12</td>
@@ -190,6 +194,7 @@
         <br>/DESADV/Header/Envelope/SendDateTime/Time</td>
         <td>Ora Invio Messaggio</td>
         <td>Formato Ora</td>
+        <td class="f">0019 - Obbligatorio 4 caratteri numerici</td>
       </tr>
       <tr>
         <td>13</td>
@@ -197,6 +202,7 @@
         <br>/DESADV/Header/Envelope/InterchangeControlReference</td>
         <td>Riferimento al controllo degli scambi</td>
         <td>Stringa alfanumerica di massimo 35 caratteri</td>
+        <td class="f">0020 - Riferiemento univoco dell'interscambio, creato dal Mittente.</td>
       </tr>
       <tr>
         <td>14</td>
@@ -204,6 +210,7 @@
         <br>/DESADV/Header/Envelope/MessageType</td>
         <td>Tipo di Messaggio</td>
         <td>Valore Fisso: DESADV</td>
+        <td class="f">0065 - Obbligatorio 6 caratteri alfanumerici</td>
       </tr>
       <tr>
         <td>15</td>
