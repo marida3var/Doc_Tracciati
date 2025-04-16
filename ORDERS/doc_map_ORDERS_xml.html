@@ -18,7 +18,7 @@
 					}
 					th, td {
 						border: 1px solid black;
-                        text-align: left;
+            text-align: left;
 						padding: 10px;
                        
 					}
@@ -177,14 +177,14 @@
       <tr>
         <td>15</td>
         <td class="e"><b>MessageIdentifier</b><br>/ORDERS/Header/Envelope/Message/MessageIdentifier</td>
-        <td> Identificativo del Messaggio</td>
+        <td>Identificativo del Messaggio</td>
         <td>Complex Type</td>
       </tr>
       <tr>
         <td>16</td>
         <td class="e"><b>MessageType</b><br>/ORDERS/Header/Envelope/Message/MessageIdentifier/MessageType</td>
         <td>Tipo di Messaggio</td>
-        <td>Valore Fisso: ORDERS</td>
+        <td>Valore Fisso: <b>ORDERS</b></td>
       </tr>
       <tr>
         <td>17</td>
@@ -567,7 +567,7 @@
       <tr>
         <td>80</td>
         <td class="e"><b>DeliveryPoint</b><br>/ORDERS/Header/Information/DeliveryPoint</td>
-        <td>Informazioni Punto di Consegna (NAD 3035 = DP)</td>
+        <td>Informazioni sul Punto di Consegna (NAD 3035 = DP)</td>
         <td>Complex Type, massimo 1 record</td>
       </tr>
       <tr>
@@ -688,7 +688,7 @@
         <td>100</td>
         <td class="e"><b>PartyType</b><br>/ORDERS/Header/Information/OtherParty/PartyType</td>
         <td>Tipo di parte</td>
-        <td><a href="tabelle_ORDERS.html#8-par-ty">Valore dinamico: IV	-LSP -PW -UC -BF -DL -CO -SN -SR -WH</a></td>
+        <td><a href="tabelle_ORDERS.html#8-par-ty">Valore dinamico: IV - LSP - PW - UC - BF - DL - CO - SN - SR - WH</a></td>
       </tr>
       <tr>
         <td>101</td>
@@ -826,7 +826,7 @@
         <td>123</td>
         <td class="e"><b>NoteType</b><br>/ORDERS/Header/Information/Various/NoteType</td>
         <td>Tipo Nota</td>
-        <td><a href="tabelle_ORDERS.html#10-note-ty">Valore dinamico: DIN - IN - PUR - PRD - ZZZ</a></td>
+        <td><a href="tabelle_ORDERS.html#10-note-ty">Valore dinamico: DIN - INV - PUR - PRD - ZZZ</a></td>
       </tr>
       <tr>
         <td>124</td>
@@ -867,13 +867,13 @@
       <tr>
         <td>130</td>
         <td class="d"><b>Item</b><br>/ORDERS/Detail/Product/Item</td>
-        <td>Elemento</td>
+        <td>Articolo</td>
         <td>Complex Type, massimo 2 record</td>
       </tr>
       <tr>
         <td>131</td>
         <td class="d"><b>PrimaryItem</b><br>/ORDERS/Detail/Product/Item/PrimaryItem</td>
-        <td>Elemento primario</td>
+        <td>Articolo primario</td>
         <td>Variabile Boolean</td>
       </tr>
       <tr>
@@ -885,7 +885,7 @@
       <tr>
         <td>133</td>
         <td class="d"><b>ItemType</b><br>/ORDERS/Detail/Product/Item/ItemType</td>
-        <td>Tipo di elemento</td>
+        <td>Tipo di articolo</td>
         <td>Valore dinamico: CU o TU</td>
       </tr>
       <tr>
@@ -903,7 +903,7 @@
       <tr>
         <td>136</td>
         <td class="d"><b>ItemNumber</b><br>/ORDERS/Detail/Product/Item/AdditionalIdentification/ItemNumber</td>
-        <td>Numero elemento</td>
+        <td>Numero articolo</td>
         <td>Stringa alfanumerica di massimo 35 caratteri</td>
       </tr>
       <tr>
@@ -1005,19 +1005,19 @@
       <tr>
         <td>153</td>
         <td class="d"><b>ItemInfo</b><br>/ORDERS/Detail/Product/ItemInfo</td>
-        <td>Informazioni elemento <em>(opzionale)</em></td>
+        <td>Informazioni articolo <em>(opzionale)</em></td>
         <td>Complex Type</td>
       </tr>
       <tr>
         <td>154</td>
         <td class="d"><b>ItemReferenceType</b><br>/ORDERS/Detail/Product/ItemInfo/ItemRefeferenceType</td>
-        <td>Tipo di riferimento elemento</td>
+        <td>Tipo di riferimento articolo</td>
         <td>Valore fisso: PD</td>
       </tr>
       <tr>
         <td>155</td>
         <td class="d"><b>ItemReferenceNumber</b><br>/ORDERS/Detail/Product/ItemInfo/ItemReferenceNumber</td>
-        <td>Numero di riferimento elemento</td>
+        <td>Numero di riferimento articolo</td>
         <td>Stringa alfanumerica di massimo 35 caratteri</td>
       </tr>
       <tr>
