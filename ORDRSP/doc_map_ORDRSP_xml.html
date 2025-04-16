@@ -1,0 +1,1187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentazione ORDERS</title>
+    <style>
+          .container {
+          display: grid;
+          column-gap: 50px;
+          grid-template-columns: auto auto auto;
+          background-color: rgb(240, 246, 253);
+          padding: 20px;
+          }
+					table, h1, h2, h3, h4, li {
+            font-family: Arial, Helvetica, sans-serif;
+						width: 95%; /* Larghezza RESPONSIVE */
+						border-collapse: collapse;
+					}
+					th, td {
+						border: 1px solid black;
+            text-align: left;
+						padding: 10px;
+                       
+					}
+
+          a:hover {
+            color: tomato;
+          }
+
+          .d {
+            background-color: rgb(186, 237, 193);
+          }
+          .e {
+            background-color: rgb(236, 238, 237);
+            flex-wrap: wrap;
+          }
+          .f {
+            color: #182dce
+          }
+          .flex-container {
+          display: flex;
+          justify-content: space-evenly;
+          }
+          .button {
+            border-radius: 20px;
+            background: #fcfbfb;
+            padding: 10px;
+            width: 200px;
+            color:#45b862;
+            font-size: large;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .right {
+            position: absolute;
+            right: 20px;
+            border: 2px solid #45b862;
+            padding: 10px;
+          }
+          
+		</style>
+  </head>
+  <body>
+    <section>     
+      <h1>La struttura del messaggio ORDRSP</h1>
+        <h3>Specifiche per il formato XML</h3>
+
+        <h4><a href="https://marida3var.github.io/Doc_Tracciati/index.html">&larr; TORNA ALLA PAGINA PRINCIPALE</a></h4>
+   
+    <div class="container">
+      <div>
+      <ul>
+      <li> Visualizza i campi della testata:<a href="#header"> HEADER</a></li>
+      <li> Visualizza i campi della sezione di Dettaglio:<a href="#detail"> DETAIL</a></li>
+      <li> Visualizza i campi del sommario:<a href="#summary"> SUMMARY</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <div class="button right"><a class="button" href="Doc_ORDRSP.pdf" target="_blank">Scarica come PDF</a></button>
+    </div>
+  </div>
+    </section>
+    <section id="top" class="table">
+    <div class="flex-container">
+    <table>
+      <tr>
+        <th>n.</th>
+        <th style="background-color: #818488; color: aliceblue;">Elementi e Path</th>
+        <th style="background-color: #45b862; color: aliceblue;">Descrizione</th>
+        <th style="background-color: #56d482; color: aliceblue;">Regole di compilazione</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="e"><b>ORDRSP</b><br>/ORDRSP</td>
+        <td>Dichiarazione del tipo di messaggio</td>
+        <td>Root element</td>
+      </tr>
+      <tr>
+        <td id="header">2</td>
+        <td class="e"><b>Header</b><br>/ORDRSP/Header</td>
+        <td>Apertura testata del messaggio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="e"><b>Envelope</b><br>/ORDRSP/Header/Envelope</td>
+        <td>Intestazione della Conferma d'Ordine: ORDRSP</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="e"><b>Sender</b><br>/ORDRSP/Header/Envelope/Sender</td>
+        <td>Il Mittente della Conferma d'Ordine</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Envelope/Sender/Identification</td>
+        <td>Identificazione del Mittente</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="e"><b>IdentificationCodeQualifier</b><br>/ORDRSP/Header/Envelope/Sender/IdentificationCodeQualifier</td>
+        <td>Codice identificativo del Mittente</td>
+        <td><a href="tabelle_ORDRSP.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="e"><b>Recipient</b><br>/ORDRSP/Header/Envelope/Recipient</td>
+        <td>Il Destinatario dell'Ordine</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Envelope/Recipient/Identification</td>
+        <td>Identificazione del Destinatario</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="e"><b>IdentificationCodeQualifier</b><br>/ORDRSP/Header/Envelope/Recipient/IdentificationCodeQualifier</td>
+        <td>Codice identificativo del Destinatario</td>
+        <td><a href="tabelle_ORDRSP.html#1-unb">Valore dinamico: 14 - ZZ - EN</a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="e"><b>SendDateTime</b><br>/ORDRSP/Header/Envelope/SendDateTime</td>
+        <td>Data e Ora di Invio Messaggio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="e"><b>Date</b><br>/ORDRSP/Header/Envelope/SendDateTime/Date</td>
+        <td>Data Invio Messaggio</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="e"><b>Time</b><br>/ORDRSP/Header/Envelope/SendDateTime/Time</td>
+        <td>Ora Invio Messaggio <em>(opzionale)</em></td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="e"><b>InterchangeControlReference</b><br>/ORDRSP/Header/Envelope/InterchangeControlReference</td>
+        <td>Riferimento al controllo degli scambi <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="e"><b>Message</b><br>/ORDRSP/Header/Envelope/Message</td>
+        <td>Il Messaggio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="e"><b>MessageIdentifier</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier</td>
+        <td>Identificativo del Messaggio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="e"><b>MessageType</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier/MessageType</td>
+        <td>Tipo di Messaggio</td>
+        <td>Valore Fisso: <b>ORDRSP</b></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="e"><b>MessageVersionNumber</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier/MessageVersionNumber</td>
+        <td>Numero Versione Messaggio <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="e"><b>MessageReleaseNumber</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier/MessageReleaseNumber</td>
+        <td>Numero Release Messaggio <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="e"><b>ControllingAgency</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier/ControllingAgency</td>
+        <td>Agenzia di Controllo <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="e"><b>AssociationAssignedCode</b><br>/ORDRSP/Header/Envelope/Message/MessageIdentifier/AssociationAssignedCode</td>
+        <td>Codice assegnato all'associazione <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td class="e"><b>Document</b><br>/ORDRSP/Header/Document</td>
+        <td>Documento</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td class="e"><b>TypeIdentification</b><br>/ORDRSP/Header/Document/TypeIdentification</td>
+        <td>Tipo di Identificazione del Documento</td>
+        <td>Valore dinamico: <b>231</b> oppure <b>Conferma</b></td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td class="e"><b>Number</b><br>/ORDRSP/Header/Document/Number</td>
+        <td>Numero identificativo del documento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td class="e"><b>MessageFunction</b><br>/ORDRSP/Header/Document/MessageFunction</td>
+        <td>Funzione del messaggio</td>
+        <td><a href="tabelle_ORDRSP.html#2-mes-fun">Valore dinamico: 4 - 27 - 29</a></td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="e"><b>Date</b><br>/ORDRSP/Header/Document/Date</td>
+        <td>Data Documento</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td class="e"><b>Time</b><br>/ORDRSP/Header/Document/Time</td>
+        <td>Ora Documento <em>(opzionale)</em></td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td class="e"><b>Information</b><br>/ORDRSP/Header/Information</td>
+        <td>Informazioni di Testata</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td class="e"><b>Order</b><br>/ORDRSP/Header/Information/Order</td>
+        <td>Informazioni di riferimento a livello di documento (RFF) <em>(opzionale)</em></td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td class="e"><b>OrderNumberVendor</b><br>/ORDRSP/Header/Information/Order/OrderNumberVendor</td>
+        <td>N.Ordine interno del venditore <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td class="e"><b>DateOrderNumberVendor</b><br>/ORDRSP/Header/Information/Order/DateOrderNumberVendor</td>
+        <td>Data Ordine interno del venditore <em>(opzionale)</em></td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td class="e"><b>TimeOrderNumberVendor</b><br>/ORDRSP/Header/Information/Order/TimeOrderNumberVendor</td>
+        <td>Ora Ordine interno del venditore <em>(opzionale)</em></td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td class="e"><b>OrderNumberPurchase</b><br>/ORDRSP/Header/Information/Order/OrderNumberPurchase</td>
+        <td>Identificativo Ordine del Compratore <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td class="e"><b>DateOrderNumberPurchase</b><br>/ORDRSP/Header/Information/Order/DateOrderNumberPurchase</td>
+        <td>Data Identificativo Ordine del Compratore</td>
+        <td>Formato data</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td class="e"><b>TimeOrderNumberPurchase</b><br>/ORDRSP/Header/Information/Order/TimeOrderNumberPurchase</td>
+        <td>Ora Identificativo Ordine del Compratore</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td class="e"><b>OrderReference</b><br>/ORDRSP/Header/Information/OrderReference</td>
+        <td>Informazioni di riferimento a livello di documento (RFF) <em>(opzionale)</em></td>
+        <td>Complex Type, Massimo 12 record</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td class="e"><b>OrderReferenceType</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceType</td>
+        <td>Tipologia di riferimento ordine (qualificatore)</td>
+        <td><a href="tabelle_ORDRSP.html#3-ref-ty">Valore dinamico: AAG - AAN - BO - CT - PD - CR - AE - AKO - ANJ - IP - PL - UC</a></td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td class="e"><b>OrderReferenceNumber</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceNumber</td>
+        <td>Numero di riferimento</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td class="e"><b>OrderReferenceDate</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceDate</td>
+        <td>Informazioni di riferimento data</td>
+        <td>Complex Type, massimo 3 record</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td class="e"><b>TypeDate</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceDate/TypeDate</td>
+        <td>Tipologia di data (qualificatore)</td>
+        <td><a href="tabelle_ORDRSP.html#4-date-ty">Valore dinamico: 171 - 10 - 194 - 206</a></td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td class="e"><b>ReferenceDate</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceDate/ReferenceDate</td>
+        <td>Data</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td class="e"><b>ReferenceTime</b><br>/ORDRSP/Header/Information/OrderReference/OrderReferenceDate/ReferenceTime</td>
+        <td>Ora <em>(opzionale)</em></td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td class="e"><b>Supplier</b><br>/ORDRSP/Header/Information/Supplier</td>
+        <td>Informazioni sul fornitore (NAD 3035 = SU)</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td class="e"><b>PartyType</b><br>/ORDRSP/Header/Information/Supplier/PartyType</td>
+        <td>Ruolo della parte</td>
+        <td>Valore fisso: SU</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Information/Supplier/Identification</td>
+        <td>Codice identificativo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>45</td>
+        <td class="e"><b>CodeListQualifier</b><br>/ORDRSP/Header/Information/Supplier/CodeListQualifier</td>
+        <td>Tipo codice</td>
+        <td><a href="tabelle_ORDRSP.html#5-nad-qual">Valore dinamico: 14 - IT - IA - ZZ - VA</a></td>
+      </tr>
+      <tr>
+        <td>46</td>
+        <td class="e"><b>Name</b><br>/ORDRSP/Header/Information/Supplier/Name</td>
+        <td>Ragione sociale</td>
+        <td>Stringa alfanumerica di massimo 175 caratteri</td>
+      </tr>
+      <tr>
+        <td>47</td>
+        <td class="e"><b>Address</b><br>/ORDRSP/Header/Information/Supplier/Address</td>
+        <td>Indirizzo (via e numero)</td>
+        <td>Stringa alfanumerica di massimo 140 caratteri</td>
+      </tr>
+      <tr>
+        <td>48</td>
+        <td class="e"><b>City</b><br>/ORDRSP/Header/Information/Supplier/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>49</td>
+        <td class="e"><b>CountrySubEntity</b><br>/ORDRSP/Header/Information/Supplier/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="e"><b>Postcode</b><br>/ORDRSP/Header/Information/Supplier/Postcode</td>
+        <td>Codice postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>51</td>
+        <td class="e"><b>Country</b><br>/ORDRSP/Header/Information/Supplier/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>52</td>
+        <td class="e"><b>ContactReference</b><br>/ORDRSP/Header/Information/Supplier/ContactReference</td>
+        <td>Riferimenti Contatti <em>(opzionale)</em></td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>53</td>
+        <td class="e"><b>Contactfunction</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/Contactfunction</td>
+        <td>Funzione del contatto</td>
+        <td><a href="tabelle_ORDRSP.html#6-cont-fun">Valore dinamico: AP - IC - OC - SA - SD - SJ - BO - PD - SR</a></td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>55</td>
+        <td class="e"><b>Telephone</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>56</td>
+        <td class="e"><b>Fax</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>57</td>
+        <td class="e"><b>Telex</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>58</td>
+        <td class="e"><b>Email</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>59</td>
+        <td class="e"><b>X400</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>60</td>
+        <td class="e"><b>URL</b><br>/ORDRSP/Header/Information/Supplier/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>61</td>
+        <td class="e"><b>Buyer</b><br>/ORDRSP/Header/Information/Buyer</td>
+        <td>Informazioni sul Buyer (NAD 3035 = BY)</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>62</td>
+        <td class="e"><b>PartyType</b><br>/ORDRSP/Header/Information/Buyer/PartyType</td>
+        <td>Ruolo della parte</td>
+        <td>Valore fisso: BY</td>
+      </tr>
+      <tr>
+        <td>63</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Information/Buyer/Identification</td>
+        <td>Codice identificativo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>64</td>
+        <td class="e"><b>CodeListQualifier</b><br>/ORDRSP/Header/Information/Buyer/CodeListQualifier</td>
+        <td>Tipo codice</td>
+        <td><a href="tabelle_ORDRSP.html#6-nad-qual">Valore dinamico: 14 - IT - IA - ZZ - VA</a></td>
+      </tr>
+      <tr>
+        <td>65</td>
+        <td class="e"><b>Name</b><br>/ORDRSP/Header/Information/Buyer/Name</td>
+        <td>Ragione sociale</td>
+        <td>Stringa alfanumerica di massimo 175 caratteri</td>
+      </tr>
+      <tr>
+        <td>66</td>
+        <td class="e"><b>Address</b><br>/ORDRSP/Header/Information/Buyer/Address</td>
+        <td>Indirizzo (via e numero)</td>
+        <td>Stringa alfanumerica di massimo 140 caratteri</td>
+      </tr>
+      <tr>
+        <td>67</td>
+        <td class="e"><b>City</b><br>/ORDRSP/Header/Information/Buyer/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>68</td>
+        <td class="e"><b>CountrySubEntity</b><br>/ORDRSP/Header/Information/Buyer/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>69</td>
+        <td class="e"><b>Postcode</b><br>/ORDRSP/Header/Information/Buyer/Postcode</td>
+        <td>Codice postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>70</td>
+        <td class="e"><b>Country</b><br>/ORDRSP/Header/Information/Buyer/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>71</td>
+        <td class="e"><b>ContactReference</b><br>/ORDRSP/Header/Information/Buyer/ContactReference</td>
+        <td>Riferimenti Contatti <em>(opzionale)</em></td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>72</td>
+        <td class="e"><b>Contactfunction</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/Contactfunction</td>
+        <td>Funzione del contatto</td>
+        <td><a href="tabelle_ORDRSP.html#6-cont-fun">Valore dinamico: AP - IC - OC - SA - SD - SJ - BO - PD - SR</a></td>
+      </tr>
+      <tr>
+        <td>73</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>74</td>
+        <td class="e"><b>Telephone</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td class="e"><b>Fax</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>76</td>
+        <td class="e"><b>Telex</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>77</td>
+        <td class="e"><b>Email</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>78</td>
+        <td class="e"><b>X400</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>79</td>
+        <td class="e"><b>URL</b><br>/ORDRSP/Header/Information/Buyer/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>80</td>
+        <td class="e"><b>DeliveryPoint</b><br>/ORDRSP/Header/Information/DeliveryPoint</td>
+        <td>Informazioni sul Punto di Consegna (NAD 3035 = DP)</td>
+        <td>Complex Type, massimo 1 record</td>
+      </tr>
+      <tr>
+        <td>81</td>
+        <td class="e"><b>PartyType</b><br>/ORDRSP/Header/Information/DeliveryPoint/PartyType</td>
+        <td>Ruolo della parte</td>
+        <td>Valore fisso: DP</td>
+      </tr>
+      <tr>
+        <td>82</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Information/DeliveryPoint/Identification</td>
+        <td>Codice identificativo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>83</td>
+        <td class="e"><b>CodeListQualifier</b><br>/ORDRSP/Header/Information/DeliveryPoint/CodeListQualifier</td>
+        <td>Tipo codice</td>
+        <td><a href="tabelle_ORDRSP.html#6-nad-qual">Valore dinamico: 14 - IT - IA - ZZ - VA</a></td>
+      </tr>
+      <tr>
+        <td>84</td>
+        <td class="e"><b>Name</b><br>/ORDRSP/Header/Information/DeliveryPoint/Name</td>
+        <td>Ragione sociale</td>
+        <td>Stringa alfanumerica di massimo 175 caratteri</td>
+      </tr>
+      <tr>
+        <td>85</td>
+        <td class="e"><b>Address</b><br>/ORDRSP/Header/Information/DeliveryPoint/Address</td>
+        <td>Indirizzo (via e numero)</td>
+        <td>Stringa alfanumerica di massimo 140 caratteri</td>
+      </tr>
+      <tr>
+        <td>86</td>
+        <td class="e"><b>City</b><br>/ORDRSP/Header/Information/DeliveryPoint/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>87</td>
+        <td class="e"><b>CountrySubEntity</b><br>/ORDRSP/Header/Information/DeliveryPoint/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>88</td>
+        <td class="e"><b>Postcode</b><br>/ORDRSP/Header/Information/DeliveryPoint/Postcode</td>
+        <td>Codice postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>89</td>
+        <td class="e"><b>Country</b><br>/ORDRSP/Header/Information/DeliveryPoint/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="e"><b>ContactReference</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference</td>
+        <td>Riferimenti Contatti <em>(opzionale)</em></td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>91</td>
+        <td class="e"><b>Contactfunction</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/Contactfunction</td>
+        <td>Funzione del contatto</td>
+        <td><a href="tabelle_ORDRSP.html#6-cont-fun">Valore dinamico: AP - IC - OC - SA - SD - SJ - BO - PD - SR</a></td>
+      </tr>
+      <tr>
+        <td>92</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>93</td>
+        <td class="e"><b>Telephone</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>94</td>
+        <td class="e"><b>Fax</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>95</td>
+        <td class="e"><b>Telex</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>96</td>
+        <td class="e"><b>Email</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>97</td>
+        <td class="e"><b>X400</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>98</td>
+        <td class="e"><b>URL</b><br>/ORDRSP/Header/Information/DeliveryPoint/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>99</td>
+        <td class="e"><b>OtherParty</b><br>/ORDRSP/Header/Information/OtherParty</td>
+        <td>Informazioni sulle altri parti coinvolte</td>
+        <td>Complex Type, massimo 9 record</td>
+      </tr>
+      <tr>
+        <td>100</td>
+        <td class="e"><b>PartyType</b><br>/ORDRSP/Header/Information/OtherParty/PartyType</td>
+        <td>Tipo di parte</td>
+        <td><a href="tabelle_ORDRSP.html#8-par-ty">Valore dinamico: IV - LSP - PW - UC - BF - DL - CO - SN - SR - WH</a></td>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td class="e"><b>Identification</b><br>/ORDRSP/Header/Information/OtherParty/Identification</td>
+        <td>Codice identificativo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td class="e"><b>CodeListQualifier</b><br>/ORDRSP/Header/Information/OtherParty/CodeListQualifier</td>
+        <td>Tipo codice</td>
+        <td><a href="tabelle_ORDRSP.html#6-nad-qual">Valore dinamico: 14 - IT - IA - ZZ - VA</a></td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td class="e"><b>Name</b><br>/ORDRSP/Header/Information/OtherParty/Name</td>
+        <td>Ragione Sociale</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>104</td>
+        <td class="e"><b>Address</b><br>/ORDRSP/Header/Information/OtherParty/Address</td>
+        <td>Indirizzo (via e numero)</td>
+        <td>Stringa alfanumerica di massimo 140 caratteri</td>
+      </tr>
+      <tr>
+        <td>105</td>
+        <td class="e"><b>City</b><br>/ORDRSP/Header/Information/OtherParty/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>106</td>
+        <td class="e"><b>CountrySubEntity</b><br>/ORDRSP/Header/Information/OtherParty/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>107</td>
+        <td class="e"><b>Postcode</b><br>/ORDRSP/Header/Information/OtherParty/Postcode</td>
+        <td>Codice postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>108</td>
+        <td class="e"><b>Country</b><br>/ORDRSP/Header/Information/OtherParty/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>109</td>
+        <td class="e"><b>ContactReference</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference</td>
+        <td>Riferimenti Contatti</td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>110</td>
+        <td class="e"><b>Contactfunction</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/Contactfunction</td>
+        <td>Funzione del contatto</td>
+        <td><a href="tabelle_ORDRSP.html#6-cont-fun">Valore dinamico: AP - IC - OC - SA - SD - SJ - BO - PD - SR</a></td>
+      </tr>
+      <tr>
+        <td>111</td>
+        <td class="e"><b>DepartmentOrEmployee</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/DepartmentOrEmployee</td>
+        <td>Ufficio o Impiegato di Riferimento <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>112</td>
+        <td class="e"><b>Telephone</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/Telephone</td>
+        <td>Numero di Telefono</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>113</td>
+        <td class="e"><b>Fax</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/Fax</td>
+        <td>Fax</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>114</td>
+        <td class="e"><b>Telex</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/Telex</td>
+        <td>Telex</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>115</td>
+        <td class="e"><b>Email</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/Email</td>
+        <td>Indirizzo Email</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>116</td>
+        <td class="e"><b>X400</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/X400</td>
+        <td>X400</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>117</td>
+        <td class="e"><b>URL</b><br>/ORDRSP/Header/Information/OtherParty/ContactReference/URL</td>
+        <td>URL</td>
+        <td>Stringa alfanumerica di massimo 512 caratteri</td>
+      </tr>
+      <tr>
+        <td>118</td>
+        <td class="e"><b>DateOfDelivery</b><br>/ORDRSP/Header/Information/DateOfDelivery</td>
+        <td>Informazioni sulla data di consegna</td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>119</td>
+        <td class="e"><b>Date</b><br>/ORDRSP/Header/Information/DateOfDelivery/Date</td>
+        <td>Data consegna merce</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>120</td>
+        <td class="e"><b>Time</b><br>/ORDRSP/Header/Information/DateOfDelivery/Time</td>
+        <td>Ora consegna merce <em>(opzionale)</em></td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>121</td>
+        <td class="e"><b>DateType</b><br>/ORDRSP/Header/Information/DateOfDelivery/DateType</td>
+        <td>Tipo data di consegna</td>
+        <td><a href="tabelle_ORDRSP.html#9-date-ty">Valore dinamico: 2 - 63 - 64 - 69 - 76 - 10 - 11 - 15 - 37 - 38 - 61 - 200 - 235 - 263 - 273 - 282 - 383 - X14</a></td>
+      </tr>
+      <tr>
+        <td>122</td>
+        <td class="e"><b>Various</b><br>/ORDRSP/Header/Information/Various</td>
+        <td>Varie</td>
+        <td>Complex Type, nessun limite al numero di inserimenti</td>
+      </tr>
+      <tr>
+        <td>123</td>
+        <td class="e"><b>NoteType</b><br>/ORDRSP/Header/Information/Various/NoteType</td>
+        <td>Tipo Nota</td>
+        <td><a href="tabelle_ORDRSP.html#10-note-ty">Valore dinamico: DIN - INV - PUR - PRD - ZZZ</a></td>
+      </tr>
+      <tr>
+        <td>124</td>
+        <td class="e"><b>Note</b><br>/ORDRSP/Header/Information/Various/Note</td>
+        <td>Annotazione</td>
+        <td>Stringa alfanumerica di massimo 350 caratteri</td>
+      </tr>
+      <tr>
+        <td>125</td>
+        <td class="e"><b>CurrencyInfo</b><br>/ORDRSP/Header/Information/CurrencyInfo</td>
+        <td>Informazioni di valuta <em>(opzionale)</em></td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>126</td>
+        <td class="e"><b>Currency</b><br>/ORDRSP/Header/Information/CurrencyInfo/Currency</td>
+        <td>Valuta</td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>127</td>
+        <td class="e"><b>UnitMonetaryType</b><br>/ORDRSP/Header/Information/CurrencyInfo/UnitMonetaryType</td>
+        <td>Tipo di Unità di Misura</td>
+        <td><a href="tabelle_ORDRSP.html#11-mon-ty">Valore dinamico: 4 - 9 - 10 - 11 - 12</a></td>
+      </tr>
+      <tr>
+        <td id="detail">128</td>
+        <td class="d"><b>Detail</b><br>/ORDRSP/Detail</td>
+        <td>Informazioni di Dettaglio</td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>129</td>
+        <td class="d"><b>Product</b><br>/ORDRSP/Detail/Product</td>
+        <td>Prodotti</td>
+        <td>Complex Type, nessun limite al numero di inserimenti</td>
+      </tr>
+      <tr>
+        <td>130</td>
+        <td class="d"><b>ProductIdFunctionQualifier</b><br>/ORDRSP/Detail/Product/ProductIdFunctionQualifier</td>
+        <td>Qualificatore funzionale dell'ID prodotto</td>>
+        <td><a href="tabelle_ORDRSP.html#12-lin-qua">Valore dinamico: 5 - 6 - 7</a></td>
+      </tr>
+      <tr>
+        <td>131</td>
+        <td class="d"><b>Item</b><br>/ORDRSP/Detail/Product/Item</td>
+        <td>Articolo</td>
+        <td>Complex Type, massimo 2 record</td>
+      </tr>
+      <tr>
+        <td>132</td>
+        <td class="d"><b>PrimaryItem</b><br>/ORDRSP/Detail/Product/Item/PrimaryItem</td>
+        <td>Articolo primario</td>
+        <td>Variabile Boolean</td>
+      </tr>
+      <tr>
+        <td>133</td>
+        <td class="d"><b>RowNumber</b><br>/ORDRSP/Detail/Product/Item/RowNumber</td>
+        <td>Numero progressivo riga</td>
+        <td>Numero intero positivo, massimo 6 caratteri</td>
+      </tr>
+      <tr>
+        <td>134</td>
+        <td class="d"><b>ItemType</b><br>/ORDRSP/Detail/Product/Item/ItemType</td>
+        <td>Tipo di articolo</td>
+        <td>Valore dinamico: CU o TU</td>
+      </tr>
+      <tr>
+        <td>135</td>
+        <td class="d"><b>Description</b><br>/ORDRSP/Detail/Product/Item/Description</td>
+        <td>Descrizione articolo <em>(opzionale)</em></td>
+        <td>Stringa alfanumerica di massimo 175 caratteri</td>
+      </tr>
+      <tr>
+        <td>136</td>
+        <td class="d"><b>AdditionalIdentification</b><br>/ORDRSP/Detail/Product/Item/AdditionalIdentification</td>
+        <td>Identificazione aggiuntiva</td>
+        <td>Complex Type, massimo 3 record</td>
+      </tr>
+      <tr>
+        <td>137</td>
+        <td class="d"><b>ItemNumber</b><br>/ORDRSP/Detail/Product/Item/AdditionalIdentification/ItemNumber</td>
+        <td>Numero articolo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>138</td>
+        <td class="d"><b>ItemTypeIdentificationCode</b><br>/ORDRSP/Detail/Product/Item/AdditionalIdentification/ItemTypeIdentificationCode</td>
+        <td>Codice Identificativo Tipo Elemento</td>
+        <td><a href="tabelle_ORDRSP.html#12-item-ty">Valore dinamico: EN	- SA - IN - UP - DW - IB - UA - AC - EWC</a></td>
+      </tr>
+      <tr>
+        <td>139</td>
+        <td class="d"><b>Quantity</b><br>/ORDRSP/Detail/Product/Item/Quantity</td>
+        <td>Quantità</td>
+        <td>Complex Type, massimo 9 record</td>
+      </tr>
+      <tr>
+        <td>140</td>
+        <td class="d"><b>QuantityQualifier</b><br>/ORDRSP/Detail/Product/Item/Quantity/QuantityQualifier</td>
+        <td>Qualificatore di quantità</td>
+        <td><a href="tabelle_ORDRSP.html#13-qua-qua">Valore dinamico: 21 - 59 - 1 - 52 - 164 - 192 - 246 - 17E - 45E - 170</a></td>
+      </tr>
+      <tr>
+        <td>141</td>
+        <td class="d"><b>Quantity</b><br>/ORDRSP/Detail/Product/Item/Quantity/Quantity</td>
+        <td>Totale Quantità ordinata espressa in TU fornitore</td>
+        <td>Numero decimale</td>
+      </tr>
+      <tr>
+        <td>142</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/ORDRSP/Detail/Product/Item/Quantity/MeasureUnitQualifier</td>
+        <td>Unità di misura della quantità ordinata</td>
+        <td><a href="tabelle_ORDERS.html#14-mea-qua">Valore dinamico: PCE - KGM - CMT - GRM - LTR - MLT - MTR - MTK - CT - CU - TU - PF</a></td>
+      </tr>
+      <tr>
+        <td>143</td>
+        <td class="d"><b>Price</b><br>/ORDRSP/Detail/Product/Item/Price</td>
+        <td>Prezzo</td>
+        <td>Complex Type, massimo 2 record</td>
+      </tr>
+      <tr>
+        <td>144</td>
+        <td class="d"><b>PriceQualifier</b><br>/ORDRSP/Detail/Product/Item/Price/PriceQualifier</td>
+        <td>Qualificatore di Prezzo</td>
+        <td>Valore dinamico: LORDO o NETTO</td>
+      </tr>
+      <tr>
+        <td>145</td>
+        <td class="d"><b>Price</b><br>/ORDRSP/Detail/Product/Item/Price/Price</td>
+        <td>Valore Prezzo</td>
+        <td>Numero decimale</td>
+      </tr>
+      <tr>
+        <td>146</td>
+        <td class="d"><b>PriceType</b><br>/ORDRSP/Detail/Product/Item/Price/PriceType</td>
+        <td>Tipo di Prezzo</td>
+        <td><a href="tabelle_ORDRSP.html#15-pri-ty">Valore dinamico: CT - AE - CA</a></td>
+      </tr>
+      <tr>
+        <td>147</td>
+        <td class="d"><b>PromotionalPrice</b><br>/ORDRSP/Detail/Product/Item/Price/PromotionalPrice</td>
+        <td>Prezzo promozionale</td>
+        <td>Variabile Boolean</td>
+      </tr>
+      <tr>
+        <td>148</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/ORDRSP/Detail/Product/Item/Price/MeasureUnitQualifier</td>
+        <td>Unità di misura del prezzo unitario</td>
+        <td><a href="tabelle_ORDRSP.html#14-mea-qua">Valore dinamico: CMT - GRM - KGM - LTR - MLT - MTR - PCE - P1 - CT - CU - TU - PF</a></td>
+      </tr>
+      <tr>
+        <td>149</td>
+        <td class="d"><b>TotalNumberPriceUnit</b><br>/ORDRSP/Detail/Product/Item/TotalNumberPriceUnit</td>
+        <td>Prezzo totale unitario</td>
+        <td>Numero decimale</td>
+      </tr>
+      <tr>
+        <td>150</td>
+        <td class="d"><b>DateOfDelivery</b><br>/ORDRSP/Detail/Product/DateOfDelivery</td>
+        <td>Informazioni sulla data di consegna</td>
+        <td>Complex Type, massimo 5 record</td>
+      </tr>
+      <tr>
+        <td>151</td>
+        <td class="d"><b>Date</b><br>/ORDRSP/Detail/Product/DateOfDelivery/Date</td>
+        <td>Data consegna merce</td>
+        <td>Formato Data</td>
+      </tr>
+      <tr>
+        <td>152</td>
+        <td class="d"><b>Time</b><br>/ORDRSP/Detail/Product/DateOfDelivery/Time</td>
+        <td>Ora consegna merce</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>153</td>
+        <td class="d"><b>DateType</b><br>/ORDRSP/Detail/Product/DateOfDelivery/DateType</td>
+        <td>Tipo data di consegna</td>
+        <td><a href="tabelle_ORDRSP.html#9-date-ty">Valore dinamico: 2 - 63 - 64 - 69 - 76 - 11 - 10 - 15 - 61 - 100 - 200 - 361 - 364 - 754 - X14</a></td>
+      </tr>
+      <tr>
+        <td>154</td>
+        <td class="d"><b>ItemInfo</b><br>/ORDRSP/Detail/Product/ItemInfo</td>
+        <td>Informazioni articolo <em>(opzionale)</em></td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>155</td>
+        <td class="d"><b>ItemRefeferenceType</b><br>/ORDRSP/Detail/Product/ItemInfo/ItemRefeferenceType</td>
+        <td>Tipo di riferimento articolo</td>
+        <td>Valore fisso: PD</td>
+      </tr>
+      <tr>
+        <td>156</td>
+        <td class="d"><b>ItemReferenceNumber</b><br>/ORDRSP/Detail/Product/ItemInfo/ItemReferenceNumber</td>
+        <td>Numero di riferimento articolo</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>157</td>
+        <td class="d"><b>PlaceLocationIdentification</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification</td>
+        <td>Identificazione del Luogo</td>
+        <td>Complex Type, nessun limite al numero di inserimenti</td>
+      </tr>
+      <tr>
+        <td>158</td>
+        <td class="d"><b>Identification</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Identification</td>
+        <td>Codice identificativo</td>
+        <td>Stringa alfanumerica di massimo 25 caratteri</td>
+      </tr>
+      <tr>
+        <td>159</td>
+        <td class="d"><b>CodeListQualifier</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/CodeListQualifier</td>
+        <td>Tipo codice</td>
+        <td><a href="tabelle_ORDRSP.html#16-loc-qua">Valore dinamico: 14 - ZZ - 91 - 92 - VA</a></td>
+      </tr>
+      <tr>
+        <td>160</td>
+        <td class="d"><b>Name</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Name</td>
+        <td>Ragione sociale</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>161</td>
+        <td class="d"><b>Address</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Address</td>
+        <td>Indirizzo (via e numero)</td>
+        <td>Stringa alfanumerica di massimo 70 caratteri</td>
+      </tr>
+      <tr>
+        <td>162</td>
+        <td class="d"><b>City</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/City</td>
+        <td>Città</td>
+        <td>Stringa alfanumerica di massimo 35 caratteri</td>
+      </tr>
+      <tr>
+        <td>163</td>
+        <td class="d"><b>CountrySubEntity</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/CountrySubEntity</td>
+        <td>Provincia</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>164</td>
+        <td class="d"><b>Postcode</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Postcode</td>
+        <td>Codice postale</td>
+        <td>Stringa alfanumerica di massimo 9 caratteri</td>
+      </tr>
+      <tr>
+        <td>165</td>
+        <td class="d"><b>Country</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Country</td>
+        <td>Nazione</td>
+        <td>Stringa alfanumerica di massimo 3 caratteri</td>
+      </tr>
+      <tr>
+        <td>166</td>
+        <td class="d"><b>Quantity</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Quantity</td>
+        <td>Quantità <em>(opzionale)</em></td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>167</td>
+        <td class="d"><b>Quantity</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Quantity/Quantity</td>
+        <td>Quantità</td>
+        <td>Numero decimale</td>
+      </tr>
+      <tr>
+        <td>168</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/Quantity/MeasureUnitQualifier</td>
+        <td>Unità di misura della quantità</td>
+        <td><a href="tabelle_ORDRSP.html#14-mea-qua">Valore dinamico: PCE - CT - KGM - MTR - MTK - LTR - CU - TU - CMT - GRM - MLT</a></td>
+      </tr>
+      <tr>
+        <td>169</td>
+        <td class="d"><b>ReferenceDate</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate</td>
+        <td>Data di riferimento</td>
+        <td>Complex Type, massimo 18 record</td>
+      </tr>
+      <tr>
+        <td>170</td>
+        <td class="d"><b>DateType</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate/DateType</td>
+        <td>Tipo Data</td>
+        <td><a href="tabelle_ORDRSP.html#18-date-ty">Valore dinamico: 002 - 10 - 11 - 61 - 063 - 064 - 069 - 200 - 364 - X14</a></td>
+      </tr>
+      <tr>
+        <td>171</td>
+        <td class="d"><b>Date</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate/Date</td>
+        <td>Data consegna merce</td>
+        <td>Formato data</td>
+      </tr>
+      <tr>
+        <td>172</td>
+        <td class="d"><b>Time</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate/Time</td>
+        <td>Ora consegna merce</td>
+        <td>Formato Ora</td>
+      </tr>
+      <tr>
+        <td>173</td>
+        <td class="d"><b>ToDate</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate/ToDate</td>
+        <td>Data limite <em>(opzionale)</em></td>
+        <td>Formato data</td>
+      </tr>
+      <tr>
+        <td>174</td>
+        <td class="d"><b>FormatQualifier</b><br>/ORDRSP/Detail/Product/PlaceLocationIdentification/ReferenceDate/FormatQualifier</td>
+        <td>Qualificatore formato</td>
+        <td><a href="tabelle_ORDRSP.html#18-form-qua">Valore dinamico: 102 - 203 - 718</a></td>
+      </tr>
+      <tr>
+        <td>175</td>
+        <td class="d"><b>Various</b><br>/ORDRSP/Detail/Product/Various</td>
+        <td>Varie</td>
+        <td>Complex Type, nessun limite al numero di inserimenti</td>
+      </tr>
+      <tr>
+        <td>176</td>
+        <td class="d"><b>NoteType</b><br>/ORDRSP/Detail/Product/Various/NoteType</td>
+        <td>Tipo nota</td>
+        <td><a href="tabelle_ORDERS.html#10-note-ty">Valore dinamico: DIN - INV - PUR - PRD - ZZZ</a></td>
+      </tr>
+      <tr>
+        <td>177</td>
+        <td class="d"><b>Note</b><br>/ORDRSP/Detail/Product/Various/Note</td>
+        <td>Annotazione</td>
+        <td>Stringa alfanumerica di massimo 350 caratteri</td>
+      </tr>
+      <tr>
+        <td id="summary">178</td>
+        <td class="d"><b>Summary</b><br>/ORDRSP/Summary</td>
+        <td>Sommario <em>(opzionale)</em></td>
+        <td>Complex Type</td>
+      </tr>
+      <tr>
+        <td>179</td>
+        <td class="d"><b>CheckInfo</b><br>/ORDRSP/Summary/CheckInfo</td>
+        <td>Controllo informazioni</td>
+        <td>Complex Type, massimo 8 record</td>
+      </tr>
+      <tr>
+        <td>180</td>
+        <td class="d"><b>ControlQualifier</b><br>/ORDRSP/Summary/CheckInfo/ControlQualifier</td>
+        <td>Qualificatore di controllo</td>
+        <td><a href="tabelle_ORDRSP.html#19-cont-qua">Valore dinamico: 1 - 2 - 11 - 7 - 10 - 15 - 16 - 29</a></td>
+      </tr>
+      <tr>
+        <td>181</td>
+        <td class="d"><b>ControlValue</b><br>/ORDRSP/Summary/CheckInfo/ControlValue</td>
+        <td>Valore di controllo</td>
+        <td>Stringa alfanumerica</td>
+      </tr>
+      <tr>
+        <td>182</td>
+        <td class="d"><b>MeasureUnitQualifier</b><br>/ORDRSP/Summary/CheckInfo/MeasureUnitQualifier</td>
+        <td>Qualificatore unità di misura</td>
+        <td><a href="tabelle_ORDERS.html#20-mea-qua">Valore dinamico: PCE - CT - KGM - MTR - MTK - LTR - CU - TU - PF</a></td>
+      </tr>
+    </table>
+  </body>
+</html>
