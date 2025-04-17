@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2022 (x64) (http://www.altova.com) by  (Di.Tech S.p.A.) -->
+<!-- edited with XMLSpy v2022 (x64) (http://www.altova.com) by  (TEKNE SRL) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:cmn="http://NamespaceTest.com/CommonTypes" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
 	<xs:element name="ORDRSP">
 		<xs:complexType>
